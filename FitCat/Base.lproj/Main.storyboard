@@ -9,7 +9,7 @@
         <!--Login Page-->
         <scene sceneID="iTm-nZ-42k">
             <objects>
-                <viewController title="Login Page" id="Vth-ft-w23" sceneMemberID="viewController">
+                <viewController title="Login Page" id="Vth-ft-w23" customClass="LoginPage" customModule="FitCat" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ycm-CH-B4d"/>
                         <viewControllerLayoutGuide type="bottom" id="3C1-lC-8O3"/>
@@ -38,6 +38,14 @@
                                 </constraints>
                                 <state key="normal" image="facbooklogin.png"/>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LZA-Na-d6n">
+                                <rect key="frame" x="127" y="532" width="120" height="30"/>
+                                <state key="normal" title="Next Page"/>
+                                <connections>
+                                    <action selector="NextPage:" destination="Vth-ft-w23" eventType="touchUpInside" id="ALz-eL-oLn"/>
+                                    <segue destination="abH-M1-0jR" kind="show" identifier="catList" id="dTi-7s-PeU"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -53,15 +61,65 @@
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <segue destination="abH-M1-0jR" kind="show" id="Rcs-Gz-xrl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wV5-dV-zQV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1499.5" y="-826.5"/>
+        </scene>
+        <!--Your Cat List-->
+        <scene sceneID="Hbo-eh-5bg">
+            <objects>
+                <viewController title="Your Cat List" id="abH-M1-0jR" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bkO-fa-XZK"/>
+                        <viewControllerLayoutGuide type="bottom" id="v4q-rT-8ZT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zRd-eW-EVI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1O5-FN-86x">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="tSc-qW-e53">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tSc-qW-e53" id="8fq-ke-9JZ">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="abH-M1-0jR" id="mPm-5i-4CI"/>
+                                    <outlet property="delegate" destination="abH-M1-0jR" id="GX6-46-InF"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="1O5-FN-86x" secondAttribute="trailing" id="A1P-Gr-TnT"/>
+                            <constraint firstItem="1O5-FN-86x" firstAttribute="top" secondItem="zRd-eW-EVI" secondAttribute="top" id="WU0-8m-zIH"/>
+                            <constraint firstItem="1O5-FN-86x" firstAttribute="bottom" secondItem="v4q-rT-8ZT" secondAttribute="top" id="dgE-Sl-L4P"/>
+                            <constraint firstItem="1O5-FN-86x" firstAttribute="leading" secondItem="zRd-eW-EVI" secondAttribute="leading" id="eUg-A6-KGL"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yho-61-Nyi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1007.5" y="-826.5"/>
         </scene>
     </scenes>
     <resources>
         <image name="facbooklogin.png" width="492" height="108"/>
         <image name="morning-coffee-40-photos-7.jpg" width="600" height="1120"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="dTi-7s-PeU"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
 </document>
