@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		6D533C531C656772008C338A /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D533C521C656772008C338A /* ThirdViewController.swift */; };
+		6D533C551C657BD5008C338A /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D533C541C657BD5008C338A /* Default@2x.png */; };
+		6D533C571C657E71008C338A /* morning-coffee-40-photos-7.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6D533C561C657E71008C338A /* morning-coffee-40-photos-7.jpg */; };
 		6DDAF92C1C652B22006C4C78 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DDAF92B1C652B22006C4C78 /* AppDelegate.swift */; };
 		6DDAF92E1C652B22006C4C78 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DDAF92D1C652B22006C4C78 /* FirstViewController.swift */; };
 		6DDAF9301C652B22006C4C78 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DDAF92F1C652B22006C4C78 /* SecondViewController.swift */; };
@@ -37,6 +39,8 @@
 
 /* Begin PBXFileReference section */
 		6D533C521C656772008C338A /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ThirdViewController.swift; path = ../ThirdViewController.swift; sourceTree = "<group>"; };
+		6D533C541C657BD5008C338A /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../Default@2x.png"; sourceTree = "<group>"; };
+		6D533C561C657E71008C338A /* morning-coffee-40-photos-7.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "morning-coffee-40-photos-7.jpg"; path = "../morning-coffee-40-photos-7.jpg"; sourceTree = "<group>"; };
 		6DDAF9281C652B21006C4C78 /* FitCat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitCat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DDAF92B1C652B22006C4C78 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6DDAF92D1C652B22006C4C78 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -102,6 +106,8 @@
 			isa = PBXGroup;
 			children = (
 				6DDAF92B1C652B22006C4C78 /* AppDelegate.swift */,
+				6D533C561C657E71008C338A /* morning-coffee-40-photos-7.jpg */,
+				6D533C541C657BD5008C338A /* Default@2x.png */,
 				6DDAF92D1C652B22006C4C78 /* FirstViewController.swift */,
 				6DDAF92F1C652B22006C4C78 /* SecondViewController.swift */,
 				6D533C521C656772008C338A /* ThirdViewController.swift */,
@@ -238,6 +244,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D533C551C657BD5008C338A /* Default@2x.png in Resources */,
+				6D533C571C657E71008C338A /* morning-coffee-40-photos-7.jpg in Resources */,
 				6DDAF9381C652B22006C4C78 /* LaunchScreen.storyboard in Resources */,
 				6DDAF9351C652B22006C4C78 /* Assets.xcassets in Resources */,
 				6DDAF9331C652B22006C4C78 /* Main.storyboard in Resources */,
