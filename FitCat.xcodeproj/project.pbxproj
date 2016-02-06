@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6D533C531C656772008C338A /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D533C521C656772008C338A /* ThirdViewController.swift */; };
 		6DDAF92C1C652B22006C4C78 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DDAF92B1C652B22006C4C78 /* AppDelegate.swift */; };
 		6DDAF92E1C652B22006C4C78 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DDAF92D1C652B22006C4C78 /* FirstViewController.swift */; };
 		6DDAF9301C652B22006C4C78 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DDAF92F1C652B22006C4C78 /* SecondViewController.swift */; };
@@ -15,7 +16,6 @@
 		6DDAF9381C652B22006C4C78 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DDAF9361C652B22006C4C78 /* LaunchScreen.storyboard */; };
 		6DDAF9431C652B22006C4C78 /* FitCatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DDAF9421C652B22006C4C78 /* FitCatTests.swift */; };
 		6DDAF94E1C652B22006C4C78 /* FitCatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DDAF94D1C652B22006C4C78 /* FitCatUITests.swift */; };
-		6DDAF95C1C653258006C4C78 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 6DDAF95B1C653258006C4C78 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6D533C521C656772008C338A /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ThirdViewController.swift; path = ../ThirdViewController.swift; sourceTree = "<group>"; };
 		6DDAF9281C652B21006C4C78 /* FitCat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitCat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DDAF92B1C652B22006C4C78 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6DDAF92D1C652B22006C4C78 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -50,7 +51,6 @@
 		6DDAF9491C652B22006C4C78 /* FitCatUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FitCatUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DDAF94D1C652B22006C4C78 /* FitCatUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitCatUITests.swift; sourceTree = "<group>"; };
 		6DDAF94F1C652B22006C4C78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6DDAF95B1C653258006C4C78 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,7 +81,6 @@
 		6DDAF91F1C652B21006C4C78 = {
 			isa = PBXGroup;
 			children = (
-				6DDAF95B1C653258006C4C78 /* README.md */,
 				6DDAF92A1C652B22006C4C78 /* FitCat */,
 				6DDAF9411C652B22006C4C78 /* FitCatTests */,
 				6DDAF94C1C652B22006C4C78 /* FitCatUITests */,
@@ -105,6 +104,7 @@
 				6DDAF92B1C652B22006C4C78 /* AppDelegate.swift */,
 				6DDAF92D1C652B22006C4C78 /* FirstViewController.swift */,
 				6DDAF92F1C652B22006C4C78 /* SecondViewController.swift */,
+				6D533C521C656772008C338A /* ThirdViewController.swift */,
 				6DDAF9311C652B22006C4C78 /* Main.storyboard */,
 				6DDAF9341C652B22006C4C78 /* Assets.xcassets */,
 				6DDAF9361C652B22006C4C78 /* LaunchScreen.storyboard */,
@@ -267,7 +267,7 @@
 			files = (
 				6DDAF9301C652B22006C4C78 /* SecondViewController.swift in Sources */,
 				6DDAF92C1C652B22006C4C78 /* AppDelegate.swift in Sources */,
-				6DDAF95C1C653258006C4C78 /* README.md in Sources */,
+				6D533C531C656772008C338A /* ThirdViewController.swift in Sources */,
 				6DDAF92E1C652B22006C4C78 /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -493,6 +493,7 @@
 				6DDAF9541C652B22006C4C78 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6DDAF9551C652B22006C4C78 /* Build configuration list for PBXNativeTarget "FitCatTests" */ = {
 			isa = XCConfigurationList;
@@ -501,6 +502,7 @@
 				6DDAF9571C652B22006C4C78 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6DDAF9581C652B22006C4C78 /* Build configuration list for PBXNativeTarget "FitCatUITests" */ = {
 			isa = XCConfigurationList;
@@ -509,6 +511,7 @@
 				6DDAF95A1C652B22006C4C78 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

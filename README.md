@@ -1,1 +1,0 @@
-This explains how to use the project
