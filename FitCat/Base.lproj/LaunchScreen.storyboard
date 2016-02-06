@@ -18,10 +18,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView opaque="NO" userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="morning-coffee-40-photos-7.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="E6d-Dh-Ucj">
+                            <imageView opaque="NO" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="morning-coffee-40-photos-7.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="E6d-Dh-Ucj">
                                 <rect key="frame" x="0.0" y="-13" width="375" height="721"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="FitCat" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ROn-CW-L1W">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FitCat" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ROn-CW-L1W">
                                 <rect key="frame" x="138" y="156" width="99" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="gSa-kB-8eY"/>
@@ -34,9 +34,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ROn-CW-L1W" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="142" id="5jJ-b4-uCe"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="ROn-CW-L1W" secondAttribute="trailing" constant="118" id="JzB-QV-MTT"/>
-                            <constraint firstItem="ROn-CW-L1W" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="142" id="MEj-hs-dog"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="E6d-Dh-Ucj" secondAttribute="bottom" constant="-41" id="EgK-LI-yrW"/>
+                            <constraint firstItem="ROn-CW-L1W" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="136" id="FTx-FB-Z1j"/>
+                            <constraint firstItem="E6d-Dh-Ucj" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="topMargin" constant="-13" id="Jad-M1-lqR"/>
+                            <constraint firstItem="ROn-CW-L1W" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="ak5-pz-k8Q"/>
+                            <constraint firstItem="E6d-Dh-Ucj" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="lDX-tp-6lc"/>
+                            <constraint firstItem="ROn-CW-L1W" firstAttribute="centerX" secondItem="E6d-Dh-Ucj" secondAttribute="centerX" id="nHY-Sn-jA5"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>

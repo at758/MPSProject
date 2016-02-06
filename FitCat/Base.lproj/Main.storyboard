@@ -1,207 +1,67 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Vth-ft-w23">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--First-->
-        <scene sceneID="hNz-n2-bh7">
+        <!--Login Page-->
+        <scene sceneID="iTm-nZ-42k">
             <objects>
-                <viewController id="9pv-A4-QxB" customClass="FirstViewController" customModule="FitCat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Login Page" id="Vth-ft-w23" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Ia1-K6-d13"/>
-                        <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
+                        <viewControllerLayoutGuide type="top" id="ycm-CH-B4d"/>
+                        <viewControllerLayoutGuide type="bottom" id="3C1-lC-8O3"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
+                    <view key="view" contentMode="scaleToFill" id="UL7-fc-y7z">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="First View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="KQZ-1w-vlD">
-                                <rect key="frame" x="109" y="313" width="158" height="42"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <imageView userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="morning-coffee-40-photos-7.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Cxb-EE-S2H">
+                                <rect key="frame" x="-6" y="-5" width="386" height="672"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign in using your facebook account" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0RU-yL-nfM">
+                                <rect key="frame" x="54" y="36" width="255" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="xNN-Mb-dZf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="12"/>
+                                <color key="textColor" red="0.1202988401055336" green="0.37420669198036194" blue="0.51756769418716431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loaded by FirstViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A5M-7J-77L">
-                                <rect key="frame" x="91" y="363" width="195" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="centerX" secondItem="KQZ-1w-vlD" secondAttribute="centerX" id="6BV-lF-sBN"/>
-                            <constraint firstItem="A5M-7J-77L" firstAttribute="top" secondItem="KQZ-1w-vlD" secondAttribute="bottom" constant="8" symbolic="YES" id="cfb-er-3JN"/>
-                            <constraint firstItem="A5M-7J-77L" firstAttribute="centerX" secondItem="KQZ-1w-vlD" secondAttribute="centerX" id="e1l-AV-tCB"/>
-                            <constraint firstAttribute="centerY" secondItem="KQZ-1w-vlD" secondAttribute="centerY" id="exm-UA-ej4"/>
-                        </constraints>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="First" image="first" id="acW-dT-cKf"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="785.5" y="-1156.5"/>
-        </scene>
-        <!--Third-->
-        <scene sceneID="40s-UM-PQ1">
-            <objects>
-                <viewController title="Third" id="1m6-dA-PV8" customClass="ThirdViewController" customModule="FitCat" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="UJ1-d9-8Q7"/>
-                        <viewControllerLayoutGuide type="bottom" id="bOp-BD-bhM"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="JDf-7Y-hvk">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Third View" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HqU-Ep-KPF">
-                                <rect key="frame" x="90" y="320" width="175" height="28"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6XQ-V0-3qH">
-                                <rect key="frame" x="164" y="132" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <segue destination="ey6-ZY-01S" kind="show" id="Qxs-ri-gSJ"/>
-                                </connections>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uOL-45-2BO">
+                                <rect key="frame" x="97" y="587" width="180" height="41"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="180" id="VDz-11-dgE"/>
+                                    <constraint firstAttribute="height" constant="41" id="nZR-Qk-w2M"/>
+                                </constraints>
+                                <state key="normal" image="facbooklogin.png"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="EKS-HJ-bcu"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="YUW-hQ-CNl" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="893.5" y="560.5"/>
-        </scene>
-        <!--Check Details-->
-        <scene sceneID="Kdh-DT-32n">
-            <objects>
-                <viewController title="Check Details" id="ey6-ZY-01S" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="TWr-yH-THA"/>
-                        <viewControllerLayoutGuide type="bottom" id="4Pv-wI-K6m"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="9pF-sL-u8O">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4XT-62-AQD" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1309.5" y="560.5"/>
-        </scene>
-        <!--Second-->
-        <scene sceneID="wg7-f3-ORb">
-            <objects>
-                <viewController id="8rJ-Kc-sve" customClass="SecondViewController" customModule="FitCat" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="L7p-HK-0SC"/>
-                        <viewControllerLayoutGuide type="bottom" id="Djb-ko-YwX"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Second View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="zEq-FU-wV5">
-                                <rect key="frame" x="83" y="313" width="210" height="42"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Loaded by SecondViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDk-cv-Gan">
-                                <rect key="frame" x="80" y="363" width="216" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="zEq-FU-wV5" secondAttribute="centerX" id="qqM-NS-xev"/>
-                            <constraint firstAttribute="centerY" secondItem="zEq-FU-wV5" secondAttribute="centerY" id="qzY-Ky-pLD"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="0RU-yL-nfM" secondAttribute="trailing" constant="50" id="8Dk-1U-HB9"/>
+                            <constraint firstItem="0RU-yL-nfM" firstAttribute="leading" secondItem="UL7-fc-y7z" secondAttribute="leadingMargin" constant="38" id="IDd-pv-Cuy"/>
+                            <constraint firstItem="Cxb-EE-S2H" firstAttribute="bottom" secondItem="3C1-lC-8O3" secondAttribute="top" id="VsV-As-zZy"/>
+                            <constraint firstItem="uOL-45-2BO" firstAttribute="leading" secondItem="UL7-fc-y7z" secondAttribute="leadingMargin" constant="77" id="gNh-8U-tTg"/>
+                            <constraint firstItem="Cxb-EE-S2H" firstAttribute="top" secondItem="UL7-fc-y7z" secondAttribute="topMargin" constant="-5" id="ot4-Dh-9eO"/>
+                            <constraint firstItem="Cxb-EE-S2H" firstAttribute="centerX" secondItem="UL7-fc-y7z" secondAttribute="centerX" id="sC6-TA-WTG"/>
+                            <constraint firstItem="3C1-lC-8O3" firstAttribute="top" secondItem="uOL-45-2BO" secondAttribute="bottom" constant="39" id="vRT-7c-pIC"/>
+                            <constraint firstItem="0RU-yL-nfM" firstAttribute="top" secondItem="ycm-CH-B4d" secondAttribute="bottom" constant="16" id="ynz-pk-Whf"/>
+                            <constraint firstItem="Cxb-EE-S2H" firstAttribute="leading" secondItem="UL7-fc-y7z" secondAttribute="leadingMargin" constant="-22" id="z8M-D7-L0f"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Second" image="second" id="cPa-gy-q4n"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="785.5" y="-228.5"/>
-        </scene>
-        <!--FitCat-->
-        <scene sceneID="yl2-sM-qoP">
-            <objects>
-                <tabBarController title="FitCat" id="49e-Tb-3d3" sceneMemberID="viewController">
-                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
-                    <nil key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
-                        <rect key="frame" x="0.0" y="975" width="768" height="49"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
-                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
-                        <segue destination="XV7-mr-TEo" kind="relationship" relationship="viewControllers" id="Sqz-6X-OIE"/>
-                        <segue destination="0uH-2H-frh" kind="relationship" relationship="viewControllers" id="2Ht-yA-GQT"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-240.5" y="-296.5"/>
-        </scene>
-        <!--Fourth-->
-        <scene sceneID="gAb-tv-qse">
-            <objects>
-                <viewController title="Fourth" id="0uH-2H-frh" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="lVF-hi-KFo"/>
-                        <viewControllerLayoutGuide type="bottom" id="D0W-5p-EcP"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="3Li-3J-TeY">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Fourth" image="user" selectedImage="user" id="PC9-fa-F4K"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0Cf-lP-9hR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wV5-dV-zQV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-561.5" y="545.5"/>
-        </scene>
-        <!--Third-->
-        <scene sceneID="GUg-Nu-csk">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XV7-mr-TEo" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Third" image="skull" selectedImage="skull" id="MPE-F0-p7f"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="2UB-sf-ptm">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="1m6-dA-PV8" kind="relationship" relationship="rootViewController" id="IRr-4z-GhI"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9b8-tb-BAQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="306.5" y="560.5"/>
+            <point key="canvasLocation" x="-1499.5" y="-826.5"/>
         </scene>
     </scenes>
     <resources>
-        <image name="first" width="30" height="30"/>
-        <image name="second" width="30" height="30"/>
-        <image name="skull" width="24" height="24"/>
-        <image name="user" width="24" height="24"/>
+        <image name="facbooklogin.png" width="492" height="108"/>
+        <image name="morning-coffee-40-photos-7.jpg" width="600" height="1120"/>
     </resources>
     <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
 </document>
