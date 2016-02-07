@@ -10,7 +10,11 @@ import UIKit
 
 class AddCatDetailsViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
+    
     @IBOutlet weak var catImage: UIImageView!
+    
+    //Creating reference to FireBase
+    var ref = Firebase(url: "https://fitcat.firebaseio.com/")
     @IBAction func CloseView(sender: UIBarButtonItem) {
         
         //dismissViewControllerAnimated(true, completion: nil)
