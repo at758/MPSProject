@@ -27,7 +27,6 @@
                                     <constraint firstAttribute="height" constant="21" id="xNN-Mb-dZf"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="12"/>
-                                <color key="textColor" red="0.1202988401055336" green="0.37420669198036194" blue="0.51756769418716431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uOL-45-2BO">
@@ -40,10 +39,12 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LZA-Na-d6n">
                                 <rect key="frame" x="127" y="532" width="120" height="30"/>
-                                <state key="normal" title="Next Page"/>
+                                <state key="normal" title="Next Page">
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="NextPage:" destination="Vth-ft-w23" eventType="touchUpInside" id="ALz-eL-oLn"/>
-                                    <segue destination="abH-M1-0jR" kind="show" identifier="catList" id="dTi-7s-PeU"/>
+                                    <segue destination="NLO-0C-hds" kind="presentation" identifier="catList" modalTransitionStyle="flipHorizontal" id="Dvb-PU-ncW"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -60,66 +61,145 @@
                             <constraint firstItem="Cxb-EE-S2H" firstAttribute="leading" secondItem="UL7-fc-y7z" secondAttribute="leadingMargin" constant="-22" id="z8M-D7-L0f"/>
                         </constraints>
                     </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                    <connections>
-                        <segue destination="abH-M1-0jR" kind="show" id="Rcs-Gz-xrl"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wV5-dV-zQV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1499.5" y="-826.5"/>
+            <point key="canvasLocation" x="-1937.5" y="-826.5"/>
         </scene>
-        <!--Your Cat List-->
-        <scene sceneID="Hbo-eh-5bg">
+        <!--Add Cat Details-->
+        <scene sceneID="L6R-SC-AMe">
             <objects>
-                <viewController title="Your Cat List" id="abH-M1-0jR" sceneMemberID="viewController">
+                <viewController id="S4L-yf-7r7" customClass="AddCatDetailsViewController" customModule="FitCat" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="bkO-fa-XZK"/>
-                        <viewControllerLayoutGuide type="bottom" id="v4q-rT-8ZT"/>
+                        <viewControllerLayoutGuide type="top" id="9WV-NP-Sym"/>
+                        <viewControllerLayoutGuide type="bottom" id="bRz-2p-11X"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="zRd-eW-EVI">
+                    <view key="view" contentMode="scaleToFill" id="soJ-um-mnU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1O5-FN-86x">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="tSc-qW-e53">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tSc-qW-e53" id="8fq-ke-9JZ">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="abH-M1-0jR" id="mPm-5i-4CI"/>
-                                    <outlet property="delegate" destination="abH-M1-0jR" id="GX6-46-InF"/>
-                                </connections>
-                            </tableView>
+                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="morning-coffee-40-photos-7.jpg" highlighted="YES" translatesAutoresizingMaskIntoConstraints="NO" id="80w-ij-Mge">
+                                <rect key="frame" x="12" y="80" width="78" height="78"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="1O5-FN-86x" secondAttribute="trailing" id="A1P-Gr-TnT"/>
-                            <constraint firstItem="1O5-FN-86x" firstAttribute="top" secondItem="zRd-eW-EVI" secondAttribute="top" id="WU0-8m-zIH"/>
-                            <constraint firstItem="1O5-FN-86x" firstAttribute="bottom" secondItem="v4q-rT-8ZT" secondAttribute="top" id="dgE-Sl-L4P"/>
-                            <constraint firstItem="1O5-FN-86x" firstAttribute="leading" secondItem="zRd-eW-EVI" secondAttribute="leading" id="eUg-A6-KGL"/>
-                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Add Cat Details" id="lN5-0z-u0H">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="3nd-fO-1JQ">
+                            <connections>
+                                <action selector="CloseView:" destination="S4L-yf-7r7" id="JWb-gD-ZEj"/>
+                                <segue destination="aMp-iP-TwZ" kind="unwind" unwindAction="prepareForUnwind:" id="uxo-et-CC2"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="JbV-hc-pJ9"/>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="catImage" destination="80w-ij-Mge" id="Shc-l9-0mf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DgN-5r-eFu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="aMp-iP-TwZ" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="-705.5" y="-1567.5"/>
+        </scene>
+        <!--Your Cat List-->
+        <scene sceneID="WZy-bU-dcc">
+            <objects>
+                <tableViewController id="Vv4-iN-aKn" customClass="CatListTableViewController" customModule="FitCat" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="qZk-oA-SsK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" textLabel="Z3k-ow-oYE" imageView="M2l-Ae-MRE" style="IBUITableViewCellStyleDefault" id="CYI-xB-d3h">
+                                <rect key="frame" x="0.0" y="92" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CYI-xB-d3h" id="Swx-KT-I6P">
+                                    <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Z3k-ow-oYE">
+                                            <rect key="frame" x="60" y="0.0" width="280" height="43"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="first" id="M2l-Ae-MRE">
+                                            <rect key="frame" x="15" y="6" width="30" height="30"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </imageView>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="1aF-XI-le4" kind="show" id="YPj-K2-HYg"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Vv4-iN-aKn" id="tBJ-hn-gzy"/>
+                            <outlet property="delegate" destination="Vv4-iN-aKn" id="7eg-LH-Eou"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Your Cat List" id="Hpr-3a-Lle">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="cPZ-jk-spD">
+                            <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="addCat:" destination="Vv4-iN-aKn" id="5Ua-t9-ZaZ"/>
+                                <segue destination="S4L-yf-7r7" kind="show" identifier="addCatDetails" id="I61-l1-icT"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Cb-qh-B3V" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-715.5" y="-826.5"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Ii3-yI-5l2">
+            <objects>
+                <viewController id="1aF-XI-le4" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0DJ-w5-2kt"/>
+                        <viewControllerLayoutGuide type="bottom" id="3HT-ko-k0G"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hEY-s5-dnf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="yho-61-Nyi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I49-gh-9RQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1007.5" y="-826.5"/>
+            <point key="canvasLocation" x="-144.5" y="-799.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="DMc-PB-S6q">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NLO-0C-hds" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Pfz-46-7Om">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Vv4-iN-aKn" kind="relationship" relationship="rootViewController" id="aIR-yA-P27"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UqD-rR-8k7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1193.5" y="-826.5"/>
         </scene>
     </scenes>
     <resources>
         <image name="facbooklogin.png" width="492" height="108"/>
+        <image name="first" width="30" height="30"/>
         <image name="morning-coffee-40-photos-7.jpg" width="600" height="1120"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="dTi-7s-PeU"/>
-    </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
 </document>
