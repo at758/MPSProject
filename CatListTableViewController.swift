@@ -10,14 +10,38 @@ import UIKit
 
 class CatListTableViewController: UITableViewController {
 
-    var catNames = ["Lua", "Argo", "Betty","Andy"]
-    var catImages = ["first", "second", "user", "skull"]
+    var catNames = [String]()
+    var catImages = ["first", "second"]
+    let u_name = "akshay_t"
     
     @IBAction func prepareForUnwind(segue: UIStoryboardSegue) {
         
     }
     
+   func calculateInitialValue()
+   {
+    let loc = Firebase(url: "https://fitcat.firebaseio.com/users/" +  (u_name))
+    
+    print(loc.description)
+    var ctr = 0
    
+    
+    loc.observeEventType(.Value, withBlock: { snapshot in
+        
+        if(snapshot.exists())
+        {
+            
+            self.catNames[ctr] =  snapshot.key
+            ctr = ctr + 1
+        }
+        else
+        {
+            print("Snapshot is null")
+        }
+        
+    })
+    
+    }
     
     
     @IBAction func addCat(sender: UIButton) {
@@ -25,6 +49,10 @@ class CatListTableViewController: UITableViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+       // calculateInitialValue()
+    
+        self.tableView.reloadData()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -42,6 +70,9 @@ class CatListTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
+        
+        
+        print("Second here")
         return catNames.count
     }
 
@@ -49,6 +80,7 @@ class CatListTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
         
+         print("Third Here")
         
         cell.textLabel?.text = catNames[indexPath.row]
         cell.imageView?.image = UIImage(named: catImages[indexPath.row]);

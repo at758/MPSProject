@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "CatListTableViewController.tableView(UITableView, numberOfRowsInSection : Int) -&gt; Int:CatListTableViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "catNames.count">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "CatListTableViewController.(viewDidLoad(CatListTableViewController) -&gt; () -&gt; ()).(closure #1):CatListTableViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "catNames[1]">
+            </PersistentString>
+            <PersistentString
+               value = "snapshot.key">
+            </PersistentString>
+            <PersistentString
+               value = "catNames[0]">
+            </PersistentString>
+            <PersistentString
+               value = "self.catNames.append(ts)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "CatListTableViewController.viewDidLoad() -&gt; ():CatListTableViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "loc.queryOrderedByKey().observeEventType(.ChileAdded,withBlock:)">
+            </PersistentString>
+            <PersistentString
+               value = "loc.queryOrderedByKey()">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
