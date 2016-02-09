@@ -22,7 +22,7 @@ class AddCatDetailsViewController: UIViewController, UINavigationControllerDeleg
     var userRef : Firebase!
     @IBOutlet weak var catName: UITextField!
     @IBAction func CloseView(sender: UIBarButtonItem) {
-        
+       
         //dismissViewControllerAnimated(true, completion: nil)
        
     }
@@ -90,6 +90,24 @@ class AddCatDetailsViewController: UIViewController, UINavigationControllerDeleg
         cat_details["cat_breed"] = catBreed.text
         
         app.setValue(cat_details)
+        
+        
+        
+        let alertController = UIAlertController(title: "Saved", message:
+            "Your details are saved", preferredStyle: UIAlertControllerStyle.Alert)
+        //alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default,handler: nil))
+        
+        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default) {
+            UIAlertAction in
+         //  CatListTableViewController().calculateInitialValue()
+           self.navigationController?.popToRootViewControllerAnimated(true)
+        }
+        
+        alertController.addAction(okAction)
+        self.presentViewController(alertController, animated: true, completion: nil)
+        
+       
+        
         
        
     }

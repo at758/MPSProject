@@ -21,7 +21,7 @@ class CatListTableViewController: UITableViewController {
    func calculateInitialValue()
    {
     
-   // let loc = Firebase(url: "https://fitcat.firebaseio.com/users/" +  (u_name))
+    //print("Hurray")
     
     let reposURL = NSURL(string: "https://fitcat.firebaseio.com/users.json")
     
@@ -43,6 +43,8 @@ class CatListTableViewController: UITableViewController {
             }
             
         }
+    
+    catNames.sortInPlace()
     }catch let error as NSError{
         print(error.localizedDescription)
     }
@@ -52,6 +54,15 @@ class CatListTableViewController: UITableViewController {
     }
     
     
+    }
+    
+    func handleRefresh(refreshControl: UIRefreshControl) {
+        
+        calculateInitialValue()
+        
+        self.tableView.reloadData()
+        refreshControl.endRefreshing()
+        
     }
     
     
@@ -64,6 +75,9 @@ class CatListTableViewController: UITableViewController {
         calculateInitialValue()
     
         self.tableView.reloadData()
+        
+        self.refreshControl?.addTarget(self, action: "handleRefresh:", forControlEvents: UIControlEvents.ValueChanged)
+
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -94,7 +108,7 @@ class CatListTableViewController: UITableViewController {
        //  print("Third Here")
         
         cell.textLabel?.text = catNames[indexPath.row]
-        cell.imageView?.image = UIImage(named: catImages[indexPath.row]);
+        cell.imageView?.image = UIImage(named: catImages[1]);
         
        
         
@@ -106,9 +120,9 @@ class CatListTableViewController: UITableViewController {
     override func viewDidAppear(animated: Bool) {
         
         
-        calculateInitialValue()
+       // calculateInitialValue()
         
-        self.tableView.reloadData()
+        //self.tableView.reloadData()
     }
 
 
