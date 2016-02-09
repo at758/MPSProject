@@ -11,7 +11,7 @@ import UIKit
 class CatListTableViewController: UITableViewController {
 
     var catNames = [String]()
-    var catImages = ["first", "second"]
+    var catImages = ["first", "second","skull","users"]
     let u_name = "akshay_t"
     
     @IBAction func prepareForUnwind(segue: UIStoryboardSegue) {
@@ -20,26 +20,37 @@ class CatListTableViewController: UITableViewController {
     
    func calculateInitialValue()
    {
-    let loc = Firebase(url: "https://fitcat.firebaseio.com/users/" +  (u_name))
     
-    print(loc.description)
-    var ctr = 0
-   
+   // let loc = Firebase(url: "https://fitcat.firebaseio.com/users/" +  (u_name))
     
-    loc.observeEventType(.Value, withBlock: { snapshot in
-        
-        if(snapshot.exists())
+    let reposURL = NSURL(string: "https://fitcat.firebaseio.com/users.json")
+    
+    catNames.removeAll()
+    
+    if let JSONData = NSData(contentsOfURL: reposURL!)
+    {
+        do
         {
+        if let json = try NSJSONSerialization.JSONObjectWithData(JSONData, options: []) as? NSDictionary {
             
-            self.catNames[ctr] =  snapshot.key
-            ctr = ctr + 1
+            if let reposArray = json[u_name] as? [String: AnyObject] {
+                // 5
+                for (cat_name, _) in reposArray {
+                    
+                    catNames.append(cat_name)
+                    
+                }
+            }
+            
         }
-        else
-        {
-            print("Snapshot is null")
-        }
+    }catch let error as NSError{
+        print(error.localizedDescription)
+    }
         
-    })
+
+       
+    }
+    
     
     }
     
@@ -72,7 +83,7 @@ class CatListTableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         
         
-        print("Second here")
+       // print("Second here")
         return catNames.count
     }
 
@@ -80,7 +91,7 @@ class CatListTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
         
-         print("Third Here")
+       //  print("Third Here")
         
         cell.textLabel?.text = catNames[indexPath.row]
         cell.imageView?.image = UIImage(named: catImages[indexPath.row]);
@@ -90,6 +101,14 @@ class CatListTableViewController: UITableViewController {
         // Configure the cell...
          return cell
         
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        
+        
+        calculateInitialValue()
+        
+        self.tableView.reloadData()
     }
 
 
