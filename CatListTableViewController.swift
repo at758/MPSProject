@@ -11,7 +11,7 @@ import UIKit
 class CatListTableViewController: UITableViewController {
 
     var catNames = [String]()
-    var catImages = ["first", "second","skull","users"]
+    var catImages = ["first", "second","skull","user","skull","first","skull","user"]
     let u_name = "akshay_t"
     
     @IBAction func prepareForUnwind(segue: UIStoryboardSegue) {
@@ -108,7 +108,7 @@ class CatListTableViewController: UITableViewController {
        //  print("Third Here")
         
         cell.textLabel?.text = catNames[indexPath.row]
-        cell.imageView?.image = UIImage(named: catImages[1]);
+        cell.imageView?.image = UIImage(named: catImages[indexPath.row]);
         
        
         

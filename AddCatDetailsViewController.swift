@@ -85,8 +85,8 @@ class AddCatDetailsViewController: UIViewController, UINavigationControllerDeleg
         if(catName.text?.characters.count > 0
         && catAge.text?.characters.count > 0
         && catGender.text?.characters.count > 0
-        && catStatus.text?.characters.count > 0 && catBreed.text?.characters.count > 0)
-        {
+        && catStatus.text?.characters.count > 0 && catBreed.text?.characters.count > 0){
+        
             saveButton.enabled = true
         }
         else
@@ -97,15 +97,7 @@ class AddCatDetailsViewController: UIViewController, UINavigationControllerDeleg
     
     @IBAction func saveCatDetails(sender: AnyObject) {
         
-        catName.addTarget(self, action: "textFieldDidChange:", forControlEvents: UIControlEvents.EditingChanged)
-        
-        catAge.addTarget(self, action: "textFieldDidChange:", forControlEvents: UIControlEvents.EditingChanged)
-        
-        catGender.addTarget(self, action: "textFieldDidChange:", forControlEvents: UIControlEvents.EditingChanged)
-        
-        catStatus.addTarget(self, action: "textFieldDidChange:", forControlEvents: UIControlEvents.EditingChanged)
-        
-        catBreed.addTarget(self, action: "textFieldDidChange:", forControlEvents: UIControlEvents.EditingChanged)
+      
         
         
         
@@ -144,6 +136,16 @@ class AddCatDetailsViewController: UIViewController, UINavigationControllerDeleg
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        catName.addTarget(self, action: "textFieldDidChange:", forControlEvents: UIControlEvents.EditingChanged)
+        
+        catAge.addTarget(self, action: "textFieldDidChange:", forControlEvents: UIControlEvents.EditingChanged)
+        
+        catGender.addTarget(self, action: "textFieldDidChange:", forControlEvents: UIControlEvents.EditingChanged)
+        
+        catStatus.addTarget(self, action: "textFieldDidChange:", forControlEvents: UIControlEvents.EditingChanged)
+        
+        catBreed.addTarget(self, action: "textFieldDidChange:", forControlEvents: UIControlEvents.EditingChanged)
         
        saveButton.enabled = false
         
