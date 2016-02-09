@@ -77,8 +77,39 @@ class AddCatDetailsViewController: UIViewController, UINavigationControllerDeleg
         }
     }
     
+    @IBOutlet weak var saveButton: UIBarButtonItem!
+    
+    func textFieldDidChange(textField: UITextField) {
+        //your code
+        
+        if(catName.text?.characters.count > 0
+        && catAge.text?.characters.count > 0
+        && catGender.text?.characters.count > 0
+        && catStatus.text?.characters.count > 0 && catBreed.text?.characters.count > 0)
+        {
+            saveButton.enabled = true
+        }
+        else
+        {
+             saveButton.enabled = false
+        }
+    }
     
     @IBAction func saveCatDetails(sender: AnyObject) {
+        
+        catName.addTarget(self, action: "textFieldDidChange:", forControlEvents: UIControlEvents.EditingChanged)
+        
+        catAge.addTarget(self, action: "textFieldDidChange:", forControlEvents: UIControlEvents.EditingChanged)
+        
+        catGender.addTarget(self, action: "textFieldDidChange:", forControlEvents: UIControlEvents.EditingChanged)
+        
+        catStatus.addTarget(self, action: "textFieldDidChange:", forControlEvents: UIControlEvents.EditingChanged)
+        
+        catBreed.addTarget(self, action: "textFieldDidChange:", forControlEvents: UIControlEvents.EditingChanged)
+        
+        
+        
+        
         
         ref = Firebase(url: "https://fitcat.firebaseio.com/users/" +  (u_name))
         
@@ -114,7 +145,7 @@ class AddCatDetailsViewController: UIViewController, UINavigationControllerDeleg
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       
+       saveButton.enabled = false
         
         
         picker1.delegate = self

@@ -173,6 +173,7 @@
                         <outlet property="catImage" destination="80w-ij-Mge" id="Shc-l9-0mf"/>
                         <outlet property="catName" destination="kBK-Uo-8a1" id="6r9-uB-VQR"/>
                         <outlet property="catStatus" destination="L8P-O9-LPH" id="PuU-pu-cBP"/>
+                        <outlet property="saveButton" destination="JbV-hc-pJ9" id="HMv-90-Lrp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DgN-5r-eFu" userLabel="First Responder" sceneMemberID="firstResponder"/>
