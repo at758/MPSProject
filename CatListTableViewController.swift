@@ -50,7 +50,7 @@ class CatListTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       // calculateInitialValue()
+        calculateInitialValue()
     
         self.tableView.reloadData()
 
