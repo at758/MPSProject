@@ -11,8 +11,12 @@ import UIKit
 class CatListTableViewController: UITableViewController{
 
     var catNames = [String]()
+<<<<<<< HEAD
     var catImages = ["cat1","cat2","cat1","cat2","first", "second","skull","users","cat1","cat2"]
     var reduceNum = ["Already reduce : 3.1 lbs","Already reduce : 1.1 lbs","Already reduce : 2.1 lbs","Already reduce : 3.3 lbs","Already reduce : 3.1 lbs","Already reduce : 1.1 lbs","Already reduce : 2.1 lbs","Already reduce : 3.3 lbs"]
+=======
+    var catImages = ["first", "second","skull","user","skull","first","skull","user"]
+>>>>>>> master
     let u_name = "akshay_t"
     
     @IBAction func prepareForUnwind(segue: UIStoryboardSegue) {
@@ -113,7 +117,7 @@ class CatListTableViewController: UITableViewController{
         //print("Third Here")
         
         cell.textLabel?.text = catNames[indexPath.row]
-        cell.imageView?.image = UIImage(named: catImages[1]);
+        cell.imageView?.image = UIImage(named: catImages[indexPath.row]);
         
 //        let image = cell.viewWithTag(105) as!  UIImageView
 //        let name = cell.viewWithTag(102) as! UILabel
