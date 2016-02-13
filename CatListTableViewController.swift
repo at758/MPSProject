@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CatListTableViewController: UITableViewController {
+class CatListTableViewController: UITableViewController{
     var catNames = [String]()
     var catImages = ["cat1", "cat2","cat1","cat2","skull","first","skull","user","cat1", "cat2","cat1"]
     var catState = ["Reduced 2.1 lbs","Reduced 1.1 lbs","Reduced 1.6 lbs","Reduced 1.7 lbs","Reduced 2.1 lbs","Reduced 2.1 lbs","Reduced 2.1 lbs","Reduced 2.1 lbs","Reduced 2.1 lbs","Reduced 1.1 lbs","Reduced 1.6 lbs","Reduced 1.7 lbs","Reduced 2.1 lbs","Reduced 2.1 lbs","Reduced 2.1 lbs","Reduced 2.1 lbs"]
@@ -79,7 +79,7 @@ class CatListTableViewController: UITableViewController {
         
         self.refreshControl?.addTarget(self, action: "handleRefresh:", forControlEvents: UIControlEvents.ValueChanged)
 
-
+        navigationItem.leftBarButtonItem = editButtonItem()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -87,6 +87,19 @@ class CatListTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
+    // delete
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == UITableViewCellEditingStyle.Delete {
+            catNames.removeAtIndex(indexPath.row)
+            self.tableView.reloadData()
+        }
+    }
+    override func setEditing(editing: Bool, animated: Bool) {
+        super.setEditing(editing, animated: animated)
+        self.tableView.setEditing(editing, animated: animated)
+    }
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

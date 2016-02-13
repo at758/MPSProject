@@ -102,7 +102,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="Vv4-iN-aKn" kind="relationship" relationship="viewControllers" id="jca-PP-cfl"/>
+                        <segue destination="9aV-LQ-5mh" kind="relationship" relationship="viewControllers" id="jca-PP-cfl"/>
                         <segue destination="ZQo-Pk-g2X" kind="relationship" relationship="viewControllers" id="wXL-c2-Uao"/>
                         <segue destination="iVx-KF-rnG" kind="relationship" relationship="viewControllers" id="mRx-Wb-AlM"/>
                     </connections>
@@ -120,11 +120,11 @@
                         <viewControllerLayoutGuide type="bottom" id="bRz-2p-11X"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="soJ-um-mnU">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="IMG_6699.png" translatesAutoresizingMaskIntoConstraints="NO" id="80w-ij-Mge">
-                                <rect key="frame" x="12" y="80" width="78" height="78"/>
+                                <rect key="frame" x="16" y="80" width="78" height="78"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="78" id="YBG-3S-s24"/>
                                     <constraint firstAttribute="height" constant="78" id="vTo-sF-wzA"/>
@@ -222,9 +222,9 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DgN-5r-eFu" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="aMp-iP-TwZ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-458.5" y="-1632.5"/>
+            <point key="canvasLocation" x="128" y="-1633"/>
         </scene>
-        <!--Your Cat List-->
+        <!--FitCat-->
         <scene sceneID="WZy-bU-dcc">
             <objects>
                 <tableViewController id="Vv4-iN-aKn" customClass="CatListTableViewController" customModule="FitCat" customModuleProvider="target" sceneMemberID="viewController">
@@ -234,7 +234,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" rowHeight="100" id="CYI-xB-d3h">
-                                <rect key="frame" x="0.0" y="28" width="375" height="100"/>
+                                <rect key="frame" x="0.0" y="92" width="375" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="bottom" tableViewCell="CYI-xB-d3h" id="Swx-KT-I6P">
                                     <rect key="frame" x="0.0" y="0.0" width="342" height="99.5"/>
@@ -273,16 +273,7 @@
                             <outlet property="delegate" destination="Vv4-iN-aKn" id="7eg-LH-Eou"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="home" image="home_icon" selectedImage="home_selected" id="jWW-55-oGa"/>
-                    <navigationItem key="navigationItem" title="Your Cat List" id="Hpr-3a-Lle">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="cPZ-jk-spD">
-                            <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            <connections>
-                                <action selector="addCat:" destination="Vv4-iN-aKn" id="5Ua-t9-ZaZ"/>
-                                <segue destination="S4L-yf-7r7" kind="show" identifier="addCatDetails" id="I61-l1-icT"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="FitCat" id="0cc-U4-B30"/>
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="eQz-Im-DY5">
                         <autoresizingMask key="autoresizingMask"/>
                         <attributedString key="attributedTitle"/>
@@ -293,7 +284,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Cb-qh-B3V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1696.5" y="-1495.5"/>
+            <point key="canvasLocation" x="-1109.5" y="-1495.5"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Ii3-yI-5l2">
@@ -312,6 +303,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I49-gh-9RQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-616.5" y="-223.5"/>
+        </scene>
+        <!--home-->
+        <scene sceneID="ubT-bQ-3dt">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9aV-LQ-5mh" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="home" image="home_icon" selectedImage="home_selected" id="jWW-55-oGa"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="uqR-4u-nK3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Vv4-iN-aKn" kind="relationship" relationship="rootViewController" id="NVa-Eh-2qW"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wzj-Fb-bMH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1696.5" y="-1495.5"/>
         </scene>
     </scenes>
     <resources>
