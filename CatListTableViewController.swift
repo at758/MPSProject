@@ -9,9 +9,10 @@
 import UIKit
 
 class CatListTableViewController: UITableViewController {
-
     var catNames = [String]()
-    var catImages = ["first", "second","skull","user","skull","first","skull","user"]
+    var catImages = ["cat1", "cat2","cat1","cat2","skull","first","skull","user","cat1", "cat2","cat1"]
+    var catState = ["Reduced 2.1 lbs","Reduced 1.1 lbs","Reduced 1.6 lbs","Reduced 1.7 lbs","Reduced 2.1 lbs","Reduced 2.1 lbs","Reduced 2.1 lbs","Reduced 2.1 lbs","Reduced 2.1 lbs","Reduced 1.1 lbs","Reduced 1.6 lbs","Reduced 1.7 lbs","Reduced 2.1 lbs","Reduced 2.1 lbs","Reduced 2.1 lbs","Reduced 2.1 lbs"]
+    var catPlan = ["Target weight should be achieved by June 15 (120 days)","Target weight should be achieved by Feb 15 (30 days)","Target weight should be achieved by March 15 (40 days)","Target weight should be achieved by June 15 (120 days)","Target weight should be achieved by Feb 15 (30 days)","Target weight should be achieved by March 15 (40 days)","Target weight should be achieved by June 15 (120 days)","Target weight should be achieved by Feb 15 (30 days)","Target weight should be achieved by March 15 (40 days)","Target weight should be achieved by June 15 (120 days)","Target weight should be achieved by Feb 15 (30 days)","Target weight should be achieved by March 15 (40 days)"]
     let u_name = "akshay_t"
     
     @IBAction func prepareForUnwind(segue: UIStoryboardSegue) {
@@ -26,7 +27,7 @@ class CatListTableViewController: UITableViewController {
     let reposURL = NSURL(string: "https://fitcat.firebaseio.com/users.json")
     
     catNames.removeAll()
-    
+
     if let JSONData = NSData(contentsOfURL: reposURL!)
     {
         do
@@ -101,16 +102,28 @@ class CatListTableViewController: UITableViewController {
         return catNames.count
     }
 
+    //height of row
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 100
+    }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
+       // let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell")! as UITableViewCell
+        print(catNames.count)
         
-       //  print("Third Here")
+//        cell.textLabel?.text = catNames[indexPath.row]
+//        cell.imageView?.image = UIImage(named: catImages[indexPath.row]);
         
-        cell.textLabel?.text = catNames[indexPath.row]
-        cell.imageView?.image = UIImage(named: catImages[indexPath.row]);
+        let image = cell.viewWithTag(101) as!  UIImageView
+        let name = cell.viewWithTag(102) as! UILabel
+        let state = cell.viewWithTag(104) as! UILabel
+        let plan = cell.viewWithTag(103) as! UILabel
         
-       
+        image.image = UIImage(named:catImages[indexPath.row])
+        name.text = catNames[indexPath.row]
+        state.text = catState[indexPath.row]
+        plan.text = catPlan[indexPath.row]
         
         // Configure the cell...
          return cell
