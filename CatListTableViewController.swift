@@ -11,7 +11,7 @@ import UIKit
 class CatListTableViewController: UITableViewController {
 
     var catNames = [String]()
-    var catImages = ["first", "second","skull","user","skull","first","skull","user"]
+    var catImages = ["first", "second","skull","user","skull","first","skull","user","skull","user","user","first"]
     let u_name = "akshay_t"
     
     @IBAction func prepareForUnwind(segue: UIStoryboardSegue) {
