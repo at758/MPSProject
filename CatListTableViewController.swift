@@ -12,6 +12,11 @@ class CatListTableViewController: UITableViewController{
     var catNames = [String]()
     var catImages = ["first", "second","skull","user","skull","first","skull","user","skull","user","user","first"]
     let u_name = "akshay_t"
+    var deleteIndex:Int = 0
+    
+    var deleteAlert = UIAlertController(title: "Delete Record", message: "Are you sure you want to delete this record?", preferredStyle: UIAlertControllerStyle.Alert)
+    
+    
     
     @IBAction func prepareForUnwind(segue: UIStoryboardSegue) {
         
@@ -57,6 +62,7 @@ class CatListTableViewController: UITableViewController{
     
     func handleRefresh(refreshControl: UIRefreshControl) {
         
+     
         calculateInitialValue()
         
         self.tableView.reloadData()
@@ -75,21 +81,63 @@ class CatListTableViewController: UITableViewController{
     
         self.tableView.reloadData()
         
+        self.refreshControl = UIRefreshControl()
+        
         self.refreshControl?.addTarget(self, action: "handleRefresh:", forControlEvents: UIControlEvents.ValueChanged)
 
         navigationItem.leftBarButtonItem = editButtonItem()
+        
+        
+        
+        deleteAlert.addAction(UIAlertAction(title: "Delete", style: .Default, handler: {(action: UIAlertAction!) in
+            
+            let fredRef = Firebase(url: "https://fitcat.firebaseio.com/users/akshay_t/" + self.catNames[self.deleteIndex]);
+            fredRef.removeValueWithCompletionBlock({ (error, fredRef) -> Void in
+                
+                if(error != nil)
+                {
+                    print("Delete error")
+                   
+                }
+                else
+                {
+                    
+                    
+                    self.catNames.removeAtIndex(self.deleteIndex)
+                    self.tableView.reloadData()
+
+                }
+            })
+            
+            
+            
+        }))
+        
+        deleteAlert.addAction(UIAlertAction(title: "Cancel", style: .Default, handler: nil))
+        
+        
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+      
     }
 
-    // delete
+        // delete
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        
+       // print("yay")
+        
         if editingStyle == UITableViewCellEditingStyle.Delete {
-            catNames.removeAtIndex(indexPath.row)
-            self.tableView.reloadData()
+            
+            //Deleting from firebase
+            //print("In here")
+            deleteIndex = indexPath.row
+            presentViewController(deleteAlert, animated: true, completion: nil)
+           
+            
         }
     }
     override func setEditing(editing: Bool, animated: Bool) {
@@ -121,20 +169,20 @@ class CatListTableViewController: UITableViewController{
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
        // let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell")! as UITableViewCell
-        print(catNames.count)
+        //print(catNames.count)
         
 //        cell.textLabel?.text = catNames[indexPath.row]
 //        cell.imageView?.image = UIImage(named: catImages[indexPath.row]);
         
         let image = cell.viewWithTag(101) as!  UIImageView
         let name = cell.viewWithTag(102) as! UILabel
-        let state = cell.viewWithTag(104) as! UILabel
-        let plan = cell.viewWithTag(103) as! UILabel
+        //let state = cell.viewWithTag(104) as! UILabel
+        //let plan = cell.viewWithTag(103) as! UILabel
         
         image.image = UIImage(named:catImages[indexPath.row])
         name.text = catNames[indexPath.row]
-        state.text = catState[indexPath.row]
-        plan.text = catPlan[indexPath.row]
+        //state.text = catState[indexPath.row]
+        //plan.text = catPlan[indexPath.row]
         
         // Configure the cell...
          return cell
