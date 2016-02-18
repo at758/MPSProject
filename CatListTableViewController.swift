@@ -8,8 +8,7 @@
 
 import UIKit
 
-class CatListTableViewController: UITableViewController {
-
+class CatListTableViewController: UITableViewController{
     var catNames = [String]()
     var catImages = ["first", "second","skull","user","skull","first","skull","user","skull","user","user","first"]
     let u_name = "akshay_t"
@@ -26,7 +25,7 @@ class CatListTableViewController: UITableViewController {
     let reposURL = NSURL(string: "https://fitcat.firebaseio.com/users.json")
     
     catNames.removeAll()
-    
+
     if let JSONData = NSData(contentsOfURL: reposURL!)
     {
         do
@@ -78,7 +77,7 @@ class CatListTableViewController: UITableViewController {
         
         self.refreshControl?.addTarget(self, action: "handleRefresh:", forControlEvents: UIControlEvents.ValueChanged)
 
-
+        navigationItem.leftBarButtonItem = editButtonItem()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -86,6 +85,19 @@ class CatListTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
+    // delete
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == UITableViewCellEditingStyle.Delete {
+            catNames.removeAtIndex(indexPath.row)
+            self.tableView.reloadData()
+        }
+    }
+    override func setEditing(editing: Bool, animated: Bool) {
+        super.setEditing(editing, animated: animated)
+        self.tableView.setEditing(editing, animated: animated)
+    }
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -101,16 +113,28 @@ class CatListTableViewController: UITableViewController {
         return catNames.count
     }
 
+    //height of row
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 100
+    }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
+       // let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell")! as UITableViewCell
+        print(catNames.count)
         
-       //  print("Third Here")
+//        cell.textLabel?.text = catNames[indexPath.row]
+//        cell.imageView?.image = UIImage(named: catImages[indexPath.row]);
         
-        cell.textLabel?.text = catNames[indexPath.row]
-        cell.imageView?.image = UIImage(named: catImages[indexPath.row]);
+        let image = cell.viewWithTag(101) as!  UIImageView
+        let name = cell.viewWithTag(102) as! UILabel
+        let state = cell.viewWithTag(104) as! UILabel
+        let plan = cell.viewWithTag(103) as! UILabel
         
-       
+        image.image = UIImage(named:catImages[indexPath.row])
+        name.text = catNames[indexPath.row]
+        state.text = catState[indexPath.row]
+        plan.text = catPlan[indexPath.row]
         
         // Configure the cell...
          return cell
