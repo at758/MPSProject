@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import Firebase
+
 
 class CatListTableViewController: UITableViewController{
     var catNames = [String]()
     var catImages = ["first", "second","skull","user","skull","first","skull","user","skull","user","user","first"]
-    let u_name = "akshay_t"
+    let u_name = floginobj.f_id
     var deleteIndex:Int = 0
     
     var deleteAlert = UIAlertController(title: "Delete Record", message: "Are you sure you want to delete this record?", preferredStyle: UIAlertControllerStyle.Alert)
@@ -91,7 +93,7 @@ class CatListTableViewController: UITableViewController{
         
         deleteAlert.addAction(UIAlertAction(title: "Delete", style: .Default, handler: {(action: UIAlertAction!) in
             
-            let fredRef = Firebase(url: "https://fitcat.firebaseio.com/users/akshay_t/" + self.catNames[self.deleteIndex]);
+            let fredRef = Firebase(url: "https://fitcat.firebaseio.com/users/" + self.u_name + "/" + self.catNames[self.deleteIndex]);
             fredRef.removeValueWithCompletionBlock({ (error, fredRef) -> Void in
                 
                 if(error != nil)

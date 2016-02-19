@@ -7,12 +7,52 @@
 //
 
 import UIKit
+import Firebase
+import FBSDKLoginKit
+
+class FBCred {
+    var f_id : String = ""
+    var f_name: String = ""
+}
+
+var floginobj = FBCred()    //floginobj
 
 class LoginPage: UIViewController {
 
+     let ref = Firebase(url: "https://fitcat.firebaseio.com/")
     @IBAction func NextPage(sender: UIButton) {
         
-        performSegueWithIdentifier("catList", sender: sender)
+        
+        let facebookLogin = FBSDKLoginManager()
+        
+        facebookLogin.logInWithReadPermissions(["email"], fromViewController: self, handler: {
+            (facebookResult, facebookError) -> Void in
+            
+           
+            if facebookError != nil {
+                print("Facebook login failed. Error \(facebookError)")
+            } else if facebookResult.isCancelled {
+                print("Facebook login was cancelled.")
+            } else {
+                let accessToken = FBSDKAccessToken.currentAccessToken().tokenString
+                self.ref.authWithOAuthProvider("facebook", token: accessToken,
+                    withCompletionBlock: { error, authData in
+                        if error != nil {
+                            print("Login failed. \(error)")
+                        } else {
+                            print("Logged in! \(authData)")
+                            floginobj.f_id = authData.uid.substringFromIndex(authData.uid.startIndex.advancedBy(9))
+                            floginobj.f_name = authData.providerData["displayName"] as! String
+                            self.performSegueWithIdentifier("catList", sender: sender)
+                            
+                           
+                        }
+                })
+            }
+        })
+        
+        
+       
         
     }
     override func viewDidLoad() {

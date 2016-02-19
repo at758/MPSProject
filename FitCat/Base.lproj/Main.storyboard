@@ -38,7 +38,8 @@
                                 <rect key="frame" x="45" y="473" width="285" height="56"/>
                                 <state key="normal" image="facebook" backgroundImage="facebook"/>
                                 <connections>
-                                    <segue destination="PG1-2d-2CM" kind="show" id="Ffo-Y3-ZuV"/>
+                                    <action selector="NextPage:" destination="Vth-ft-w23" eventType="touchUpInside" id="JXK-r1-KBt"/>
+                                    <segue destination="PG1-2d-2CM" kind="show" identifier="catList" id="Ffo-Y3-ZuV"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -124,7 +125,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Mf-ez-4R5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2641.5" y="-1166.5"/>
+            <point key="canvasLocation" x="-2492.5" y="-1166.5"/>
         </scene>
         <!--Add Cat Details-->
         <scene sceneID="L6R-SC-AMe">

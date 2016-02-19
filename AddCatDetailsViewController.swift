@@ -8,6 +8,8 @@
 
 import UIKit
 
+import Firebase
+
 class AddCatDetailsViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIPickerViewDataSource,UIPickerViewDelegate {
 
     var choice = ["Yes","No"]
@@ -17,7 +19,7 @@ class AddCatDetailsViewController: UIViewController, UINavigationControllerDeleg
     
     //Creating reference to FireBase
     var ref = Firebase(url: "https://fitcat.firebaseio.com/users")
-    var u_name = "akshay_t"
+    var u_name = floginobj.f_id
     var cat_details = ["cat_age": 0, "cat_gender":"Male", "cat_status": "No", "cat_breed" :""]
     var userRef : Firebase!
     @IBOutlet weak var catName: UITextField!
