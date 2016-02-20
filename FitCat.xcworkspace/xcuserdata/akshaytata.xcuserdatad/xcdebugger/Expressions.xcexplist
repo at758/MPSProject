@@ -54,31 +54,5 @@
             </PersistentString>
          </PersistentStrings>
       </ContextState>
-      <ContextState
-         contextName = "CatListTableViewController.calculateInitialValue() -&gt; ():CatListTableViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "json[0]">
-            </PersistentString>
-            <PersistentString
-               value = "item[0]">
-            </PersistentString>
-            <PersistentString
-               value = "json[u_name]">
-            </PersistentString>
-            <PersistentString
-               value = "a = json[&quot;akshay_t&quot;] as? NSObject">
-            </PersistentString>
-            <PersistentString
-               value = "json[u_name][&quot;Andy&quot;]">
-            </PersistentString>
-            <PersistentString
-               value = "json[&quot;akshay_t&quot;]">
-            </PersistentString>
-            <PersistentString
-               value = "json[0][0]">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
    </ContextStates>
 </VariablesViewState>

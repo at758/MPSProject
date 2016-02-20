@@ -11,10 +11,17 @@ import Firebase
 
 
 class CatListTableViewController: UITableViewController{
+    
+    
+    @IBOutlet weak var TitleItem: UINavigationItem!
+    
+    
     var catNames = [String]()
     var catImages = ["first", "second","skull","user","skull","first","skull","user","skull","user","user","first"]
     let u_name = floginobj.f_id
     var deleteIndex:Int = 0
+    
+    var myURL = "https://fitcat.firebaseio.com/users"
     
     var deleteAlert = UIAlertController(title: "Delete Record", message: "Are you sure you want to delete this record?", preferredStyle: UIAlertControllerStyle.Alert)
     
@@ -41,9 +48,16 @@ class CatListTableViewController: UITableViewController{
             
             if let reposArray = json[u_name] as? [String: AnyObject] {
                 // 5
-                for (cat_name, _) in reposArray {
+                for (cat_name, val) in reposArray {
                     
-                    catNames.append(cat_name)
+                    if(cat_name != "name")
+                    {
+                        catNames.append(cat_name)
+                    }
+                    else
+                    {
+                        TitleItem.title = "Welcome, " + (val as! String)
+                    }
                     
                 }
             }
@@ -76,8 +90,18 @@ class CatListTableViewController: UITableViewController{
     @IBAction func addCat(sender: UIButton) {
         performSegueWithIdentifier("addCatDetails", sender: sender)
     }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        //Create the link for data for a new user
+        //Add id
+        let fbRef = Firebase(url: "https://fitcat.firebaseio.com/users/" +  (u_name))
+        //Add login name
+        fbRef.updateChildValues(["name" : floginobj.f_name]);
+        
         
         calculateInitialValue()
     

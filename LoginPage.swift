@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 import FBSDKLoginKit
 
+
 class FBCred {
     var f_id : String = ""
     var f_name: String = ""
@@ -20,13 +21,14 @@ var floginobj = FBCred()    //floginobj
 class LoginPage: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate {
 
      let ref = Firebase(url: "https://fitcat.firebaseio.com/")
-    
+     let facebookLogin = FBSDKLoginManager()
    
     
     @IBAction func NextPage(sender: UIButton) {
         
         
-        let facebookLogin = FBSDKLoginManager()
+       
+       
         
         facebookLogin.logInWithReadPermissions(["email"], fromViewController: self, handler: {
             (facebookResult, facebookError) -> Void in
@@ -46,8 +48,8 @@ class LoginPage: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate {
                             print("Logged in! \(authData)")
                             floginobj.f_id = authData.uid.substringFromIndex(authData.uid.startIndex.advancedBy(9))
                             floginobj.f_name = authData.providerData["displayName"] as! String
-                            self.performSegueWithIdentifier("catList", sender: sender)
-                            
+                           let dest = self.storyboard?.instantiateViewControllerWithIdentifier("MyTabController")
+                            self.presentViewController(dest!, animated: true, completion: nil)
                            
                         }
                 })
@@ -55,6 +57,10 @@ class LoginPage: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate {
         })
         
         
+        
+        //shouldPerformSegueWithIdentifier(catList, sender: sender){
+            
+       
        
         
     }
@@ -63,12 +69,12 @@ class LoginPage: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate {
     @IBAction func GoogleSignUp(sender: UIButton) {
         
         // Setup delegates
-        GIDSignIn.sharedInstance().delegate = self
-        GIDSignIn.sharedInstance().uiDelegate = self
+      
         // Attempt to sign in silently, this will succeed if
         // the user has recently been authenticated
        // GIDSignIn.sharedInstance().signInSilently()
         
+        GIDSignIn.sharedInstance().signOut()
         GIDSignIn.sharedInstance().signIn()
         
         
@@ -84,8 +90,11 @@ class LoginPage: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate {
                 ref.authWithOAuthProvider("google", token: user.authentication.accessToken, withCompletionBlock: { (error, authData) in
                     // User is logged in!
                     
-                    print(authData.uid)
-                   // self.performSegueWithIdentifier("catListGoogle", sender: UIButton.self)
+                    floginobj.f_id = authData.uid.substringFromIndex(authData.uid.startIndex.advancedBy(7))
+                    floginobj.f_name = authData.providerData["displayName"] as! String
+                    let dest = self.storyboard?.instantiateViewControllerWithIdentifier("MyTabController")
+                    self.presentViewController(dest!, animated: true, completion: nil)
+                    
                     
                 })
             } else {
@@ -109,7 +118,9 @@ class LoginPage: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        GIDSignIn.sharedInstance().delegate = self
+        GIDSignIn.sharedInstance().uiDelegate = self
+        facebookLogin.logOut()
                // Do any additional setup after loading the view.
     }
 
@@ -117,6 +128,7 @@ class LoginPage: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     
 
     /*

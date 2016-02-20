@@ -35,7 +35,7 @@
                                 <state key="normal" image="facebook" backgroundImage="facebook"/>
                                 <connections>
                                     <action selector="NextPage:" destination="Vth-ft-w23" eventType="touchUpInside" id="JXK-r1-KBt"/>
-                                    <segue destination="PG1-2d-2CM" kind="show" identifier="catListGoogle" id="Ffo-Y3-ZuV"/>
+                                    <segue destination="PG1-2d-2CM" kind="show" identifier="catList" id="djR-sm-07a"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YLV-in-zVl">
@@ -43,7 +43,6 @@
                                 <state key="normal" image="email" backgroundImage="email"/>
                                 <connections>
                                     <action selector="GoogleSignUp:" destination="Vth-ft-w23" eventType="touchUpInside" id="yni-CT-qj2"/>
-                                    <segue destination="PG1-2d-2CM" kind="show" identifier="catList" id="h9u-5A-Ueb"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -112,10 +111,10 @@
             </objects>
             <point key="canvasLocation" x="-1906.5" y="-195.5"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--MyTabController-->
         <scene sceneID="OBp-Db-7IY">
             <objects>
-                <tabBarController id="PG1-2d-2CM" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="MyTabController" title="MyTabController" id="PG1-2d-2CM" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="7vS-JN-8Uy">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -244,7 +243,7 @@
             </objects>
             <point key="canvasLocation" x="-448" y="-1677"/>
         </scene>
-        <!--FitCat-->
+        <!--Cat List Table View Controller-->
         <scene sceneID="WZy-bU-dcc">
             <objects>
                 <tableViewController id="Vv4-iN-aKn" customClass="CatListTableViewController" customModule="FitCat" customModuleProvider="target" sceneMemberID="viewController">
@@ -293,7 +292,7 @@
                             <outlet property="delegate" destination="Vv4-iN-aKn" id="7eg-LH-Eou"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="FitCat" id="0cc-U4-B30">
+                    <navigationItem key="navigationItem" id="0cc-U4-B30">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="7zW-TI-lgE">
                             <connections>
                                 <segue destination="S4L-yf-7r7" kind="show" id="6eL-OX-YJ7"/>
@@ -304,6 +303,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </refreshControl>
                     <connections>
+                        <outlet property="TitleItem" destination="0cc-U4-B30" id="5NQ-NJ-5kW"/>
                         <outlet property="tableView" destination="qZk-oA-SsK" id="IUk-Hi-WFI"/>
                     </connections>
                 </tableViewController>
@@ -364,8 +364,5 @@
         <image name="record" width="30" height="30"/>
         <image name="record_selected" width="30" height="30"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="h9u-5A-Ueb"/>
-    </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
 </document>

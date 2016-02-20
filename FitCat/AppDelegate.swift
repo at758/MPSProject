@@ -27,8 +27,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         var configureError: NSError?
         GGLContext.sharedInstance().configureWithError(&configureError)
         assert(configureError == nil, "Error configuring Google services: \(configureError)")
-
-        
         //print (application.description)
             //print("This is " + (launchOptions?.description)!)
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
@@ -64,7 +62,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, openURL url: NSURL,
         sourceApplication: String?, annotation: AnyObject) -> Bool {
             
-            print(url.description)
+           // print(url.description)
+            
+           
             
             return FBSDKApplicationDelegate.sharedInstance()
                 .application(application, openURL: url,
