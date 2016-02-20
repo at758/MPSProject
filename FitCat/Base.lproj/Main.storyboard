@@ -30,16 +30,20 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FitCat" translatesAutoresizingMaskIntoConstraints="NO" id="0HB-Jq-gSL">
                                 <rect key="frame" x="100" y="311" width="174" height="37"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YLV-in-zVl">
-                                <rect key="frame" x="45" y="537" width="285" height="56"/>
-                                <state key="normal" image="email" backgroundImage="email"/>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uxo-ox-g87">
                                 <rect key="frame" x="45" y="473" width="285" height="56"/>
                                 <state key="normal" image="facebook" backgroundImage="facebook"/>
                                 <connections>
                                     <action selector="NextPage:" destination="Vth-ft-w23" eventType="touchUpInside" id="JXK-r1-KBt"/>
-                                    <segue destination="PG1-2d-2CM" kind="show" identifier="catList" id="Ffo-Y3-ZuV"/>
+                                    <segue destination="PG1-2d-2CM" kind="show" identifier="catListGoogle" id="Ffo-Y3-ZuV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YLV-in-zVl">
+                                <rect key="frame" x="45" y="537" width="285" height="56"/>
+                                <state key="normal" image="email" backgroundImage="email"/>
+                                <connections>
+                                    <action selector="GoogleSignUp:" destination="Vth-ft-w23" eventType="touchUpInside" id="yni-CT-qj2"/>
+                                    <segue destination="PG1-2d-2CM" kind="show" identifier="catList" id="h9u-5A-Ueb"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -328,7 +332,6 @@
         <!--home-->
         <scene sceneID="ubT-bQ-3dt">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wzj-Fb-bMH" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9aV-LQ-5mh" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="home" image="home_icon" selectedImage="home_selected" id="jWW-55-oGa"/>
                     <toolbarItems/>
@@ -341,6 +344,7 @@
                         <segue destination="Vv4-iN-aKn" kind="relationship" relationship="rootViewController" id="NVa-Eh-2qW"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wzj-Fb-bMH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1867.5" y="-1254.5"/>
         </scene>
@@ -360,5 +364,8 @@
         <image name="record" width="30" height="30"/>
         <image name="record_selected" width="30" height="30"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="h9u-5A-Ueb"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
 </document>

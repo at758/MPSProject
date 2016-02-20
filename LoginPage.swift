@@ -17,9 +17,12 @@ class FBCred {
 
 var floginobj = FBCred()    //floginobj
 
-class LoginPage: UIViewController {
+class LoginPage: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate {
 
      let ref = Firebase(url: "https://fitcat.firebaseio.com/")
+    
+   
+    
     @IBAction func NextPage(sender: UIButton) {
         
         
@@ -55,10 +58,59 @@ class LoginPage: UIViewController {
        
         
     }
+    
+    
+    @IBAction func GoogleSignUp(sender: UIButton) {
+        
+        // Setup delegates
+        GIDSignIn.sharedInstance().delegate = self
+        GIDSignIn.sharedInstance().uiDelegate = self
+        // Attempt to sign in silently, this will succeed if
+        // the user has recently been authenticated
+       // GIDSignIn.sharedInstance().signInSilently()
+        
+        GIDSignIn.sharedInstance().signIn()
+        
+        
+       
+        
+    }
+    
+    // Implement the required GIDSignInDelegate methods
+    func signIn(signIn: GIDSignIn!, didSignInForUser user: GIDGoogleUser!,
+        withError error: NSError!) {
+            if (error == nil) {
+                // Auth with Firebase
+                ref.authWithOAuthProvider("google", token: user.authentication.accessToken, withCompletionBlock: { (error, authData) in
+                    // User is logged in!
+                    
+                    print(authData.uid)
+                   // self.performSegueWithIdentifier("catListGoogle", sender: UIButton.self)
+                    
+                })
+            } else {
+                // Don't assert this error it is commonly returned as nil
+                print("\(error.localizedDescription)")
+            }
+    }
+    
+    
+    func signOut() {
+        GIDSignIn.sharedInstance().signOut()
+        ref.unauth()
+    }
+  
+    // Implement the required GIDSignInDelegate methods
+    // Unauth when disconnected from Google
+    func signIn(signIn: GIDSignIn!, didDisconnectWithUser user:GIDGoogleUser!,
+        withError error: NSError!) {
+            ref.unauth();
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+               // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {

@@ -11,6 +11,7 @@
 		6D533C571C657E71008C338A /* morning-coffee-40-photos-7.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6D533C561C657E71008C338A /* morning-coffee-40-photos-7.jpg */; };
 		6D533C591C667141008C338A /* facbooklogin.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D533C581C667141008C338A /* facbooklogin.png */; };
 		6D533C5B1C667666008C338A /* LoginPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D533C5A1C667666008C338A /* LoginPage.swift */; };
+		6D620CC21C78B9D300597634 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6D620CC11C78B9D300597634 /* GoogleService-Info.plist */; };
 		6DB10B641C668203007ACEDB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DB10B621C668203007ACEDB /* Main.storyboard */; };
 		6DB10B661C66D6D7007ACEDB /* CatListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB10B651C66D6D7007ACEDB /* CatListTableViewController.swift */; };
 		6DB10B681C66E6D2007ACEDB /* AddCatDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB10B671C66E6D2007ACEDB /* AddCatDetailsViewController.swift */; };
@@ -46,6 +47,7 @@
 		6D533C561C657E71008C338A /* morning-coffee-40-photos-7.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "morning-coffee-40-photos-7.jpg"; path = "../morning-coffee-40-photos-7.jpg"; sourceTree = "<group>"; };
 		6D533C581C667141008C338A /* facbooklogin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facbooklogin.png; sourceTree = "<group>"; };
 		6D533C5A1C667666008C338A /* LoginPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginPage.swift; path = ../LoginPage.swift; sourceTree = "<group>"; };
+		6D620CC11C78B9D300597634 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6DB10B631C668203007ACEDB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6DB10B651C66D6D7007ACEDB /* CatListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CatListTableViewController.swift; path = ../CatListTableViewController.swift; sourceTree = "<group>"; };
 		6DB10B671C66E6D2007ACEDB /* AddCatDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddCatDetailsViewController.swift; path = ../AddCatDetailsViewController.swift; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 				6DB10B671C66E6D2007ACEDB /* AddCatDetailsViewController.swift */,
 				6D533C561C657E71008C338A /* morning-coffee-40-photos-7.jpg */,
 				6D533C5A1C667666008C338A /* LoginPage.swift */,
+				6D620CC11C78B9D300597634 /* GoogleService-Info.plist */,
 				6DB10B691C67B5C4007ACEDB /* IMG_6699.png */,
 				6D533C541C657BD5008C338A /* Default@2x.png */,
 				6DB10B621C668203007ACEDB /* Main.storyboard */,
@@ -280,6 +283,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6D533C551C657BD5008C338A /* Default@2x.png in Resources */,
+				6D620CC21C78B9D300597634 /* GoogleService-Info.plist in Resources */,
 				6D533C591C667141008C338A /* facbooklogin.png in Resources */,
 				6DB10B6A1C67B5C4007ACEDB /* IMG_6699.png in Resources */,
 				6D533C571C657E71008C338A /* morning-coffee-40-photos-7.jpg in Resources */,

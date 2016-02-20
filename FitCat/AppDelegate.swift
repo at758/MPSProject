@@ -13,6 +13,9 @@ import FBSDKLoginKit
 
 
 
+
+
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -21,6 +24,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
+        var configureError: NSError?
+        GGLContext.sharedInstance().configureWithError(&configureError)
+        assert(configureError == nil, "Error configuring Google services: \(configureError)")
+
         
         //print (application.description)
             //print("This is " + (launchOptions?.description)!)
@@ -61,7 +68,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             return FBSDKApplicationDelegate.sharedInstance()
                 .application(application, openURL: url,
-                    sourceApplication: sourceApplication, annotation: annotation)
+            sourceApplication: sourceApplication, annotation: annotation) || GIDSignIn.sharedInstance().handleURL(url,
+                sourceApplication: sourceApplication,
+                annotation: annotation)
             
 
 
