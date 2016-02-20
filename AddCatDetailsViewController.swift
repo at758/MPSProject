@@ -107,6 +107,7 @@ class AddCatDetailsViewController: UIViewController, UINavigationControllerDeleg
         
         ref = Firebase(url: "https://fitcat.firebaseio.com/users/" +  (u_name))
         
+       // ref.updateChildValues(["name":"baba tata"])
         let app   = ref.childByAppendingPath(catName.text)
         
         cat_details["cat_age"] = Int(catAge.text!)
@@ -115,6 +116,11 @@ class AddCatDetailsViewController: UIViewController, UINavigationControllerDeleg
         cat_details["cat_breed"] = catBreed.text
         
         app.setValue(cat_details)
+        
+       
+       
+        
+       
         
         
         

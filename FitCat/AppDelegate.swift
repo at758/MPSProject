@@ -22,7 +22,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
         
-        return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+        //print (application.description)
+            //print("This is " + (launchOptions?.description)!)
+        FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+
+        return true      //return true
         
     }
 
@@ -52,6 +56,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(application: UIApplication, openURL url: NSURL,
         sourceApplication: String?, annotation: AnyObject) -> Bool {
+            
+            print(url.description)
+            
             return FBSDKApplicationDelegate.sharedInstance()
                 .application(application, openURL: url,
                     sourceApplication: sourceApplication, annotation: annotation)
