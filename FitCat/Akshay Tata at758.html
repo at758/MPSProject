@@ -1,0 +1,221 @@
+
+<!-- saved from url=(0063)file:///Users/akshaytata/Desktop/CS5150/HomeWork%203/index.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <title>Akshay Tata at758</title>
+  <script src="./Akshay Tata at758_files/d3.v3.min.js" charset="utf-8"></script>
+	<style> 
+		svg
+		{
+			border: solid black 1px;
+		}
+
+    .axis path,
+    .axis line {
+    fill: none;
+    stroke: black;
+    shape-rendering: crispEdges;
+    }
+
+    .axis text {
+    font-family: sans-serif;
+    font-size: 11px;
+    display: none;
+    }
+
+    rect {
+      fill:black;
+      stroke: none;
+    }
+	</style>
+</head>
+<body>
+
+<p> 
+</p><div>Problem 1</div>
+<div>
+<script>
+  //Mapping x-Scale from data-coordinates to svg coordinates
+  var xScale = d3.scale.linear()      
+                       .domain([0, 10]) 
+                       .range([30, 230]);  
+  //Mapping y-Scale from data-coordinates to svg coordinates
+  var yScale = d3.scale.linear()
+                       .domain([0, 90])
+                       .range([310, 30]);
+
+  //First creating an svg element using d3
+  var svg = d3.select("body")
+            .append("svg")
+            .attr("width", 260)
+            .attr("height", 350);
+
+  svg.append("circle")
+    .attr("cx", xScale(1))
+    .attr("cy", yScale(1))
+    .attr("r", 6)
+    .on("click", function(){
+      d3.select(this).style("fill", "blue")
+    });
+
+   svg.append("text")
+    .attr("x", 110)
+    .attr("y", 30)
+    .text("title");
+
+   svg.append("text")
+    .attr("x", 10)
+    .attr("y", 185)
+    .text("C");
+
+   svg.append("text")
+    .attr("x", 115)
+    .attr("y", 340)
+    .text("A");
+    
+    
+
+
+  svg.append("circle")
+    .attr("cx", xScale(2))
+    .attr("cy", yScale(4))
+    .attr("r", 6)
+    .on("click", function(){
+      d3.select(this).style("fill", "blue")
+    });
+  svg.append("rect")
+     .attr("x", xScale(3.7))
+     .attr("y", yScale(15))
+     .attr("width", 10)
+     .attr("height", 10)
+     .on("click", function(){
+      d3.select(this).style("fill", "blue")
+    });
+  svg.append("rect")
+     .attr("x", xScale(8.7))
+     .attr("y", yScale(80))
+     .attr("width", 10)
+     .attr("height", 10)
+     .on("click", function(){
+      d3.select(this).style("fill", "blue")
+    });
+
+  var xAxis = d3.svg.axis();
+  xAxis.scale(xScale)
+       .orient("bottom");
+
+  var yAxis = d3.svg.axis()
+                  .scale(yScale)
+                  .orient("left")
+                  
+
+  svg.append("g")
+     .attr("class", "axis")
+     .attr("transform", "translate(0," + 320 + ")")
+     .call(xAxis);
+
+  svg.append("g")
+    .attr("class", "axis")
+    .attr("transform", "translate(" + 30 + ",10)")
+    .call(yAxis);
+
+
+    
+   
+  
+
+
+</script>
+</div><svg width="260" height="350"><circle cx="50" cy="306.88888888888886" r="6"></circle><text x="110" y="30">title</text><text x="10" y="185">C</text><text x="115" y="340">A</text><circle cx="70" cy="297.55555555555554" r="6"></circle><rect x="104" y="263.33333333333337" width="10" height="10"></rect><rect x="203.99999999999997" y="61.11111111111112" width="10" height="10"></rect><g class="axis" transform="translate(0,320)"><g class="tick" transform="translate(30,0)" style="opacity: 1;"><line y2="6" x2="0"></line><text dy=".71em" y="9" x="0" style="text-anchor: middle;">0</text></g><g class="tick" transform="translate(50,0)" style="opacity: 1;"><line y2="6" x2="0"></line><text dy=".71em" y="9" x="0" style="text-anchor: middle;">1</text></g><g class="tick" transform="translate(70,0)" style="opacity: 1;"><line y2="6" x2="0"></line><text dy=".71em" y="9" x="0" style="text-anchor: middle;">2</text></g><g class="tick" transform="translate(90,0)" style="opacity: 1;"><line y2="6" x2="0"></line><text dy=".71em" y="9" x="0" style="text-anchor: middle;">3</text></g><g class="tick" transform="translate(110,0)" style="opacity: 1;"><line y2="6" x2="0"></line><text dy=".71em" y="9" x="0" style="text-anchor: middle;">4</text></g><g class="tick" transform="translate(130,0)" style="opacity: 1;"><line y2="6" x2="0"></line><text dy=".71em" y="9" x="0" style="text-anchor: middle;">5</text></g><g class="tick" transform="translate(150,0)" style="opacity: 1;"><line y2="6" x2="0"></line><text dy=".71em" y="9" x="0" style="text-anchor: middle;">6</text></g><g class="tick" transform="translate(170,0)" style="opacity: 1;"><line y2="6" x2="0"></line><text dy=".71em" y="9" x="0" style="text-anchor: middle;">7</text></g><g class="tick" transform="translate(190,0)" style="opacity: 1;"><line y2="6" x2="0"></line><text dy=".71em" y="9" x="0" style="text-anchor: middle;">8</text></g><g class="tick" transform="translate(210,0)" style="opacity: 1;"><line y2="6" x2="0"></line><text dy=".71em" y="9" x="0" style="text-anchor: middle;">9</text></g><g class="tick" transform="translate(230,0)" style="opacity: 1;"><line y2="6" x2="0"></line><text dy=".71em" y="9" x="0" style="text-anchor: middle;">10</text></g><path class="domain" d="M30,6V0H230V6"></path></g><g class="axis" transform="translate(30,10)"><g class="tick" transform="translate(0,310)" style="opacity: 1;"><line x2="-6" y2="0"></line><text dy=".32em" x="-9" y="0" style="text-anchor: end;">0</text></g><g class="tick" transform="translate(0,278.88888888888886)" style="opacity: 1;"><line x2="-6" y2="0"></line><text dy=".32em" x="-9" y="0" style="text-anchor: end;">10</text></g><g class="tick" transform="translate(0,247.77777777777777)" style="opacity: 1;"><line x2="-6" y2="0"></line><text dy=".32em" x="-9" y="0" style="text-anchor: end;">20</text></g><g class="tick" transform="translate(0,216.66666666666669)" style="opacity: 1;"><line x2="-6" y2="0"></line><text dy=".32em" x="-9" y="0" style="text-anchor: end;">30</text></g><g class="tick" transform="translate(0,185.55555555555557)" style="opacity: 1;"><line x2="-6" y2="0"></line><text dy=".32em" x="-9" y="0" style="text-anchor: end;">40</text></g><g class="tick" transform="translate(0,154.44444444444443)" style="opacity: 1;"><line x2="-6" y2="0"></line><text dy=".32em" x="-9" y="0" style="text-anchor: end;">50</text></g><g class="tick" transform="translate(0,123.33333333333334)" style="opacity: 1;"><line x2="-6" y2="0"></line><text dy=".32em" x="-9" y="0" style="text-anchor: end;">60</text></g><g class="tick" transform="translate(0,92.22222222222221)" style="opacity: 1;"><line x2="-6" y2="0"></line><text dy=".32em" x="-9" y="0" style="text-anchor: end;">70</text></g><g class="tick" transform="translate(0,61.11111111111112)" style="opacity: 1;"><line x2="-6" y2="0"></line><text dy=".32em" x="-9" y="0" style="text-anchor: end;">80</text></g><g class="tick" transform="translate(0,30)" style="opacity: 1;"><line x2="-6" y2="0"></line><text dy=".32em" x="-9" y="0" style="text-anchor: end;">90</text></g><path class="domain" d="M-6,30H0V310H-6"></path></g></svg>
+<p></p>
+
+<p>
+</p><div>Problem 2<br></div>
+<script>
+var wordRanks = [{rank: 1, count: 15342397280, word: "of"},
+{rank: 2, count: 7611765281, word: "in"},
+{rank: 4, count: 11021132912, word: "and"},
+{rank: 8, count: 3021925527, word: "for"},
+{rank: 16, count: 1562321315, word: "at"},
+{rank: 32, count: 746702714, word: "more"},
+{rank: 64, count: 652703221, word: "its"},
+{rank: 128, count: 186584246, word: "different"},
+{rank: 256, count: 102237666, word: "light"},
+{rank: 512, count: 44824164, word: "middle"},
+{rank: 1024, count: 34340679, word: "additional"},
+{rank: 2048, count: 11864923, word: "abandoned"},
+{rank: 4096, count: 7506730, word: "motive"},
+{rank: 8192, count: 10615754, word: "Die"},
+{rank: 16384, count: 907890, word: "portrays"},
+{rank: 32768, count: 226851, word: "Fundamentally"},
+{rank: 65536, count: 144913, word: "dv"}];
+
+
+var svgElement = d3.select("body")
+                   .append("svg")
+                   .attr("width", 200)
+                   .attr("height", 200);
+
+   
+/*svgElement.append("circle")
+    .attr("cx", 180)
+    .attr("cy", 180)
+    .attr("r", 6); 
+
+svgElement.append("circle")
+    .attr("cx", 180)
+    .attr("cy", 20)
+    .attr("r", 6); 
+
+svgElement.append("circle")
+    .attr("cx", 20)
+    .attr("cy", 20)
+    .attr("r", 6); 
+
+svgElement.append("circle")
+    .attr("cx", 20)
+    .attr("cy", 180)
+    .attr("r", 6); 
+    */
+
+var rankScale = d3.scale.linear()      
+                       .domain([-100, 66000]) 
+                       .range([20, 180]); 
+
+var countScale = d3.scale.linear()      
+                       .domain([144913, 16000000000]) 
+                       .range([180, 20]); 
+
+
+var xAxis = d3.svg.axis();
+  xAxis.scale(rankScale)
+       .orient("bottom");
+
+  var yAxis = d3.svg.axis()
+                  .scale(countScale)
+                  .orient("left")
+                  
+
+  svgElement.append("g")
+     .attr("class", "axis")
+     .attr("transform", "translate(0," + 180 + ")")
+     .call(xAxis);
+
+  svgElement.append("g")
+    .attr("class", "axis")
+    .attr("transform", "translate(" + 20 + ",0)")
+    .call(yAxis);
+
+  wordRanks.forEach( function (word)
+{
+    svgElement.append("text")
+    .attr("x", rankScale(word.rank))
+    .attr("y", countScale(word.count))
+    .text(word.word)
+    .style("font-size","11px");
+});
+
+</script><svg width="200" height="200"><g class="axis" transform="translate(0,180)"><g class="tick" transform="translate(20.242057488653554,0)" style="opacity: 1;"><line y2="6" x2="0"></line><text dy=".71em" y="9" x="0" style="text-anchor: middle;">0</text></g><g class="tick" transform="translate(32.344931921331316,0)" style="opacity: 1;"><line y2="6" x2="0"></line><text dy=".71em" y="9" x="0" style="text-anchor: middle;">5,000</text></g><g class="tick" transform="translate(44.447806354009074,0)" style="opacity: 1;"><line y2="6" x2="0"></line><text dy=".71em" y="9" x="0" style="text-anchor: middle;">10,000</text></g><g class="tick" transform="translate(56.55068078668684,0)" style="opacity: 1;"><line y2="6" x2="0"></line><text dy=".71em" y="9" x="0" style="text-anchor: middle;">15,000</text></g><g class="tick" transform="translate(68.65355521936459,0)" style="opacity: 1;"><line y2="6" x2="0"></line><text dy=".71em" y="9" x="0" style="text-anchor: middle;">20,000</text></g><g class="tick" transform="translate(80.75642965204236,0)" style="opacity: 1;"><line y2="6" x2="0"></line><text dy=".71em" y="9" x="0" style="text-anchor: middle;">25,000</text></g><g class="tick" transform="translate(92.85930408472012,0)" style="opacity: 1;"><line y2="6" x2="0"></line><text dy=".71em" y="9" x="0" style="text-anchor: middle;">30,000</text></g><g class="tick" transform="translate(104.96217851739787,0)" style="opacity: 1;"><line y2="6" x2="0"></line><text dy=".71em" y="9" x="0" style="text-anchor: middle;">35,000</text></g><g class="tick" transform="translate(117.06505295007565,0)" style="opacity: 1;"><line y2="6" x2="0"></line><text dy=".71em" y="9" x="0" style="text-anchor: middle;">40,000</text></g><g class="tick" transform="translate(129.16792738275342,0)" style="opacity: 1;"><line y2="6" x2="0"></line><text dy=".71em" y="9" x="0" style="text-anchor: middle;">45,000</text></g><g class="tick" transform="translate(141.27080181543116,0)" style="opacity: 1;"><line y2="6" x2="0"></line><text dy=".71em" y="9" x="0" style="text-anchor: middle;">50,000</text></g><g class="tick" transform="translate(153.37367624810892,0)" style="opacity: 1;"><line y2="6" x2="0"></line><text dy=".71em" y="9" x="0" style="text-anchor: middle;">55,000</text></g><g class="tick" transform="translate(165.4765506807867,0)" style="opacity: 1;"><line y2="6" x2="0"></line><text dy=".71em" y="9" x="0" style="text-anchor: middle;">60,000</text></g><g class="tick" transform="translate(177.57942511346445,0)" style="opacity: 1;"><line y2="6" x2="0"></line><text dy=".71em" y="9" x="0" style="text-anchor: middle;">65,000</text></g><path class="domain" d="M20,6V0H180V6"></path></g><g class="axis" transform="translate(20,0)"><g class="tick" transform="translate(0,160.00126800023435)" style="opacity: 1;"><line x2="-6" y2="0"></line><text dy=".32em" x="-9" y="0" style="text-anchor: end;">2,000,000,000</text></g><g class="tick" transform="translate(0,140.00108685734372)" style="opacity: 1;"><line x2="-6" y2="0"></line><text dy=".32em" x="-9" y="0" style="text-anchor: end;">4,000,000,000</text></g><g class="tick" transform="translate(0,120.00090571445313)" style="opacity: 1;"><line x2="-6" y2="0"></line><text dy=".32em" x="-9" y="0" style="text-anchor: end;">6,000,000,000</text></g><g class="tick" transform="translate(0,100.0007245715625)" style="opacity: 1;"><line x2="-6" y2="0"></line><text dy=".32em" x="-9" y="0" style="text-anchor: end;">8,000,000,000</text></g><g class="tick" transform="translate(0,80.00054342867188)" style="opacity: 1;"><line x2="-6" y2="0"></line><text dy=".32em" x="-9" y="0" style="text-anchor: end;">10,000,000,000</text></g><g class="tick" transform="translate(0,60.00036228578125)" style="opacity: 1;"><line x2="-6" y2="0"></line><text dy=".32em" x="-9" y="0" style="text-anchor: end;">12,000,000,000</text></g><g class="tick" transform="translate(0,40.000181142890625)" style="opacity: 1;"><line x2="-6" y2="0"></line><text dy=".32em" x="-9" y="0" style="text-anchor: end;">14,000,000,000</text></g><g class="tick" transform="translate(0,20)" style="opacity: 1;"><line x2="-6" y2="0"></line><text dy=".32em" x="-9" y="0" style="text-anchor: end;">16,000,000,000</text></g><path class="domain" d="M-6,20H0V180H-6"></path></g><text x="20.24447806354009" y="26.576086760028787" style="font-size: 11px;">of</text><text x="20.24689863842663" y="103.88310692454212" style="font-size: 11px;">in</text><text x="20.251739788199696" y="69.78912182318817" style="font-size: 11px;">and</text><text x="20.26142208774584" y="149.78192017296237" style="font-size: 11px;">for</text><text x="20.280786686838123" y="164.37809449142543" style="font-size: 11px;">at</text><text x="20.319515885022692" y="172.53435437318095" style="font-size: 11px;">more</text><text x="20.39697428139183" y="173.4743578168509" style="font-size: 11px;">its</text><text x="20.551891074130104" y="178.13558978392015" style="font-size: 11px;">different</text><text x="20.861724659606658" y="178.9790632233118" style="font-size: 11px;">light</text><text x="21.481391830559755" y="179.55320344333566" style="font-size: 11px;">middle</text><text x="22.720726172465962" y="179.65803924284006" style="font-size: 11px;">additional</text><text x="25.199394856278364" y="179.88279883850177" style="font-size: 11px;">abandoned</text><text x="30.15673222390318" y="179.92638116322962" style="font-size: 11px;">motive</text><text x="40.071406959152796" y="179.8952906416408" style="font-size: 11px;">Die</text><text x="59.90075642965205" y="179.99237016089606" style="font-size: 11px;">portrays</text><text x="99.55945537065053" y="179.99918061257875" style="font-size: 11px;">Fundamentally</text><text x="178.8768532526475" y="180" style="font-size: 11px;">dv</text></svg>
+<p></p>
+
+
+</body></html>
