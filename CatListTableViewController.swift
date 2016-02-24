@@ -228,9 +228,11 @@ class CatListTableViewController: UITableViewController{
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
+       
+        
         return true
-    }
-    */
+    }*/
+
 
     /*
     // Override to support editing the table view.

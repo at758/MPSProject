@@ -18,28 +18,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView opaque="NO" userInteractionEnabled="NO" alpha="0.75" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="morning-coffee-40-photos-7.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="E6d-Dh-Ucj">
-                                <rect key="frame" x="0.0" y="-13" width="375" height="721"/>
+                            <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg-1" translatesAutoresizingMaskIntoConstraints="NO" id="E6d-Dh-Ucj">
+                                <rect key="frame" x="-9" y="0.0" width="393" height="667"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FitCat" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ROn-CW-L1W">
-                                <rect key="frame" x="138" y="156" width="99" height="40"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="white log" translatesAutoresizingMaskIntoConstraints="NO" id="qtn-j8-Duv">
+                                <rect key="frame" x="50" y="190" width="308" height="69"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="gSa-kB-8eY"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="99" id="uzZ-Ct-KGf"/>
+                                    <constraint firstAttribute="height" constant="69" id="Stc-Ue-x9p"/>
+                                    <constraint firstAttribute="width" constant="308" id="oLa-x0-V8b"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="36"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FitCat-1" translatesAutoresizingMaskIntoConstraints="NO" id="ASR-pM-eMr">
+                                <rect key="frame" x="106" y="267" width="163" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="45" id="1GG-Ap-g6n"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="163" id="hyN-2Q-FAd"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="bottomMargin" secondItem="E6d-Dh-Ucj" secondAttribute="bottom" constant="-41" id="EgK-LI-yrW"/>
-                            <constraint firstItem="ROn-CW-L1W" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="136" id="FTx-FB-Z1j"/>
-                            <constraint firstItem="E6d-Dh-Ucj" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="topMargin" constant="-13" id="Jad-M1-lqR"/>
-                            <constraint firstItem="ROn-CW-L1W" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="ak5-pz-k8Q"/>
-                            <constraint firstItem="E6d-Dh-Ucj" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="lDX-tp-6lc"/>
-                            <constraint firstItem="ROn-CW-L1W" firstAttribute="centerX" secondItem="E6d-Dh-Ucj" secondAttribute="centerX" id="nHY-Sn-jA5"/>
+                            <constraint firstItem="E6d-Dh-Ucj" firstAttribute="bottom" secondItem="xb3-aO-Qok" secondAttribute="top" id="0B0-1c-QX4"/>
+                            <constraint firstItem="E6d-Dh-Ucj" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="-25" id="FIK-mH-kMZ"/>
+                            <constraint firstItem="qtn-j8-Duv" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="34" id="Kmv-gc-M5O"/>
+                            <constraint firstItem="ASR-pM-eMr" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="-44" id="Kwb-C9-p5u"/>
+                            <constraint firstItem="qtn-j8-Duv" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="170" id="TnH-N8-cye"/>
+                            <constraint firstItem="ASR-pM-eMr" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="aXv-GF-FGn"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="E6d-Dh-Ucj" secondAttribute="trailing" constant="-25" id="cVz-OE-hkx"/>
+                            <constraint firstItem="E6d-Dh-Ucj" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="oHJ-t8-hfT"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
@@ -50,6 +56,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="morning-coffee-40-photos-7.jpg" width="600" height="1120"/>
+        <image name="FitCat-1" width="141" height="38"/>
+        <image name="bg-1" width="375" height="667"/>
+        <image name="white log" width="291" height="65"/>
     </resources>
 </document>

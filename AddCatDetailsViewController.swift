@@ -41,6 +41,7 @@ class AddCatDetailsViewController: UIViewController, UINavigationControllerDeleg
     
     var picker1 = UIPickerView()
     var picker2 = UIPickerView()
+    var datePicker = UIDatePicker()
     
     
     
@@ -162,6 +163,8 @@ class AddCatDetailsViewController: UIViewController, UINavigationControllerDeleg
         picker2.delegate = self
         picker1.dataSource = self
         picker1.dataSource = self
+        
+        catAge.inputView = datePicker
         
         picker1.tag = 0
         picker2.tag = 1

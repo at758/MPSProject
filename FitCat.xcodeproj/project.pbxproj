@@ -19,27 +19,8 @@
 		6DDAF92C1C652B22006C4C78 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DDAF92B1C652B22006C4C78 /* AppDelegate.swift */; };
 		6DDAF9351C652B22006C4C78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6DDAF9341C652B22006C4C78 /* Assets.xcassets */; };
 		6DDAF9381C652B22006C4C78 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DDAF9361C652B22006C4C78 /* LaunchScreen.storyboard */; };
-		6DDAF9431C652B22006C4C78 /* FitCatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DDAF9421C652B22006C4C78 /* FitCatTests.swift */; };
-		6DDAF94E1C652B22006C4C78 /* FitCatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DDAF94D1C652B22006C4C78 /* FitCatUITests.swift */; };
 		A48461A14125A8CB73902A9A /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2ECB57CCF803EA094EC87C5 /* Pods.framework */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		6DDAF93F1C652B22006C4C78 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 6DDAF9201C652B21006C4C78 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 6DDAF9271C652B21006C4C78;
-			remoteInfo = FitCat;
-		};
-		6DDAF94A1C652B22006C4C78 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 6DDAF9201C652B21006C4C78 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 6DDAF9271C652B21006C4C78;
-			remoteInfo = FitCat;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		59305728D0ADC5368C315B92 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -58,12 +39,6 @@
 		6DDAF9341C652B22006C4C78 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6DDAF9371C652B22006C4C78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6DDAF9391C652B22006C4C78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6DDAF93E1C652B22006C4C78 /* FitCatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FitCatTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		6DDAF9421C652B22006C4C78 /* FitCatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitCatTests.swift; sourceTree = "<group>"; };
-		6DDAF9441C652B22006C4C78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6DDAF9491C652B22006C4C78 /* FitCatUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FitCatUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		6DDAF94D1C652B22006C4C78 /* FitCatUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitCatUITests.swift; sourceTree = "<group>"; };
-		6DDAF94F1C652B22006C4C78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8EAAD7D5DF5B1B393A59953F /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		A2ECB57CCF803EA094EC87C5 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -74,20 +49,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A48461A14125A8CB73902A9A /* Pods.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		6DDAF93B1C652B22006C4C78 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		6DDAF9461C652B22006C4C78 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,8 +67,6 @@
 			isa = PBXGroup;
 			children = (
 				6DDAF92A1C652B22006C4C78 /* FitCat */,
-				6DDAF9411C652B22006C4C78 /* FitCatTests */,
-				6DDAF94C1C652B22006C4C78 /* FitCatUITests */,
 				6DDAF9291C652B21006C4C78 /* Products */,
 				C740C9AC354E2537304A5DFB /* Pods */,
 				52542FEAB69BF51D80A505A4 /* Frameworks */,
@@ -118,8 +77,6 @@
 			isa = PBXGroup;
 			children = (
 				6DDAF9281C652B21006C4C78 /* FitCat.app */,
-				6DDAF93E1C652B22006C4C78 /* FitCatTests.xctest */,
-				6DDAF9491C652B22006C4C78 /* FitCatUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -143,24 +100,6 @@
 				6DDAF9391C652B22006C4C78 /* Info.plist */,
 			);
 			path = FitCat;
-			sourceTree = "<group>";
-		};
-		6DDAF9411C652B22006C4C78 /* FitCatTests */ = {
-			isa = PBXGroup;
-			children = (
-				6DDAF9421C652B22006C4C78 /* FitCatTests.swift */,
-				6DDAF9441C652B22006C4C78 /* Info.plist */,
-			);
-			path = FitCatTests;
-			sourceTree = "<group>";
-		};
-		6DDAF94C1C652B22006C4C78 /* FitCatUITests */ = {
-			isa = PBXGroup;
-			children = (
-				6DDAF94D1C652B22006C4C78 /* FitCatUITests.swift */,
-				6DDAF94F1C652B22006C4C78 /* Info.plist */,
-			);
-			path = FitCatUITests;
 			sourceTree = "<group>";
 		};
 		C740C9AC354E2537304A5DFB /* Pods */ = {
@@ -195,42 +134,6 @@
 			productReference = 6DDAF9281C652B21006C4C78 /* FitCat.app */;
 			productType = "com.apple.product-type.application";
 		};
-		6DDAF93D1C652B22006C4C78 /* FitCatTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 6DDAF9551C652B22006C4C78 /* Build configuration list for PBXNativeTarget "FitCatTests" */;
-			buildPhases = (
-				6DDAF93A1C652B22006C4C78 /* Sources */,
-				6DDAF93B1C652B22006C4C78 /* Frameworks */,
-				6DDAF93C1C652B22006C4C78 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				6DDAF9401C652B22006C4C78 /* PBXTargetDependency */,
-			);
-			name = FitCatTests;
-			productName = FitCatTests;
-			productReference = 6DDAF93E1C652B22006C4C78 /* FitCatTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		6DDAF9481C652B22006C4C78 /* FitCatUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 6DDAF9581C652B22006C4C78 /* Build configuration list for PBXNativeTarget "FitCatUITests" */;
-			buildPhases = (
-				6DDAF9451C652B22006C4C78 /* Sources */,
-				6DDAF9461C652B22006C4C78 /* Frameworks */,
-				6DDAF9471C652B22006C4C78 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				6DDAF94B1C652B22006C4C78 /* PBXTargetDependency */,
-			);
-			name = FitCatUITests;
-			productName = FitCatUITests;
-			productReference = 6DDAF9491C652B22006C4C78 /* FitCatUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -244,16 +147,6 @@
 					6DDAF9271C652B21006C4C78 = {
 						CreatedOnToolsVersion = 7.2.1;
 						DevelopmentTeam = 37CNT232NG;
-					};
-					6DDAF93D1C652B22006C4C78 = {
-						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = 5XZD7M887W;
-						TestTargetID = 6DDAF9271C652B21006C4C78;
-					};
-					6DDAF9481C652B22006C4C78 = {
-						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = 5XZD7M887W;
-						TestTargetID = 6DDAF9271C652B21006C4C78;
 					};
 				};
 			};
@@ -271,8 +164,6 @@
 			projectRoot = "";
 			targets = (
 				6DDAF9271C652B21006C4C78 /* FitCat */,
-				6DDAF93D1C652B22006C4C78 /* FitCatTests */,
-				6DDAF9481C652B22006C4C78 /* FitCatUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -290,20 +181,6 @@
 				6DB10B641C668203007ACEDB /* Main.storyboard in Resources */,
 				6DDAF9381C652B22006C4C78 /* LaunchScreen.storyboard in Resources */,
 				6DDAF9351C652B22006C4C78 /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		6DDAF93C1C652B22006C4C78 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		6DDAF9471C652B22006C4C78 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -369,36 +246,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6DDAF93A1C652B22006C4C78 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				6DDAF9431C652B22006C4C78 /* FitCatTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		6DDAF9451C652B22006C4C78 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				6DDAF94E1C652B22006C4C78 /* FitCatUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		6DDAF9401C652B22006C4C78 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 6DDAF9271C652B21006C4C78 /* FitCat */;
-			targetProxy = 6DDAF93F1C652B22006C4C78 /* PBXContainerItemProxy */;
-		};
-		6DDAF94B1C652B22006C4C78 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 6DDAF9271C652B21006C4C78 /* FitCat */;
-			targetProxy = 6DDAF94A1C652B22006C4C78 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		6DB10B621C668203007ACEDB /* Main.storyboard */ = {
@@ -546,54 +394,6 @@
 			};
 			name = Release;
 		};
-		6DDAF9561C652B22006C4C78 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = FitCatTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = edu.cornell.FelineHealth.FitCatTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FitCat.app/FitCat";
-			};
-			name = Debug;
-		};
-		6DDAF9571C652B22006C4C78 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = FitCatTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = edu.cornell.FelineHealth.FitCatTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FitCat.app/FitCat";
-			};
-			name = Release;
-		};
-		6DDAF9591C652B22006C4C78 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = FitCatUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = edu.cornell.FelineHealth.FitCatUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = FitCat;
-				USES_XCTRUNNER = YES;
-			};
-			name = Debug;
-		};
-		6DDAF95A1C652B22006C4C78 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = FitCatUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = edu.cornell.FelineHealth.FitCatUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = FitCat;
-				USES_XCTRUNNER = YES;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -611,24 +411,6 @@
 			buildConfigurations = (
 				6DDAF9531C652B22006C4C78 /* Debug */,
 				6DDAF9541C652B22006C4C78 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		6DDAF9551C652B22006C4C78 /* Build configuration list for PBXNativeTarget "FitCatTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				6DDAF9561C652B22006C4C78 /* Debug */,
-				6DDAF9571C652B22006C4C78 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		6DDAF9581C652B22006C4C78 /* Build configuration list for PBXNativeTarget "FitCatUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				6DDAF9591C652B22006C4C78 /* Debug */,
-				6DDAF95A1C652B22006C4C78 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
