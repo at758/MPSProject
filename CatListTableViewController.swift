@@ -40,6 +40,7 @@ class CatListTableViewController: UITableViewController{
     let reposURL = NSURL(string: "https://fitcat.firebaseio.com/users.json")
     
     catNames.removeAll()
+    catImages.removeAll()
 
     if let JSONData = NSData(contentsOfURL: reposURL!)
     {
@@ -61,6 +62,8 @@ class CatListTableViewController: UITableViewController{
                     let finString = nsstring as! String
                     let datans = NSData(base64EncodedString: finString, options: NSDataBase64DecodingOptions.IgnoreUnknownCharacters)
                         
+                    
+                        
                     catImages.append(datans!)
                         
                         
@@ -76,7 +79,8 @@ class CatListTableViewController: UITableViewController{
             
         }
     
-    catNames.sortInPlace()
+    //catNames.sortInPlace()
+    
     }catch let error as NSError{
         print(error.localizedDescription)
     }
