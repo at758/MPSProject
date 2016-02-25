@@ -3,6 +3,25 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "AddCatDetailsViewController.dateChanged(UIDatePicker) -&gt; ():AddCatDetailsViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "dateFormatter.stringFromDate(datePicker.date)">
+            </PersistentString>
+            <PersistentString
+               value = "datePicker.date">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "CatListTableViewController.calculateInitialValue() -&gt; ():CatListTableViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "((val[&quot;cat_image&quot;]  as? NSString) as? String)!">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "CatListTableViewController.tableView(UITableView, numberOfRowsInSection : Int) -&gt; Int:CatListTableViewController.swift">
          <PersistentStrings>
             <PersistentString
@@ -28,6 +47,14 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "AddCatDetailsViewController.(saveCatDetails(AddCatDetailsViewController) -&gt; (AnyObject) -&gt; ()).(closure #1):AddCatDetailsViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "CatListTableViewController().catNames">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "CatListTableViewController.(calculateInitialValue(CatListTableViewController) -&gt; () -&gt; ()).(closure #1):CatListTableViewController.swift">
          <PersistentStrings>
             <PersistentString
@@ -43,14 +70,6 @@
             </PersistentString>
             <PersistentString
                value = "loc.queryOrderedByKey()">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "AddCatDetailsViewController.(saveCatDetails(AddCatDetailsViewController) -&gt; (AnyObject) -&gt; ()).(closure #1):AddCatDetailsViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "CatListTableViewController().catNames">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

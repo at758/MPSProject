@@ -12,6 +12,7 @@
 		6D533C591C667141008C338A /* facbooklogin.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D533C581C667141008C338A /* facbooklogin.png */; };
 		6D533C5B1C667666008C338A /* LoginPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D533C5A1C667666008C338A /* LoginPage.swift */; };
 		6D620CC21C78B9D300597634 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6D620CC11C78B9D300597634 /* GoogleService-Info.plist */; };
+		6D8F34521C7E15D000A0C12C /* ViewControllerWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8F34511C7E15D000A0C12C /* ViewControllerWebView.swift */; };
 		6DB10B641C668203007ACEDB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DB10B621C668203007ACEDB /* Main.storyboard */; };
 		6DB10B661C66D6D7007ACEDB /* CatListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB10B651C66D6D7007ACEDB /* CatListTableViewController.swift */; };
 		6DB10B681C66E6D2007ACEDB /* AddCatDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB10B671C66E6D2007ACEDB /* AddCatDetailsViewController.swift */; };
@@ -29,6 +30,7 @@
 		6D533C581C667141008C338A /* facbooklogin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facbooklogin.png; sourceTree = "<group>"; };
 		6D533C5A1C667666008C338A /* LoginPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginPage.swift; path = ../LoginPage.swift; sourceTree = "<group>"; };
 		6D620CC11C78B9D300597634 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		6D8F34511C7E15D000A0C12C /* ViewControllerWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewControllerWebView.swift; path = ../ViewControllerWebView.swift; sourceTree = "<group>"; };
 		6DB10B631C668203007ACEDB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6DB10B651C66D6D7007ACEDB /* CatListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CatListTableViewController.swift; path = ../CatListTableViewController.swift; sourceTree = "<group>"; };
 		6DB10B671C66E6D2007ACEDB /* AddCatDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddCatDetailsViewController.swift; path = ../AddCatDetailsViewController.swift; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 		6DDAF92A1C652B22006C4C78 /* FitCat */ = {
 			isa = PBXGroup;
 			children = (
+				6D8F34511C7E15D000A0C12C /* ViewControllerWebView.swift */,
 				6DDAF92B1C652B22006C4C78 /* AppDelegate.swift */,
 				6DB10B651C66D6D7007ACEDB /* CatListTableViewController.swift */,
 				6DB10B671C66E6D2007ACEDB /* AddCatDetailsViewController.swift */,
@@ -239,6 +242,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D8F34521C7E15D000A0C12C /* ViewControllerWebView.swift in Sources */,
 				6DB10B661C66D6D7007ACEDB /* CatListTableViewController.swift in Sources */,
 				6D533C5B1C667666008C338A /* LoginPage.swift in Sources */,
 				6DB10B681C66E6D2007ACEDB /* AddCatDetailsViewController.swift in Sources */,

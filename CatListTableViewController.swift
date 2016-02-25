@@ -17,7 +17,8 @@ class CatListTableViewController: UITableViewController{
     
     
     var catNames = [String]()
-    var catImages = ["first", "second","skull","user","skull","first","skull","user","skull","user","user","first"]
+    //var catImages = ["first", "second","skull","user","skull","first","skull","user","skull","user","user","first"]
+    var catImages = [NSData]()
     let u_name = floginobj.f_id
     var deleteIndex:Int = 0
     
@@ -52,6 +53,17 @@ class CatListTableViewController: UITableViewController{
                     
                     if(cat_name != "name")
                     {
+                        
+                        //Get Values as objects
+                        
+                      // print(val)
+                    let nsstring = val["cat_image"] as? NSString
+                    let finString = nsstring as! String
+                    let datans = NSData(base64EncodedString: finString, options: NSDataBase64DecodingOptions.IgnoreUnknownCharacters)
+                        
+                    catImages.append(datans!)
+                        
+                        
                         catNames.append(cat_name)
                     }
                     else
@@ -101,6 +113,9 @@ class CatListTableViewController: UITableViewController{
         let fbRef = Firebase(url: "https://fitcat.firebaseio.com/users/" +  (u_name))
         //Add login name
         fbRef.updateChildValues(["name" : floginobj.f_name]);
+        
+       
+
         
         
         calculateInitialValue()
@@ -201,11 +216,15 @@ class CatListTableViewController: UITableViewController{
 //        cell.imageView?.image = UIImage(named: catImages[indexPath.row]);
         
         let image = cell.viewWithTag(101) as!  UIImageView
+        image.layer.cornerRadius = image.frame.size.width / 2
+        image.layer.masksToBounds = true
         let name = cell.viewWithTag(102) as! UILabel
         //let state = cell.viewWithTag(104) as! UILabel
         //let plan = cell.viewWithTag(103) as! UILabel
         
-        image.image = UIImage(named:catImages[indexPath.row])
+        
+        
+        image.image = UIImage(data:catImages[indexPath.row])
         name.text = catNames[indexPath.row]
         //state.text = catState[indexPath.row]
         //plan.text = catPlan[indexPath.row]
