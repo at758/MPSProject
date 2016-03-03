@@ -21,6 +21,7 @@
 		6DDAF9351C652B22006C4C78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6DDAF9341C652B22006C4C78 /* Assets.xcassets */; };
 		6DDAF9381C652B22006C4C78 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DDAF9361C652B22006C4C78 /* LaunchScreen.storyboard */; };
 		A48461A14125A8CB73902A9A /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2ECB57CCF803EA094EC87C5 /* Pods.framework */; };
+		DD2B6FF41C87DC3D00A111C3 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2B6FF31C87DC3D00A111C3 /* InfoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		6DDAF9391C652B22006C4C78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8EAAD7D5DF5B1B393A59953F /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		A2ECB57CCF803EA094EC87C5 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD2B6FF31C87DC3D00A111C3 /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InfoViewController.swift; path = ../InfoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				6D8F34511C7E15D000A0C12C /* ViewControllerWebView.swift */,
+				DD2B6FF31C87DC3D00A111C3 /* InfoViewController.swift */,
 				6DDAF92B1C652B22006C4C78 /* AppDelegate.swift */,
 				6DB10B651C66D6D7007ACEDB /* CatListTableViewController.swift */,
 				6DB10B671C66E6D2007ACEDB /* AddCatDetailsViewController.swift */,
@@ -246,6 +249,7 @@
 				6DB10B661C66D6D7007ACEDB /* CatListTableViewController.swift in Sources */,
 				6D533C5B1C667666008C338A /* LoginPage.swift in Sources */,
 				6DB10B681C66E6D2007ACEDB /* AddCatDetailsViewController.swift in Sources */,
+				DD2B6FF41C87DC3D00A111C3 /* InfoViewController.swift in Sources */,
 				6DDAF92C1C652B22006C4C78 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -362,6 +366,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -385,6 +390,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",

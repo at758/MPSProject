@@ -190,7 +190,6 @@ class CatListTableViewController: UITableViewController{
         self.tableView.setEditing(editing, animated: animated)
     }
     
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -238,6 +237,16 @@ class CatListTableViewController: UITableViewController{
         
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let vc = segue.destinationViewController as! InfoViewController
+        let indexPath = tableView.indexPathForSelectedRow
+        if let index = indexPath {
+            vc.image = catImages[index.row]
+            vc.name = catNames[index.row]
+        }
+        
+    }
+
     override func viewDidAppear(animated: Bool) {
         
         
