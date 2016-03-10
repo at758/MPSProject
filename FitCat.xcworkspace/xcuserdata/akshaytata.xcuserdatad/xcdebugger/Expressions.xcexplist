@@ -63,6 +63,20 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "InfoViewController.viewDidLoad() -&gt; ():InfoViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "name">
+            </PersistentString>
+            <PersistentString
+               value = " NSURL(string: &quot;https://fitcat.firebaseio.com/users/&quot; +  (u_name) + &quot;/\(name).json&quot;)">
+            </PersistentString>
+            <PersistentString
+               value = "https://fitcat.firebaseio.com/users/&quot; +  (u_name) + &quot;/buddy .json">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "CatListTableViewController.viewDidLoad() -&gt; ():CatListTableViewController.swift">
          <PersistentStrings>
             <PersistentString

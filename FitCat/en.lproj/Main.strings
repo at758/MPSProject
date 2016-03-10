@@ -8,14 +8,14 @@
 /* Class = "UIBarButtonItem"; title = "Cancel"; ObjectID = "3nd-fO-1JQ"; */
 "3nd-fO-1JQ.title" = "Cancel";
 
-/* Class = "UITextField"; text = "16lbs"; ObjectID = "5Dl-Am-ojB"; */
-"5Dl-Am-ojB.text" = "16lbs";
+/* Class = "UITextField"; placeholder = "Enter weight in pounds"; ObjectID = "5Dl-Am-ojB"; */
+"5Dl-Am-ojB.placeholder" = "Enter weight in pounds";
 
-/* Class = "UIButton"; normalTitle = "Change"; ObjectID = "7xH-r2-rhf"; */
-"7xH-r2-rhf.normalTitle" = "Change";
+/* Class = "UITabBarItem"; title = "Item"; ObjectID = "9y5-Gh-QGN"; */
+"9y5-Gh-QGN.title" = "Item";
 
-/* Class = "UILabel"; text = "Weight lost to date: 2.9 lbs"; ObjectID = "IfJ-H0-i9h"; */
-"IfJ-H0-i9h.text" = "Weight lost to date: 2.9 lbs";
+/* Class = "UILabel"; text = "Weight lost to date:"; ObjectID = "IfJ-H0-i9h"; */
+"IfJ-H0-i9h.text" = "Weight lost to date:";
 
 /* Class = "UIBarButtonItem"; title = "Save"; ObjectID = "JbV-hc-pJ9"; */
 "JbV-hc-pJ9.title" = "Save";
@@ -38,20 +38,20 @@
 /* Class = "UILabel"; text = "Weight:"; ObjectID = "PL4-J8-fpg"; */
 "PL4-J8-fpg.text" = "Weight:";
 
+/* Class = "UITextField"; placeholder = "Enter a plan start date"; ObjectID = "Phi-7V-V8Q"; */
+"Phi-7V-V8Q.placeholder" = "Enter a plan start date";
+
 /* Class = "UILabel"; text = "Target weight should be achieved by June 15 (120 days)"; ObjectID = "RPR-gR-zLi"; */
 "RPR-gR-zLi.text" = "Target weight should be achieved by June 15 (120 days)";
 
 /* Class = "UILabel"; text = "Kitty"; ObjectID = "SSC-qD-tg9"; */
 "SSC-qD-tg9.text" = "Kitty";
 
-/* Class = "UILabel"; text = "Plan start: 2015-01-01"; ObjectID = "SVC-ra-FD0"; */
-"SVC-ra-FD0.text" = "Plan start: 2015-01-01";
+/* Class = "UILabel"; text = "Starting weight:"; ObjectID = "Stv-Mm-Oh7"; */
+"Stv-Mm-Oh7.text" = "Starting weight:";
 
-/* Class = "UILabel"; text = "Starting weight:18 lbs"; ObjectID = "Stv-Mm-Oh7"; */
-"Stv-Mm-Oh7.text" = "Starting weight:18 lbs";
-
-/* Class = "UIButton"; normalTitle = "Update a plan"; ObjectID = "Vdl-ym-A6b"; */
-"Vdl-ym-A6b.normalTitle" = "Update a plan";
+/* Class = "UIButton"; normalTitle = "Create a fitPlan"; ObjectID = "Vdl-ym-A6b"; */
+"Vdl-ym-A6b.normalTitle" = "Create a fitPlan";
 
 /* Class = "UIViewController"; title = "Login Page"; ObjectID = "Vth-ft-w23"; */
 "Vth-ft-w23.title" = "Login Page";
@@ -62,8 +62,8 @@
 /* Class = "UITextField"; placeholder = "Enter Breed"; ObjectID = "ZG4-rG-8gg"; */
 "ZG4-rG-8gg.placeholder" = "Enter Breed";
 
-/* Class = "UILabel"; text = "Target weight loss: 3.1 lbs\n"; ObjectID = "ecc-7x-8EB"; */
-"ecc-7x-8EB.text" = "Target weight loss: 3.1 lbs\n";
+/* Class = "UILabel"; text = "Target weight loss:\n"; ObjectID = "ecc-7x-8EB"; */
+"ecc-7x-8EB.text" = "Target weight loss:\n";
 
 /* Class = "UITabBarItem"; title = "Setting"; ObjectID = "jUy-OI-XrM"; */
 "jUy-OI-XrM.title" = "Setting";
@@ -80,11 +80,17 @@
 /* Class = "UINavigationItem"; title = "Add Cat Details"; ObjectID = "lN5-0z-u0H"; */
 "lN5-0z-u0H.title" = "Add Cat Details";
 
-/* Class = "UILabel"; text = "Current target completion: 2016-01-01"; ObjectID = "lQU-rf-iLv"; */
-"lQU-rf-iLv.text" = "Current target completion: 2016-01-01";
+/* Class = "UILabel"; text = "Current target completion:"; ObjectID = "lQU-rf-iLv"; */
+"lQU-rf-iLv.text" = "Current target completion:";
+
+/* Class = "UILabel"; text = "lbs"; ObjectID = "mJs-TG-7zs"; */
+"mJs-TG-7zs.text" = "lbs";
 
 /* Class = "UILabel"; text = "Cat D.O.B"; ObjectID = "mpt-PF-XyC"; */
 "mpt-PF-XyC.text" = "Cat D.O.B";
+
+/* Class = "UILabel"; text = "Plan Start Date"; ObjectID = "pGj-2T-qo7"; */
+"pGj-2T-qo7.text" = "Plan Start Date";
 
 /* Class = "UILabel"; text = "Reduced 2.1 lbs"; ObjectID = "pSd-gF-gd7"; */
 "pSd-gF-gd7.text" = "Reduced 2.1 lbs";
@@ -104,5 +110,5 @@
 /* Class = "UILabel"; text = "Spayed/Neutered"; ObjectID = "yJX-jW-xVU"; */
 "yJX-jW-xVU.text" = "Spayed/Neutered";
 
-/* Class = "UITabBarItem"; title = "Item"; ObjectID = "zHG-ip-9ei"; */
-"zHG-ip-9ei.title" = "Item";
+/* Class = "UILabel"; text = "Title"; ObjectID = "z9u-xC-fuN"; */
+"z9u-xC-fuN.text" = "Title";

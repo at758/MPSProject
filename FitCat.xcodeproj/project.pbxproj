@@ -27,6 +27,7 @@
 
 /* Begin PBXFileReference section */
 		59305728D0ADC5368C315B92 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		6D22BB751C91323A00D4AA64 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		6D533C541C657BD5008C338A /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../Default@2x.png"; sourceTree = "<group>"; };
 		6D533C561C657E71008C338A /* morning-coffee-40-photos-7.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "morning-coffee-40-photos-7.jpg"; path = "../morning-coffee-40-photos-7.jpg"; sourceTree = "<group>"; };
 		6D533C581C667141008C338A /* facbooklogin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facbooklogin.png; sourceTree = "<group>"; };
@@ -45,7 +46,6 @@
 		6DDAF9391C652B22006C4C78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8EAAD7D5DF5B1B393A59953F /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		A2ECB57CCF803EA094EC87C5 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D601D4331C90F25C0003C064 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		D601D4341C90F36E0003C064 /* SearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
 		DD2B6FF31C87DC3D00A111C3 /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InfoViewController.swift; path = ../InfoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -266,7 +266,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				6DB10B631C668203007ACEDB /* Base */,
-				D601D4331C90F25C0003C064 /* en */,
+				6D22BB751C91323A00D4AA64 /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
