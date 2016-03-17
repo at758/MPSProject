@@ -100,6 +100,16 @@ class InfoViewController: UIViewController {
 
     }
         
+        for id in self.view.subviews as [UIView]{
+            
+            if (id.isMemberOfClass(UILabel))
+            {
+                id.hidden = true
+            }
+            
+        }
+    
+        
     targetDateLabel.text = dateFormatter.stringFromDate(plandateinDateFormat!)
     startingBCSLabel.text = bcsScore.text
     startWeightLabel.text = catWeight.text! + " lbs"
@@ -138,6 +148,8 @@ class InfoViewController: UIViewController {
         
         //Adding target to planStartDatePicker
         planStartDatePicker.addTarget(self, action: Selector("dateChanged:"), forControlEvents: UIControlEvents.ValueChanged)
+        
+        
 
         
         if(name != nil && image != nil){
@@ -146,43 +158,64 @@ class InfoViewController: UIViewController {
             catName.text = name
         }
         
-       /* let str = "https://fitcat.firebaseio.com/users/" +  (u_name) + "/"+name!+".json"
-        let reposURL = NSURL(string: str)
+        var str = "https://fitcat.firebaseio.com/users/" +  (u_name) + "/" + (name!)
+        str = str.stringByReplacingOccurrencesOfString(" ", withString: "%20")
+        let reposURL = NSURL(string: str + ".json")
         
-        
+       
         if let JSONData = NSData(contentsOfURL: reposURL!)
         {
             do
             {
                 if let json = try NSJSONSerialization.JSONObjectWithData(JSONData, options: []) as? NSDictionary {
                     
-                    if let reposArray = json[name!] as? [String: AnyObject] {
+                   
                         // 5
-                        for (cat_name_param, val) in reposArray {
+                    for (cat_name_param, val) in json{
+                        
+                        switch(cat_name_param as! String)
+                        {
                             
-                            if(cat_name_param == "catBCS" || cat_name_param == "catTargetEndDate" || cat_name_param == "catWeight"||cat_name_param == "catTargetWeightLoss"||cat_name_param == "catWeightLoss")
-                            {
-                               /* targetDateLabel.text =
-                                startingBCSLabel.text =
-                                startWeightLabel.text =  + " lbs"
-                                targetWeightLossLabel.text =
-                                weightLossLabel.text = "0 lbs"
-                                    */
-
-                                
-                            }
+                        case "catBCS":  startingBCSLabel.text = val as? String
+                                            break
+                        case "catTargetEndDate":  targetDateLabel.text = val as? String
+                            break
+                        case "catWeight":    startWeightLabel.text = (val as? String)! + " lbs"
+                            break
+                        case "catTargetWeightLoss":  targetWeightLossLabel.text = (val as? String)! + " lbs"
+                            break
+                        case "catWeightLoss":  startingBCSLabel.text = (val as? String)! + " lbs"
+                            break
+                        default: break
+                        }
                             
                         }
-                    }
+                    
                     
                 }
                 
-            }catch let error as NSError{
+            }  catch let error as NSError{
                 print(error.localizedDescription)
             }
         }
         
-        */
+        
+        if(startingBCSLabel.text == "" && targetDateLabel.text == "" && startWeightLabel.text == "" && targetWeightLossLabel.text == "" && startingBCSLabel.text == "")
+        {
+            for id in self.view.subviews as [UIView]{
+                
+                if (id.isMemberOfClass(UILabel))
+                {
+                    if(id.valueForKey("text")  as! String == "")
+                    {
+                        id.setValue("Not planned", forKey: "text")
+                    }
+                }
+                
+            }
+
+        }
+        
         
         
          // targetDateLabel.text = app["catTargetEndDate"]

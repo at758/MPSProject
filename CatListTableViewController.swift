@@ -12,6 +12,7 @@ import Firebase
 
 class CatListTableViewController: UITableViewController{
     
+  
     
     @IBOutlet weak var TitleItem: UINavigationItem!
     
@@ -20,6 +21,12 @@ class CatListTableViewController: UITableViewController{
     //var catImages = ["first", "second","skull","user","skull","first","skull","user","skull","user","user","first"]
     var catImages = [NSData]()
     let u_name = floginobj.f_id
+    
+    //This array stores all the reduction values
+    var reductionLabelText = [String]()
+     //This array stores all the target date values
+    var targetDateLabelText = [String]()
+    
     var deleteIndex:Int = 0
     
     var myURL = "https://fitcat.firebaseio.com/users"
@@ -61,10 +68,21 @@ class CatListTableViewController: UITableViewController{
                     let nsstring = val["cat_image"] as? NSString
                     let finString = nsstring as! String
                     let datans = NSData(base64EncodedString: finString, options: NSDataBase64DecodingOptions.IgnoreUnknownCharacters)
+                    let catBCS = val["catWeightLoss"] as! NSString
                         
+                    //Checking for reduction
+                    if((catBCS as String) != "")
+                    {
+                        reductionLabelText.append(catBCS as String)
+                    }
+                    else
+                    {
+                        reductionLabelText.append("FitPlan not yet started")
+                    }
                     
                         
-                    catImages.append(datans!)
+                        
+                        catImages.append(datans!)
                         
                         
                         catNames.append(cat_name)
@@ -222,6 +240,13 @@ class CatListTableViewController: UITableViewController{
         image.layer.cornerRadius = image.frame.size.width / 2
         image.layer.masksToBounds = true
         let name = cell.viewWithTag(102) as! UILabel
+        
+        //Label that stores reduction value
+      //  let reduction = cell.viewWithTag(104) as! UILabel
+        //Label that stores the target achievement date
+      //  let targetAchieved = cell.viewWithTag(103) as! UILabel
+        
+        
         //let state = cell.viewWithTag(104) as! UILabel
         //let plan = cell.viewWithTag(103) as! UILabel
         
