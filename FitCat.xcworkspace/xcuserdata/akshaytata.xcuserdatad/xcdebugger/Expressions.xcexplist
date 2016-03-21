@@ -17,6 +17,9 @@
          contextName = "CatListTableViewController.calculateInitialValue() -&gt; ():CatListTableViewController.swift">
          <PersistentStrings>
             <PersistentString
+               value = "(catBCS!) != nil">
+            </PersistentString>
+            <PersistentString
                value = "((val[&quot;cat_image&quot;]  as? NSString) as? String)!">
             </PersistentString>
          </PersistentStrings>
@@ -64,6 +67,11 @@
       </ContextState>
       <ContextState
          contextName = "InfoViewController.viewDidLoad() -&gt; ():InfoViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "name">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
       <ContextState
          contextName = "CatListTableViewController.viewDidLoad() -&gt; ():CatListTableViewController.swift">

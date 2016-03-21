@@ -68,20 +68,26 @@ class CatListTableViewController: UITableViewController{
                     let nsstring = val["cat_image"] as? NSString
                     let finString = nsstring as! String
                     let datans = NSData(base64EncodedString: finString, options: NSDataBase64DecodingOptions.IgnoreUnknownCharacters)
-                    let catBCS = val["catWeightLoss"] as! NSString
                         
-                    //Checking for reduction
-                    if((catBCS as String) != "")
-                    {
-                        reductionLabelText.append(catBCS as String)
+                   let catBCS = val["catWeightLoss"]
+                   //Checking for reduction
+                   if((catBCS!) != nil)
+                   {
+                       if((catBCS as! String) != "")
+                        {
+                            reductionLabelText.append(catBCS as! String)
+                            targetDateLabelText.append(val["catTargetEndDate"] as! NSString as String)
+
+                        }
+                    
                     }
                     else
-                    {
-                        reductionLabelText.append("FitPlan not yet started")
-                    }
+                   {
+                            reductionLabelText.append("FitPlan not yet started")
+                            targetDateLabelText.append("Target date not calculated")
+
+                        }
                     
-                        
-                        
                         catImages.append(datans!)
                         
                         
@@ -242,9 +248,9 @@ class CatListTableViewController: UITableViewController{
         let name = cell.viewWithTag(102) as! UILabel
         
         //Label that stores reduction value
-      //  let reduction = cell.viewWithTag(104) as! UILabel
+        let reduction = cell.viewWithTag(104) as! UILabel
         //Label that stores the target achievement date
-      //  let targetAchieved = cell.viewWithTag(103) as! UILabel
+        let targetAchieved = cell.viewWithTag(103) as! UILabel
         
         
         //let state = cell.viewWithTag(104) as! UILabel
@@ -254,6 +260,20 @@ class CatListTableViewController: UITableViewController{
         
         image.image = UIImage(data:catImages[indexPath.row])
         name.text = catNames[indexPath.row]
+        reduction.text = reductionLabelText[indexPath.row] + " lbs reduced"
+        if(reductionLabelText[indexPath.row].hasPrefix("FitPlan"))
+        {
+            reduction.textColor = UIColor(red: 1.0, green: 0.0, blue: 0.0, alpha: 1.0)
+            targetAchieved.text = targetDateLabelText[indexPath.row]
+
+        }
+        else
+        {
+            reduction.textColor = UIColor(red: 0.0, green: 0.0, blue: 1.0, alpha: 1.0)
+            targetAchieved.text = "Target should be achieved by " + targetDateLabelText[indexPath.row]
+
+
+        }
         //state.text = catState[indexPath.row]
         //plan.text = catPlan[indexPath.row]
         
@@ -263,11 +283,16 @@ class CatListTableViewController: UITableViewController{
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let vc = segue.destinationViewController as! InfoViewController
+        print("Unwind")
+        
+        if(segue.identifier == "info")
+        {
+       let vc = segue.destinationViewController as! InfoViewController
         let indexPath = tableView.indexPathForSelectedRow
         if let index = indexPath {
             vc.image = catImages[index.row]
             vc.name = catNames[index.row]
+        }
         }
         
     }

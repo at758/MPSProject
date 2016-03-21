@@ -158,6 +158,7 @@ class InfoViewController: UIViewController {
             catName.text = name
         }
         
+        
         var str = "https://fitcat.firebaseio.com/users/" +  (u_name) + "/" + (name!)
         str = str.stringByReplacingOccurrencesOfString(" ", withString: "%20")
         let reposURL = NSURL(string: str + ".json")
