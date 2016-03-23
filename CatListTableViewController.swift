@@ -54,17 +54,11 @@ class CatListTableViewController: UITableViewController{
         do
         {
         if let json = try NSJSONSerialization.JSONObjectWithData(JSONData, options: []) as? NSDictionary {
-            
             if let reposArray = json[u_name] as? [String: AnyObject] {
-                // 5
                 for (cat_name, val) in reposArray {
                     
                     if(cat_name != "name")
                     {
-                        
-                        //Get Values as objects
-                        
-                      // print(val)
                     let nsstring = val["cat_image"] as? NSString
                     let finString = nsstring as! String
                     let datans = NSData(base64EncodedString: finString, options: NSDataBase64DecodingOptions.IgnoreUnknownCharacters)
@@ -76,36 +70,26 @@ class CatListTableViewController: UITableViewController{
                        if((catBCS as! String) != "")
                         {
                             reductionLabelText.append(catBCS as! String)
-                            targetDateLabelText.append(val["catTargetEndDate"] as! NSString as String)
-
+            targetDateLabelText.append(val["catTargetEndDate"] as! NSString as String)
                         }
-                    
                     }
                     else
                    {
                             reductionLabelText.append("FitPlan not yet started")
                             targetDateLabelText.append("Target date not calculated")
-
                         }
-                    
                         catImages.append(datans!)
-                        
-                        
                         catNames.append(cat_name)
                     }
                     else
                     {
                         TitleItem.title = "Welcome, " + (val as! String)
                     }
-                    
                 }
             }
-            
-        }
-    
+            }
     //catNames.sortInPlace()
-    
-    }catch let error as NSError{
+        }catch let error as NSError{
         print(error.localizedDescription)
     }
         
