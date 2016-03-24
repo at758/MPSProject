@@ -62,7 +62,7 @@ class FeedingDetailViewController: UIViewController, UIPickerViewDataSource,UIPi
             {
                 if let json = try NSJSONSerialization.JSONObjectWithData(JSONData, options: []) as? NSDictionary {
                     if let reposArray = json[u_name] as? [String: AnyObject] {
-                        for (cat_name, val) in reposArray {
+                        for (cat_name, _) in reposArray {
                             if(cat_name != "name")
                             {
                                  catNameArr.append(cat_name)
@@ -83,15 +83,20 @@ class FeedingDetailViewController: UIViewController, UIPickerViewDataSource,UIPi
 
     
     @IBAction func saveBT(sender: AnyObject) {
+       save()
+        self.navigationController?.popToRootViewControllerAnimated(true)
+    }
+    
+    func save(){
         if(catName.text != "" || catName.text != nil){
-        ref = Firebase(url: "https://fitcat.firebaseio.com/users/" +  (u_name) + "/" + (catName.text)!)
-        let uuid = NSUUID().UUIDString
-        let path = "feeding" + "/" + uuid
-        let app   = ref.childByAppendingPath(path)
-        feedingRecord["date"] = date.text
-        feedingRecord["foodname"] = food?.name
-        feedingRecord["calories"] = food?.calories
-        app.setValue(feedingRecord)
+            ref = Firebase(url: "https://fitcat.firebaseio.com/users/" +  (u_name) + "/" + (catName.text)!)
+            let uuid = NSUUID().UUIDString
+            let path = "feeding" + "/" + uuid
+            let app   = ref.childByAppendingPath(path)
+            feedingRecord["date"] = date.text
+            feedingRecord["foodname"] = food?.name
+            feedingRecord["calories"] = food?.calories
+            app.setValue(feedingRecord)
         }
     }
     //date

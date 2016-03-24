@@ -113,7 +113,7 @@
         <!--Tracking-->
         <scene sceneID="Qi5-0a-Gwh">
             <objects>
-                <viewController id="iVx-KF-rnG" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="trackingview" id="iVx-KF-rnG" customClass="TrackingViewController" customModule="FitCat" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="G5c-rr-Zb8"/>
                         <viewControllerLayoutGuide type="bottom" id="etL-FG-x0k"/>
@@ -121,18 +121,78 @@
                     <view key="view" contentMode="scaleToFill" id="foN-g4-Sp6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cat's Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3FA-9P-3pe">
+                                <rect key="frame" x="40" y="25" width="114" height="31"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zBH-nD-Itm">
+                                <rect key="frame" x="157" y="25" width="188" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="55" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WEA-DG-YLQ">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="feedcell" rowHeight="55" id="6qT-6M-WqW">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="55"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6qT-6M-WqW" id="hO4-he-x8X">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="54.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="301" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="3/22/16" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gRy-AJ-PdF">
+                                                    <rect key="frame" x="13" y="0.0" width="65" height="54.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="302" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="FoodName" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h3d-fJ-vvk">
+                                                    <rect key="frame" x="77" y="0.0" width="193" height="54.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Calories" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kqI-sM-Hns">
+                                                    <rect key="frame" x="298" y="0.0" width="69" height="54.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="303" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cl5-Qm-yRI">
+                                                    <rect key="frame" x="269" y="0.0" width="31" height="54.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="iVx-KF-rnG" id="fHg-Pn-1hE"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Tracking" image="down" selectedImage="tracking_selected" id="YEc-5m-BvN"/>
+                    <connections>
+                        <outlet property="catName" destination="zBH-nD-Itm" id="3cP-MT-6S0"/>
+                        <outlet property="tableView" destination="WEA-DG-YLQ" id="Opo-tb-Cx5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aT8-ag-pTl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2452.5" y="-79.5"/>
+            <point key="canvasLocation" x="-2324.5" y="20.5"/>
         </scene>
         <!--Feeding-->
         <scene sceneID="6dx-Rs-FDu">
             <objects>
-                <viewController id="9MR-t3-Qa7" customClass="FeedingViewController" customModule="FitCat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="feedingview" id="9MR-t3-Qa7" customClass="FeedingViewController" customModule="FitCat" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mCE-ta-xON"/>
                         <viewControllerLayoutGuide type="bottom" id="60K-W7-QuW"/>
@@ -354,7 +414,6 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="era-f4-sVE">
                             <connections>
                                 <action selector="saveBT:" destination="JbM-6b-Y3z" id="IBa-Oq-03D"/>
-                                <segue destination="HgF-uU-EkU" kind="unwind" unwindAction="close:" id="Q5v-E5-P3g"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -992,7 +1051,7 @@
         <!--Feeding-->
         <scene sceneID="b3A-l7-79b">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="BwF-kZ-OXL" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="feedingNavigation" automaticallyAdjustsScrollViewInsets="NO" id="BwF-kZ-OXL" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Feeding" image="Feeding" selectedImage="Feeding_selected" id="qS3-g0-mfT"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="XvL-2L-Cmj">

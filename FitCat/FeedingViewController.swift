@@ -18,7 +18,6 @@ class FeedingViewController: UIViewController, UITableViewDataSource, UITableVie
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
         let reportURL = NSURL(string: "https://fitcat.firebaseio.com/food.json")
         if let JSONData = NSData (contentsOfURL: reportURL!){
             do{

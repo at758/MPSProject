@@ -27,3 +27,15 @@ class Food: NSObject {
         self.sugar = sugar
     }
 }
+
+class Feed: NSObject{
+    var calories: String
+    var date: String
+    var foodname: String
+    
+    init(calories: String, date: String, foodname: String) {
+        self.calories = calories
+        self.date = date
+        self.foodname = foodname
+    }
+}

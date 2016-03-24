@@ -133,10 +133,6 @@ class AddCatDetailsViewController: UIViewController, UINavigationControllerDeleg
     
     @IBAction func saveCatDetails(sender: AnyObject) {
         
-      
-        
-        
-        
         
         
         ref = Firebase(url: "https://fitcat.firebaseio.com/users/" +  (u_name))
@@ -160,11 +156,6 @@ class AddCatDetailsViewController: UIViewController, UINavigationControllerDeleg
         cat_details["cat_breed"] = catBreed.text
         
         app.setValue(cat_details)
-        
-       
-       
-        
-       
         
         
         
