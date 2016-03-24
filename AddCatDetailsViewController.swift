@@ -196,15 +196,15 @@ class AddCatDetailsViewController: UIViewController, UINavigationControllerDeleg
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        catName.addTarget(self, action: "textFieldDidChange:", forControlEvents: UIControlEvents.EditingChanged)
+        catName.addTarget(self, action: #selector(AddCatDetailsViewController.textFieldDidChange(_:)), forControlEvents: UIControlEvents.EditingChanged)
         
-        catAge.addTarget(self, action: "textFieldDidChange:", forControlEvents: UIControlEvents.AllEditingEvents)
+        catAge.addTarget(self, action: #selector(AddCatDetailsViewController.textFieldDidChange(_:)), forControlEvents: UIControlEvents.AllEditingEvents)
         
-        catGender.addTarget(self, action: "textFieldDidChange:", forControlEvents: UIControlEvents.AllEditingEvents)
+        catGender.addTarget(self, action: #selector(AddCatDetailsViewController.textFieldDidChange(_:)), forControlEvents: UIControlEvents.AllEditingEvents)
         
-        catStatus.addTarget(self, action: "textFieldDidChange:", forControlEvents: UIControlEvents.AllEditingEvents)
+        catStatus.addTarget(self, action: #selector(AddCatDetailsViewController.textFieldDidChange(_:)), forControlEvents: UIControlEvents.AllEditingEvents)
         
-        catBreed.addTarget(self, action: "textFieldDidChange:", forControlEvents: UIControlEvents.AllEditingEvents)
+        catBreed.addTarget(self, action: #selector(AddCatDetailsViewController.textFieldDidChange(_:)), forControlEvents: UIControlEvents.AllEditingEvents)
         
        saveButton.enabled = false
         
@@ -223,7 +223,7 @@ class AddCatDetailsViewController: UIViewController, UINavigationControllerDeleg
         datePicker.datePickerMode = UIDatePickerMode.Date
         catAge.inputView = datePicker
         
-        datePicker.addTarget(self, action: Selector("dateChanged:"), forControlEvents: UIControlEvents.ValueChanged)
+        datePicker.addTarget(self, action: #selector(AddCatDetailsViewController.dateChanged(_:)), forControlEvents: UIControlEvents.ValueChanged)
         
         picker1.tag = 0
         picker2.tag = 1
@@ -238,7 +238,7 @@ class AddCatDetailsViewController: UIViewController, UINavigationControllerDeleg
         
         catImage.userInteractionEnabled = true
         
-        let tapImageRecognizer = UITapGestureRecognizer(target: self, action: Selector("catImageTapped:"))
+        let tapImageRecognizer = UITapGestureRecognizer(target: self, action: #selector(AddCatDetailsViewController.catImageTapped(_:)))
         
         catImage.addGestureRecognizer(tapImageRecognizer)
         

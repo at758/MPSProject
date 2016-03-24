@@ -86,8 +86,11 @@ class CatListTableViewController: UITableViewController{
                     
                     else
                     {
+                        if(cat_name == "name")
+                        {
                         TitleItem.title = "Welcome, " + (val as! String)
-                        attributeFlag++
+                        }
+                        attributeFlag += 1
                     }
                 }
             }
@@ -184,7 +187,7 @@ class CatListTableViewController: UITableViewController{
         
         self.refreshControl = UIRefreshControl()
         
-        self.refreshControl?.addTarget(self, action: "handleRefresh:", forControlEvents: UIControlEvents.ValueChanged)
+        self.refreshControl?.addTarget(self, action: #selector(CatListTableViewController.handleRefresh(_:)), forControlEvents: UIControlEvents.ValueChanged)
 
         navigationItem.leftBarButtonItem = editButtonItem()
         
