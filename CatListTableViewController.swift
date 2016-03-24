@@ -59,7 +59,7 @@ class CatListTableViewController: UITableViewController{
             if let reposArray = json[u_name] as? [String: AnyObject] {
                 for (cat_name, val) in reposArray {
                     
-                    if(cat_name != "name")
+                    if(cat_name != "name" && cat_name != "tandccheck")
                     {
                     let nsstring = val["cat_image"] as? NSString
                     let finString = nsstring as! String
