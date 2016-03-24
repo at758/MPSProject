@@ -26,8 +26,7 @@ class LoginPage: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate {
     
     @IBAction func NextPage(sender: UIButton) {
         
-        
-       
+
        
         
         facebookLogin.logInWithReadPermissions(["email"], fromViewController: self, handler: {

@@ -15,8 +15,8 @@ class CatListTableViewController: UITableViewController{
   
     
     @IBOutlet weak var TitleItem: UINavigationItem!
-    
-    
+    //This variable checks for the number of key value pairs within a user entry that are not cat information
+    var attributeFlag:Int = 0
     var catNames = [String]()
     //var catImages = ["first", "second","skull","user","skull","first","skull","user","skull","user","user","first"]
     var catImages = [NSData]()
@@ -26,7 +26,8 @@ class CatListTableViewController: UITableViewController{
     var reductionLabelText = [String]()
      //This array stores all the target date values
     var targetDateLabelText = [String]()
-    
+    var tandcmessageString = "By agreeing to the terms of use for the FitCat application, you declare that neither Cornell University, The Cornell Feline Health Center, nor any of their officers, agents, employees, contractors,subcontractors, directors, or students are responsible for any illness or injury (including death) that may occur in any animal or person as a result of the use of this application, nor for any financial indebtedness that may arise as a result of its use."
+    var introdiscString = "Thank you for choosing FitCat as a tool to help your kitty achieve a healthy weight and body condition. While we are confident that you will find this application very useful and informative, it is important to recognize that its use should not, in any way, take the place of regular visits to your veterinarian, who is best equipped to provide guidance in your cat’s individual health care plan."
     var deleteIndex:Int = 0
     
     var myURL = "https://fitcat.firebaseio.com/users"
@@ -43,7 +44,8 @@ class CatListTableViewController: UITableViewController{
    {
     
     //print("Hurray")
-    
+    let fbRef = Firebase(url: "https://fitcat.firebaseio.com/users/" +  (u_name))
+
     let reposURL = NSURL(string: "https://fitcat.firebaseio.com/users.json")
     
     catNames.removeAll()
@@ -93,9 +95,11 @@ class CatListTableViewController: UITableViewController{
                         
                         catNames.append(cat_name)
                     }
+                    
                     else
                     {
                         TitleItem.title = "Welcome, " + (val as! String)
+                        attributeFlag++
                     }
                     
                 }
@@ -109,7 +113,51 @@ class CatListTableViewController: UITableViewController{
         print(error.localizedDescription)
     }
         
+    //Check if attributeFlag is 2, if not, then Terms and Conditions are not added
+        if(attributeFlag != 2)
+        {
+            //This variable contains the UIAlert view for the terms and conditions alert view
+            let tandcAlert = UIAlertController(title: "Terms and Conditions", message: tandcmessageString, preferredStyle: UIAlertControllerStyle.Alert)
+            let introAlert = UIAlertController(title: "Introductory Disclaimer", message: introdiscString, preferredStyle: UIAlertControllerStyle.Alert)
+            
+            tandcAlert.addAction(UIAlertAction(title: "Agree", style: .Default, handler: {(action: UIAlertAction!) in
+                
+            
+                self.presentViewController(introAlert, animated: true, completion: nil)
+                
+                
+                
+            }))
+            
+            tandcAlert.addAction(UIAlertAction(title: "Disagree", style: .Default, handler: {(action: UIAlertAction!) in
+                
+                self.presentViewController(tandcAlert, animated: true, completion: nil)
 
+                
+            }))
+            
+            
+            introAlert.addAction(UIAlertAction(title: "Agree", style: .Default, handler: {(action: UIAlertAction!) in
+                
+                let todaysDate:NSDate = NSDate()
+                let dateFormatter:NSDateFormatter = NSDateFormatter()
+                dateFormatter.dateFormat = "MM-dd-yyyy"
+                let DateInFormat:String = dateFormatter.stringFromDate(todaysDate)
+                fbRef.updateChildValues(["tandccheck" : DateInFormat + ":Y"]);
+                
+            }))
+            
+            introAlert.addAction(UIAlertAction(title: "Disagree", style: .Default, handler: {(action: UIAlertAction!) in
+                
+                self.presentViewController(introAlert, animated: true, completion: nil)
+                
+                
+            }))
+
+            self.presentViewController(tandcAlert, animated: true, completion: nil)
+
+            
+        }
        
     }
     
@@ -141,7 +189,7 @@ class CatListTableViewController: UITableViewController{
         let fbRef = Firebase(url: "https://fitcat.firebaseio.com/users/" +  (u_name))
         //Add login name
         fbRef.updateChildValues(["name" : floginobj.f_name]);
-        
+       
        
 
         

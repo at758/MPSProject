@@ -30,6 +30,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //print (application.description)
             //print("This is " + (launchOptions?.description)!)
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+        
+        let settings = UIUserNotificationSettings(forTypes: [.Badge, .Alert, .Sound], categories: nil)
+        application.registerUserNotificationSettings(settings)
+        
+        
 
         return true      //return true
         
