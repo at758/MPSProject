@@ -15,31 +15,19 @@ class InfoViewController: UIViewController {
     var u_name = floginobj.f_id
 
     @IBOutlet weak var catImage: UIImageView!
-   
     @IBOutlet weak var catName: UILabel!
-   
     @IBOutlet weak var bcsSliderOutlet: UISlider!
     @IBOutlet weak var bcsScore: UILabel!
-    
-    
     @IBOutlet weak var targetDateLabel: UILabel!
-    
     @IBOutlet weak var startingBCSLabel: UILabel!
-    
     @IBOutlet weak var startWeightLabel: UILabel!
-    
-    
     @IBOutlet weak var targetWeightLossLabel: UILabel!
-    
     @IBOutlet weak var weightLossLabel: UILabel!
-    
     
     //This is cat weight in pounds
     @IBOutlet weak var catWeight: UITextField!
-    
     //This text stores Plan Start Date
     @IBOutlet weak var planStartDateText: UITextField!
-    
     //Picker view for data
     var planStartDatePicker = UIDatePicker()
     

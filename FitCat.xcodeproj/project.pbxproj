@@ -23,6 +23,7 @@
 		A48461A14125A8CB73902A9A /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2ECB57CCF803EA094EC87C5 /* Pods.framework */; };
 		D601D4351C90F36E0003C064 /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D601D4341C90F36E0003C064 /* SearchTableViewController.swift */; };
 		DD2B6FF41C87DC3D00A111C3 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2B6FF31C87DC3D00A111C3 /* InfoViewController.swift */; };
+		DD3520951CA365DD0069626C /* FeedingDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3520941CA365DD0069626C /* FeedingDetailViewController.swift */; };
 		DDE161A31CA220B100FD0471 /* FeedingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE161A21CA220B100FD0471 /* FeedingViewController.swift */; };
 		DDE161A51CA2480C00FD0471 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE161A41CA2480C00FD0471 /* Models.swift */; };
 /* End PBXBuildFile section */
@@ -50,6 +51,7 @@
 		A2ECB57CCF803EA094EC87C5 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D601D4341C90F36E0003C064 /* SearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
 		DD2B6FF31C87DC3D00A111C3 /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InfoViewController.swift; path = ../InfoViewController.swift; sourceTree = "<group>"; };
+		DD3520941CA365DD0069626C /* FeedingDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedingDetailViewController.swift; sourceTree = "<group>"; };
 		DDE161A21CA220B100FD0471 /* FeedingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedingViewController.swift; sourceTree = "<group>"; };
 		DDE161A41CA2480C00FD0471 /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -95,6 +97,7 @@
 		6DDAF92A1C652B22006C4C78 /* FitCat */ = {
 			isa = PBXGroup;
 			children = (
+				DD3520941CA365DD0069626C /* FeedingDetailViewController.swift */,
 				DDE161A21CA220B100FD0471 /* FeedingViewController.swift */,
 				6D8F34511C7E15D000A0C12C /* ViewControllerWebView.swift */,
 				DD2B6FF31C87DC3D00A111C3 /* InfoViewController.swift */,
@@ -263,6 +266,7 @@
 				DD2B6FF41C87DC3D00A111C3 /* InfoViewController.swift in Sources */,
 				DDE161A51CA2480C00FD0471 /* Models.swift in Sources */,
 				6DDAF92C1C652B22006C4C78 /* AppDelegate.swift in Sources */,
+				DD3520951CA365DD0069626C /* FeedingDetailViewController.swift in Sources */,
 				DDE161A31CA220B100FD0471 /* FeedingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -95,6 +95,19 @@ class FeedingViewController: UIViewController, UITableViewDataSource, UITableVie
         return true
     }
 
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+            let feed = segue.destinationViewController as! FeedingDetailViewController
+            let indexPath = tableView.indexPathForSelectedRow
+            if let index = indexPath {
+                feed.food = food[index.row]
+            }
+        
+       }
+    @IBAction func close (segue: UIStoryboardSegue){
+        tableView.reloadData()
+    }
+    
     /*
     // MARK: - Navigation
 
