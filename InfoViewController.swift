@@ -57,7 +57,7 @@ class InfoViewController: UIViewController {
         let cal = NSCalendar.currentCalendar()
 
         var plandateinDateFormat = dateFormatter.dateFromString(planStartDateText.text!)
-
+        //let currDate = plandateinDateFormat
       
         //∆BCS * (.075/.01)
         
@@ -88,14 +88,14 @@ class InfoViewController: UIViewController {
 
     }
         
-        for id in self.view.subviews as [UIView]{
+        /*for id in self.view.subviews as [UIView]{
             
             if (id.isMemberOfClass(UILabel))
             {
                 id.hidden = true
             }
             
-        }
+        }*/
     
         
     targetDateLabel.text = dateFormatter.stringFromDate(plandateinDateFormat!)
@@ -113,9 +113,33 @@ class InfoViewController: UIViewController {
     app.updateChildValues(["catBCS" : String(bcsScore.text!)])
     app.updateChildValues(["catTargetWeightLoss" : String(totalWeight)])
     app.updateChildValues(["catWeightLoss" : "0"])
-    
         
-    
+    //Notifications : Set up
+    //Daily Cat notifications
+    let notification = UILocalNotification()
+        notification.fireDate = NSDate(timeIntervalSinceNow: 10)
+        notification.alertTitle = "Reminder to input data"
+        notification.repeatInterval  = NSCalendarUnit.Day
+        notification.alertBody = "Please enter the total amount of food you fed \(catName.text!) today."
+        notification.soundName = UILocalNotificationDefaultSoundName
+        notification.userInfo = ["CustomField1": "w00t"]
+        //notification.category = "Cat feed details"
+        //UIApplication.sharedApplication()
+        UIApplication.sharedApplication().scheduleLocalNotification(notification)
+        
+        //Notifications for month
+        let notificationMonth = UILocalNotification()
+        notificationMonth.fireDate = NSDate(timeIntervalSinceNow: 20)
+        notificationMonth.alertTitle = "Reminder to weigh cat"
+        notificationMonth.repeatInterval  = NSCalendarUnit.Day
+        notificationMonth.alertBody = "It’s that time of the month again! Please weigh \(catName.text!) and enter his weight into your database so that we can track the progress of the established weight loss plan."
+        notificationMonth.soundName = UILocalNotificationDefaultSoundName
+        notificationMonth.userInfo = ["CustomField1": "w00t"]
+        //notification.category = "Cat feed details"
+        //UIApplication.sharedApplication()
+        UIApplication.sharedApplication().scheduleLocalNotification(notificationMonth)
+        
+        
        
     }
     var name : String?
@@ -135,7 +159,7 @@ class InfoViewController: UIViewController {
         planStartDateText.inputView = planStartDatePicker
         
         //Adding target to planStartDatePicker
-        planStartDatePicker.addTarget(self, action: Selector("dateChanged:"), forControlEvents: UIControlEvents.ValueChanged)
+        planStartDatePicker.addTarget(self, action: #selector(InfoViewController.dateChanged(_:)), forControlEvents: UIControlEvents.ValueChanged)
         
         
 
@@ -173,7 +197,7 @@ class InfoViewController: UIViewController {
                             break
                         case "catTargetWeightLoss":  targetWeightLossLabel.text = (val as? String)! + " lbs"
                             break
-                        case "catWeightLoss":  startingBCSLabel.text = (val as? String)! + " lbs"
+                        case "catWeightLoss":  weightLossLabel.text = (val as? String)! + " lbs"
                             break
                         default: break
                         }
