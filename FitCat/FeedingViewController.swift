@@ -17,14 +17,11 @@ class FeedingViewController: UIViewController, UITableViewDataSource, UITableVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
-<<<<<<< HEAD
 
-=======
+
         self.tableView.editing = true
         self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        
-        // Do any additional setup after loading the view.
->>>>>>> 71697b45fa170a28125fdcd2037b4402caf6d269
+    
         let reportURL = NSURL(string: "https://fitcat.firebaseio.com/food.json")
         if let JSONData = NSData (contentsOfURL: reportURL!){
             do{
@@ -100,7 +97,6 @@ class FeedingViewController: UIViewController, UITableViewDataSource, UITableVie
         }
         return true
     }
-<<<<<<< HEAD
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
@@ -114,33 +110,5 @@ class FeedingViewController: UIViewController, UITableViewDataSource, UITableVie
     @IBAction func close (segue: UIStoryboardSegue){
         tableView.reloadData()
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-=======
-    
-    
-    func tableView(tableView: UITableView, editingStyleForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCellEditingStyle {
-        return .None
->>>>>>> 71697b45fa170a28125fdcd2037b4402caf6d269
-    }
-    
-    func tableView(tableView: UITableView, shouldIndentWhileEditingRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        return false
-    }
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
     
 }
