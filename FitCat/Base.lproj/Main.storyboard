@@ -267,7 +267,7 @@
                     <navigationItem key="navigationItem" title="Feeding" id="Uvu-q9-eg7"/>
                     <connections>
                         <outlet property="searchDisplayController" destination="lUt-cb-Aq7" id="iJP-35-qSE"/>
-                        <outlet property="tableView" destination="VC2-8R-5HK" id="tmH-SQ-Ms3"/>
+                        <outlet property="tableView" destination="VC2-8R-5HK" id="JET-Ah-VDX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gz6-Md-5MN" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -281,7 +281,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="-1302.5" y="20.5"/>
+            <point key="canvasLocation" x="-1335" y="12"/>
         </scene>
         <!--Add a new feed-->
         <scene sceneID="Ztw-JT-A7J">
@@ -1064,7 +1064,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="9MR-t3-Qa7" kind="relationship" relationship="rootViewController" id="Pbk-gI-ZLh"/>
+                        <segue destination="9MR-t3-Qa7" kind="relationship" relationship="rootViewController" id="Fsf-q4-OFY"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="40z-u3-Cd4" userLabel="First Responder" sceneMemberID="firstResponder"/>

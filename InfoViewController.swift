@@ -228,8 +228,6 @@ class InfoViewController: UIViewController {
 
         }
         
-        
-        
          // targetDateLabel.text = app["catTargetEndDate"]
         // Do any additional setup after loading the view.
     }

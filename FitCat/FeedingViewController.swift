@@ -10,6 +10,8 @@ import UIKit
 import Firebase
 
 class FeedingViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchDisplayDelegate {
+
+    
     @IBOutlet weak var tableView: UITableView!
     
     var food: [Food] = []
@@ -19,8 +21,8 @@ class FeedingViewController: UIViewController, UITableViewDataSource, UITableVie
         super.viewDidLoad()
 
 
-        self.tableView.editing = true
-        self.navigationItem.rightBarButtonItem = self.editButtonItem()
+//        self.tableView.editing = true
+//        self.navigationItem.rightBarButtonItem = self.editButtonItem()
     
         let reportURL = NSURL(string: "https://fitcat.firebaseio.com/food.json")
         if let JSONData = NSData (contentsOfURL: reportURL!){
