@@ -187,7 +187,7 @@ class CatListTableViewController: UITableViewController{
         
         self.refreshControl = UIRefreshControl()
         
-        self.refreshControl?.addTarget(self, action: #selector(CatListTableViewController.handleRefresh(_:)), forControlEvents: UIControlEvents.ValueChanged)
+//        self.refreshControl?.addTarget(self, action: #selector(CatListTableViewController.handleRefresh(_:)), forControlEvents: UIControlEvents.ValueChanged)
 
         navigationItem.leftBarButtonItem = editButtonItem()
         
