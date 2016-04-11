@@ -52,7 +52,7 @@ class FeedingDetailViewController: UIViewController, UIPickerViewDataSource,UIPi
         datePicker.datePickerMode = UIDatePickerMode.Date
         date.inputView = datePicker
         
-        datePicker.addTarget(self, action: Selector("dateChanged:"), forControlEvents: UIControlEvents.ValueChanged)
+        datePicker.addTarget(self, action: #selector(self.dateChanged(_:)), forControlEvents: UIControlEvents.ValueChanged)
         
         let reposURL = NSURL(string: "https://fitcat.firebaseio.com/users.json"
                 )

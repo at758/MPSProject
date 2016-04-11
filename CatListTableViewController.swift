@@ -18,7 +18,6 @@ class CatListTableViewController: UITableViewController{
     //This variable checks for the number of key value pairs within a user entry that are not cat information
     var attributeFlag:Int = 0
     var catNames = [String]()
-    //var catImages = ["first", "second","skull","user","skull","first","skull","user","skull","user","user","first"]
     var catImages = [NSData]()
     let u_name = floginobj.f_id
     
@@ -43,9 +42,7 @@ class CatListTableViewController: UITableViewController{
    func calculateInitialValue()
    {
     
-    //print("Hurray")
     let fbRef = Firebase(url: "https://fitcat.firebaseio.com/users/" +  (u_name))
-
     let reposURL = NSURL(string: "https://fitcat.firebaseio.com/users.json")
     
     catNames.removeAll()
@@ -187,7 +184,7 @@ class CatListTableViewController: UITableViewController{
         
         self.refreshControl = UIRefreshControl()
         
-//        self.refreshControl?.addTarget(self, action: #selector(CatListTableViewController.handleRefresh(_:)), forControlEvents: UIControlEvents.ValueChanged)
+        self.refreshControl?.addTarget(self, action: #selector(CatListTableViewController.handleRefresh(_:)), forControlEvents: UIControlEvents.ValueChanged)
 
         navigationItem.leftBarButtonItem = editButtonItem()
         
@@ -205,16 +202,10 @@ class CatListTableViewController: UITableViewController{
                 }
                 else
                 {
-                    
-                    
                     self.catNames.removeAtIndex(self.deleteIndex)
                     self.tableView.reloadData()
-
                 }
             })
-            
-            
-            
         }))
         
         deleteAlert.addAction(UIAlertAction(title: "Cancel", style: .Default, handler: nil))
@@ -229,19 +220,11 @@ class CatListTableViewController: UITableViewController{
       
     }
 
-        // delete
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        
-       // print("yay")
-        
         if editingStyle == UITableViewCellEditingStyle.Delete {
-            
             //Deleting from firebase
-            //print("In here")
             deleteIndex = indexPath.row
             presentViewController(deleteAlert, animated: true, completion: nil)
-           
-            
         }
     }
     override func setEditing(editing: Bool, animated: Bool) {

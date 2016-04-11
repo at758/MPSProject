@@ -160,9 +160,9 @@ class InfoViewController: UIViewController {
         
         //Adding target to planStartDatePicker
         
-//        planStartDatePicker.addTarget(self, action: #selector(InfoViewController.dateChanged(_:)), forControlEvents: UIControlEvents.ValueChanged)
-//        
-//        
+        planStartDatePicker.addTarget(self, action: #selector(InfoViewController.dateChanged(_:)), forControlEvents: UIControlEvents.ValueChanged)
+        
+        
         if(name != nil && image != nil){
             navigationController?.title = name
             catImage?.image = UIImage(data: image!)

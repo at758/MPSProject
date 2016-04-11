@@ -9,16 +9,19 @@
 import UIKit
 import Firebase
 
-class FeedingViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchDisplayDelegate {
+class FeedingViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchResultsUpdating{
 
-    
+
     @IBOutlet weak var tableView: UITableView!
     
     var food: [Food] = []
     var filteredfood : [Food] = []
-    
+    var resultSearchController = UISearchController()
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.delegate = self
+        tableView.dataSource = self
 
 
 //        self.tableView.editing = true
@@ -50,6 +53,25 @@ class FeedingViewController: UIViewController, UITableViewDataSource, UITableVie
             }
         }
         //end
+        
+        self.resultSearchController = ({
+            
+            let controller = UISearchController(searchResultsController: nil)
+            controller.searchResultsUpdater = self
+            controller.dimsBackgroundDuringPresentation = false
+            controller.searchBar.sizeToFit()
+            controller.searchBar.barStyle = UIBarStyle.Black
+            controller.searchBar.barTintColor = UIColor.whiteColor()
+            controller.searchBar.backgroundColor = UIColor.clearColor()
+            self.tableView.tableHeaderView = controller.searchBar
+            
+            
+            return controller
+            
+            
+        })()
+        self.tableView.reloadData()
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -59,7 +81,7 @@ class FeedingViewController: UIViewController, UITableViewDataSource, UITableVie
     
     // number of row
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if tableView == searchDisplayController?.searchResultsTableView {
+        if self.resultSearchController.active{
             return filteredfood.count
         } else {
             return food.count}
@@ -74,7 +96,7 @@ class FeedingViewController: UIViewController, UITableViewDataSource, UITableVie
         let cell = self.tableView.dequeueReusableCellWithIdentifier("foodlist") as UITableViewCell!
         var myfood : Food
         
-        if tableView == searchDisplayController?.searchResultsTableView {
+        if self.resultSearchController.active {
             myfood = filteredfood[indexPath.row] as Food
         } else {
             myfood = food[indexPath.row] as Food
@@ -93,12 +115,12 @@ class FeedingViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     //Search
-    func searchDisplayController(controller: UISearchDisplayController, shouldReloadTableForSearchString searchString: String?) -> Bool {
-        filteredfood = food.filter(){
-            $0.name.rangeOfString(searchString!) != nil
-        }
-        return true
-    }
+//    func searchDisplayController(controller: UISearchDisplayController, shouldReloadTableForSearchString searchString: String?) -> Bool {
+//        filteredfood = food.filter(){
+//            $0.name.rangeOfString(searchString!) != nil
+//        }
+//        return true
+//    }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
@@ -113,4 +135,16 @@ class FeedingViewController: UIViewController, UITableViewDataSource, UITableVie
         tableView.reloadData()
     }
     
+    func updateSearchResultsForSearchController(searchController: UISearchController){
+        filteredfood.removeAll(keepCapacity: false)
+        
+        //   let searchPredicate = NSPredicate(format: "SELF CONTAINS[c] %@", searchController.searchBar.text!)
+//        let array = (food as NSArray).filteredArrayUsingPredicate(searchPredicate)
+//        filteredfood = array as! [Food]
+        filteredfood = food.filter(){
+            $0.name.rangeOfString(searchController.searchBar.text!) != nil
+        }
+        self.tableView.reloadData()
+    }
+
 }

@@ -93,7 +93,8 @@ class TrackingViewController: UIViewController, UIPickerViewDataSource,UIPickerV
             tableView.reloadData()
         }
     //hide keyboard
-        let tap : UITapGestureRecognizer = UITapGestureRecognizer(target: self,action: "dismissKeyboard")
+        let tap : UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(TrackingViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = true
         self.view.addGestureRecognizer(tap)
     }
 
