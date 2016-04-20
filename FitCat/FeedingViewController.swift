@@ -1,7 +1,5 @@
 //
 //  FeedingViewController.swift
-//
-//
 //  Created by LiMaggie on 3/22/16.
 //
 //
@@ -64,8 +62,6 @@ class FeedingViewController: UIViewController, UITableViewDataSource, UITableVie
             controller.searchBar.barTintColor = UIColor.whiteColor()
             controller.searchBar.backgroundColor = UIColor.clearColor()
             self.tableView.tableHeaderView = controller.searchBar
-            
-            
             return controller
             
             
