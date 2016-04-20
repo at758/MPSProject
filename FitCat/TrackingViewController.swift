@@ -1,10 +1,9 @@
-//
-//  TrackingViewController.swift
-//  FitCat
-//
-//  Created by LiMaggie on 3/24/16.
-//  Copyright © 2016 Akshay Tata. All rights reserved.
-//
+/*
+ TrackingViewController.swift
+ 
+ Created by Li Maggie on 3/23/16.
+ Refactored by Shunchang Bai
+ */
 
 import UIKit
 import Firebase
@@ -50,8 +49,6 @@ extension TrackingViewController: UITextFieldDelegate, UIPickerViewDataSource, U
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // picker
         let reposURL = NSURL(string: "https://fitcat.firebaseio.com/users.json")
         if let JSONData = NSData(contentsOfURL: reposURL!) {
             do {

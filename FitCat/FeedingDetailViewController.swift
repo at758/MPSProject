@@ -1,10 +1,9 @@
-//
-//  FeedingDetailViewController.swift
-//
-//  Created by LiMaggie on 3/23/16.
-//  Refactored by Shunchang Bai
-//
-//
+/* 
+ FeedingDetailViewController.swift
+ 
+ Created by Li Maggie on 3/23/16.
+ Refactored by Shunchang Bai 
+ */
 
 import UIKit
 import Firebase
