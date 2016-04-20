@@ -2,14 +2,16 @@
 //  Models.swift
 //  FitCat
 //
-//  Created by LiMaggie on 3/22/16.
+//  Created by Li Maggie on 3/22/16.
+//  Refactored by Shunchang Bai on 4/18/16.
+//
 //  Copyright © 2016 Akshay Tata. All rights reserved.
 //
 
 import UIKit
 
 class Food: NSObject {
-    var name:String
+    var name: String
     var calories: String
     var amount: String
     var fat: String
@@ -17,7 +19,8 @@ class Food: NSObject {
     var protein: String
     var sugar: String
     
-    init(name: String, calories: String, amount: String, fat:String, fiber:String, protein: String, sugar: String){
+    init(name: String, calories: String, amount: String, fat: String,
+         fiber:String, protein: String, sugar: String) {
         self.name = name
         self.calories = calories
         self.amount = amount
@@ -28,7 +31,7 @@ class Food: NSObject {
     }
 }
 
-class Feed: NSObject{
+class Feed: NSObject {
     var calories: String
     var date: String
     var foodname: String

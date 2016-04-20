@@ -48,56 +48,45 @@ class CatListTableViewController: UITableViewController{
     catNames.removeAll()
     catImages.removeAll()
 
-    if let JSONData = NSData(contentsOfURL: reposURL!)
-    {
-        do
-        {
-        if let json = try NSJSONSerialization.JSONObjectWithData(JSONData, options: []) as? NSDictionary {
-            if let reposArray = json[u_name] as? [String: AnyObject] {
-                for (cat_name, val) in reposArray {
-                    
-                    if(cat_name != "name" && cat_name != "tandccheck")
-                    {
-                    let nsstring = val["cat_image"] as? NSString
-                    let finString = nsstring as! String
-                    let datans = NSData(base64EncodedString: finString, options: NSDataBase64DecodingOptions.IgnoreUnknownCharacters)
-                        
-                   let catBCS = val["catWeightLoss"]
-                   //Checking for reduction
-                   if((catBCS!) != nil)
-                   {
-                       if((catBCS as! String) != "")
-                        {
-                            reductionLabelText.append(catBCS as! String)
-            targetDateLabelText.append(val["catTargetEndDate"] as! NSString as String)
+    if let JSONData = NSData(contentsOfURL: reposURL!) {
+        do {
+            if let json = try NSJSONSerialization.JSONObjectWithData(JSONData, options: []) as? NSDictionary {
+                if let reposArray = json[u_name] as? [String: AnyObject] {
+                    for (cat_name, val) in reposArray {
+                        if (cat_name != "name" && cat_name != "tandccheck") {
+                            let nsstring = val["cat_image"] as? NSString
+                            let finString = nsstring as! String
+                            let datans = NSData(base64EncodedString: finString,
+                                            options: NSDataBase64DecodingOptions.IgnoreUnknownCharacters)
+                            let catBCS = val["catWeightLoss"]
+                            // Checking for reduction
+                            if ((catBCS!) != nil) {
+                                if((catBCS as! String) != "") {
+                                    reductionLabelText.append(catBCS as! String)
+                                    targetDateLabelText.append(val["catTargetEndDate"] as! NSString as String)
+                                }
+                            } else {
+                                reductionLabelText.append("FitPlan not yet started")
+                                targetDateLabelText.append("Target date not calculated")
+                            }
+                            catImages.append(datans!)
+                            catNames.append(cat_name)
+                        } else {
+                            if (cat_name == "name") {
+                                TitleItem.title = "Welcome, " + (val as! String)
+                            }
+                            attributeFlag += 1
                         }
-                    }
-                    else
-                   {
-                            reductionLabelText.append("FitPlan not yet started")
-                            targetDateLabelText.append("Target date not calculated")
-                        }
-                        catImages.append(datans!)
-                        catNames.append(cat_name)
-                    }
-                    
-                    else
-                    {
-                        if(cat_name == "name")
-                        {
-                        TitleItem.title = "Welcome, " + (val as! String)
-                        }
-                        attributeFlag += 1
                     }
                 }
             }
-            }
-    //catNames.sortInPlace()
-        }catch let error as NSError{
+            // catNames.sortInPlace()
+        } catch let error as NSError {
         print(error.localizedDescription)
-    }
         
-    //Check if attributeFlag is 2, if not, then Terms and Conditions are not added
+        }
+        
+    // Check if attributeFlag is 2, if not, then Terms and Conditions are not added
         if(attributeFlag != 2)
         {
             //This variable contains the UIAlert view for the terms and conditions alert view
