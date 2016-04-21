@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -18,20 +17,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ZhK-ti-GqF">
-                                <rect key="frame" x="-9" y="0.0" width="375" height="667"/>
-                                <subviews>
-                                    <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg-1" translatesAutoresizingMaskIntoConstraints="NO" id="E6d-Dh-Ucj">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                    </imageView>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="E6d-Dh-Ucj" secondAttribute="bottom" id="ACt-1L-srM"/>
-                                    <constraint firstItem="E6d-Dh-Ucj" firstAttribute="top" secondItem="ZhK-ti-GqF" secondAttribute="top" id="Mgs-9Y-5Kw"/>
-                                    <constraint firstAttribute="trailing" secondItem="E6d-Dh-Ucj" secondAttribute="trailing" id="eM5-jR-HkU"/>
-                                    <constraint firstItem="E6d-Dh-Ucj" firstAttribute="leading" secondItem="ZhK-ti-GqF" secondAttribute="leading" id="oyy-bd-iMZ"/>
-                                </constraints>
-                            </stackView>
+                            <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg-1" translatesAutoresizingMaskIntoConstraints="NO" id="E6d-Dh-Ucj">
+                                <rect key="frame" x="-2" y="0.0" width="379" height="667"/>
+                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FitCat-1" translatesAutoresizingMaskIntoConstraints="NO" id="ASR-pM-eMr">
                                 <rect key="frame" x="106" y="404" width="163" height="45"/>
                                 <constraints>
@@ -63,8 +51,6 @@
                             <constraint firstItem="ASR-pM-eMr" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="93" id="Kwb-C9-p5u"/>
                             <constraint firstItem="ASR-pM-eMr" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="aXv-GF-FGn"/>
                             <constraint firstItem="SUJ-dd-Ppr" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="63" id="cw9-h6-YeB"/>
-                            <constraint firstItem="ZhK-ti-GqF" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="-25" id="fex-Z6-pLJ"/>
-                            <constraint firstItem="ZhK-ti-GqF" firstAttribute="bottom" secondItem="xb3-aO-Qok" secondAttribute="top" id="kRK-li-ZnN"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
