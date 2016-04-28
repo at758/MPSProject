@@ -10,21 +10,23 @@ import UIKit
 
 class Food: NSObject {
     var name:String
-    var calories: String
-    var amount: String
+    var carb: String
     var fat: String
     var fiber: String
     var protein: String
-    var sugar: String
+    var moisture: String
+    var kcalPerCap:String
+    var kcalPerKg:String
     
-    init(name: String, calories: String, amount: String, fat:String, fiber:String, protein: String, sugar: String){
+    init(name: String, carb: String,fat:String, fiber:String, protein: String, moisture: String,kcalPerCap:String, kcalPerKg:String){
         self.name = name
-        self.calories = calories
-        self.amount = amount
+        self.carb = carb
         self.fat = fat
         self.fiber = fiber
         self.protein = protein
-        self.sugar = sugar
+        self.moisture = moisture
+        self.kcalPerCap = kcalPerCap
+        self.kcalPerKg = kcalPerKg
     }
 }
 

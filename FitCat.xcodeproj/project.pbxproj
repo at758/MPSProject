@@ -395,7 +395,7 @@
 				);
 				INFOPLIST_FILE = FitCat/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = edu.cornell.FelineHealth.FitCat;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.cornell.FelineHealth.yuanyuan.FitCat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "FitCat-Bridging-Header.h";
@@ -419,7 +419,7 @@
 				);
 				INFOPLIST_FILE = FitCat/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = edu.cornell.FelineHealth.FitCat;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.cornell.FelineHealth.yuanyuan.FitCat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "FitCat-Bridging-Header.h";

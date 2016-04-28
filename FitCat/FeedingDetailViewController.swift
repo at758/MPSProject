@@ -13,15 +13,15 @@ class FeedingDetailViewController: UIViewController, UINavigationControllerDeleg
   
   /* food information */
   @IBOutlet weak var name: UILabel!
-  @IBOutlet weak var amount: UILabel!
-  @IBOutlet weak var calories: UILabel!
+  @IBOutlet weak var kcalKg: UILabel!
+  @IBOutlet weak var kcalCup: UILabel!
   @IBOutlet weak var fat: UILabel!
   @IBOutlet weak var fiber: UILabel!
-  @IBOutlet weak var sugar: UILabel!
   @IBOutlet weak var protein: UILabel!
   @IBOutlet weak var catName: UITextField!
-    
-  /* date information */
+    @IBOutlet weak var moisture: UILabel!
+    @IBOutlet weak var carb: UILabel!
+    /* date information */
   @IBOutlet weak var date: UITextField!
   var datePicker = UIDatePicker()
   let dateFormatter: NSDateFormatter = NSDateFormatter()
@@ -39,13 +39,15 @@ class FeedingDetailViewController: UIViewController, UINavigationControllerDeleg
     super.viewDidLoad()
     if (food != nil) {
       name.text = food?.name
-      amount.text = food?.amount
-      calories.text = food?.calories
+      kcalKg.text = food?.kcalPerKg
+      kcalCup.text = food?.kcalPerCap
       fat.text = food?.fat
       fiber.text = food?.fiber
-      sugar.text = food?.sugar
+      moisture.text = food?.moisture
       protein.text = food?.protein
+        carb.text = food?.carb
     }
+    /* feeding date*/
     dateFormatter.dateFormat = "M/d/yy"
     date.text = self.dateFormatter.stringFromDate(self.mydate)
     datePicker.datePickerMode = UIDatePickerMode.Date
@@ -86,7 +88,7 @@ class FeedingDetailViewController: UIViewController, UINavigationControllerDeleg
       let app = ref.childByAppendingPath(path)
       feedingRecord["date"] = date.text
       feedingRecord["foodname"] = food?.name
-      feedingRecord["calories"] = food?.calories
+      feedingRecord["calories"] = food?.kcalPerCap
       app.setValue(feedingRecord)
     }
   }
