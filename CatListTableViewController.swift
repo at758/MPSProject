@@ -12,7 +12,6 @@ import Firebase
 
 class CatListTableViewController: UITableViewController{
     
-  
     
     @IBOutlet weak var TitleItem: UINavigationItem!
     //This variable checks for the number of key value pairs within a user entry that are not cat information
@@ -28,13 +27,8 @@ class CatListTableViewController: UITableViewController{
     var tandcmessageString = "By agreeing to the terms of use for the FitCat application, you declare that neither Cornell University, The Cornell Feline Health Center, nor any of their officers, agents, employees, contractors,subcontractors, directors, or students are responsible for any illness or injury (including death) that may occur in any animal or person as a result of the use of this application, nor for any financial indebtedness that may arise as a result of its use."
     var introdiscString = "Thank you for choosing FitCat as a tool to help your kitty achieve a healthy weight and body condition. While we are confident that you will find this application very useful and informative, it is important to recognize that its use should not, in any way, take the place of regular visits to your veterinarian, who is best equipped to provide guidance in your cat’s individual health care plan."
     var deleteIndex:Int = 0
-    
     var myURL = "https://fitcat.firebaseio.com/users"
-    
     var deleteAlert = UIAlertController(title: "Delete Record", message: "Are you sure you want to delete this record?", preferredStyle: UIAlertControllerStyle.Alert)
-    
-    
-    
     @IBAction func prepareForUnwind(segue: UIStoryboardSegue) {
         
     }
@@ -69,7 +63,7 @@ class CatListTableViewController: UITableViewController{
                        if((catBCS as! String) != "")
                         {
                             reductionLabelText.append(catBCS as! String)
-            targetDateLabelText.append(val["catTargetEndDate"] as! NSString as String)
+                            targetDateLabelText.append(val["catTargetEndDate"] as! NSString as String)
                         }
                     }
                     else
@@ -80,7 +74,6 @@ class CatListTableViewController: UITableViewController{
                         catImages.append(datans!)
                         catNames.append(cat_name)
                     }
-                    
                     else
                     {
                         if(cat_name == "name")
@@ -105,11 +98,7 @@ class CatListTableViewController: UITableViewController{
             let introAlert = UIAlertController(title: "Introductory Disclaimer", message: introdiscString, preferredStyle: UIAlertControllerStyle.Alert)
             
             tandcAlert.addAction(UIAlertAction(title: "Agree", style: .Default, handler: {(action: UIAlertAction!) in
-                
-            
                 self.presentViewController(introAlert, animated: true, completion: nil)
-                
-                
                 
             }))
             
@@ -149,10 +138,8 @@ class CatListTableViewController: UITableViewController{
     }
     
     func handleRefresh(refreshControl: UIRefreshControl) {
-        
      
         calculateInitialValue()
-        
         self.tableView.reloadData()
         refreshControl.endRefreshing()
         
@@ -173,10 +160,6 @@ class CatListTableViewController: UITableViewController{
         let fbRef = Firebase(url: "https://fitcat.firebaseio.com/users/" +  (u_name))
         //Add login name
         fbRef.updateChildValues(["name" : floginobj.f_name]);
-       
-       
-
-        
         
         calculateInitialValue()
     
@@ -275,7 +258,6 @@ class CatListTableViewController: UITableViewController{
         //let plan = cell.viewWithTag(103) as! UILabel
         
         
-        
         image.image = UIImage(data:catImages[indexPath.row])
         name.text = catNames[indexPath.row]
         reduction.text = reductionLabelText[indexPath.row] + " lbs reduced"
@@ -283,19 +265,13 @@ class CatListTableViewController: UITableViewController{
         {
             reduction.textColor = UIColor(red: 1.0, green: 0.0, blue: 0.0, alpha: 1.0)
             targetAchieved.text = targetDateLabelText[indexPath.row]
-
         }
         else
         {
             reduction.textColor = UIColor(red: 0.0, green: 0.0, blue: 1.0, alpha: 1.0)
             targetAchieved.text = "Target should be achieved by " + targetDateLabelText[indexPath.row]
 
-
         }
-        //state.text = catState[indexPath.row]
-        //plan.text = catPlan[indexPath.row]
-        
-        // Configure the cell...
          return cell
         
     }
@@ -317,12 +293,13 @@ class CatListTableViewController: UITableViewController{
 
     override func viewDidAppear(animated: Bool) {
         
-        
-       // calculateInitialValue()
-        
-        //self.tableView.reloadData()
     }
-
+    
+    override func viewWillAppear(animated: Bool) {
+        print("here")
+        calculateInitialValue()
+        self.tableView.reloadData()
+    }
 
     /*
     // Override to support conditional editing of the table view.
