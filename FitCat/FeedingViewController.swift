@@ -75,16 +75,6 @@ extension FeedingViewController: UISearchBarDelegate, UISearchResultsUpdating {
                         }
                     }
                 }
-//              let foodCarb = val["Carb"] as! String
-//              let foodfat = val["Fat"] as! String
-//              let foodfiber = val["Fiber"] as! String
-//              let foodkcalPerCap = val["KcalperCup"] as! String
-//            let foodkcalPerKg = val["KcalperKg"] as!String
-//              let foodProtein = val["Protein"] as! String
-////              let foodMoisture = val["Moisture"] as! String
-//                let myfood = Food(name: food_name, carb: foodCarb, fat:foodfat, fiber:foodfiber, protein: foodProtein, moisture: foodMoisture, kcalPerCap: foodkcalPerCap,
-//                    kcalPerKg:foodkcalPerKg)
-//              food.append(myfood)
             }
           }
         }

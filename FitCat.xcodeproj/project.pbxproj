@@ -23,6 +23,7 @@
 		A48461A14125A8CB73902A9A /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2ECB57CCF803EA094EC87C5 /* Pods.framework */; };
 		D601D4351C90F36E0003C064 /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D601D4341C90F36E0003C064 /* SearchTableViewController.swift */; };
 		DD2B6FF41C87DC3D00A111C3 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2B6FF31C87DC3D00A111C3 /* InfoViewController.swift */; };
+		DD2DD6FC1CD8125F0008EA63 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2DD6FB1CD8125F0008EA63 /* SettingViewController.swift */; };
 		DD3520951CA365DD0069626C /* FeedingDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3520941CA365DD0069626C /* FeedingDetailViewController.swift */; };
 		DDC2183B1CA3A46100169845 /* TrackingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC2183A1CA3A46100169845 /* TrackingViewController.swift */; };
 		DDE161A31CA220B100FD0471 /* FeedingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE161A21CA220B100FD0471 /* FeedingViewController.swift */; };
@@ -52,6 +53,7 @@
 		A2ECB57CCF803EA094EC87C5 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D601D4341C90F36E0003C064 /* SearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
 		DD2B6FF31C87DC3D00A111C3 /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InfoViewController.swift; path = ../InfoViewController.swift; sourceTree = "<group>"; };
+		DD2DD6FB1CD8125F0008EA63 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		DD3520941CA365DD0069626C /* FeedingDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedingDetailViewController.swift; sourceTree = "<group>"; };
 		DDC2183A1CA3A46100169845 /* TrackingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackingViewController.swift; sourceTree = "<group>"; };
 		DDE161A21CA220B100FD0471 /* FeedingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedingViewController.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 				6DB10B691C67B5C4007ACEDB /* IMG_6699.png */,
 				6D533C541C657BD5008C338A /* Default@2x.png */,
 				6DB10B621C668203007ACEDB /* Main.storyboard */,
+				DD2DD6FB1CD8125F0008EA63 /* SettingViewController.swift */,
 				DDE161A41CA2480C00FD0471 /* Models.swift */,
 				6D533C581C667141008C338A /* facbooklogin.png */,
 				6DB10B6B1C67D9DC007ACEDB /* FitCat-Bridging-Header.h */,
@@ -272,6 +275,7 @@
 				6DDAF92C1C652B22006C4C78 /* AppDelegate.swift in Sources */,
 				DD3520951CA365DD0069626C /* FeedingDetailViewController.swift in Sources */,
 				DDE161A31CA220B100FD0471 /* FeedingViewController.swift in Sources */,
+				DD2DD6FC1CD8125F0008EA63 /* SettingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

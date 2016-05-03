@@ -14,21 +14,18 @@
                         <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg-1" translatesAutoresizingMaskIntoConstraints="NO" id="E6d-Dh-Ucj">
-                                <rect key="frame" x="-2" y="0.0" width="379" height="667"/>
-                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FitCat-1" translatesAutoresizingMaskIntoConstraints="NO" id="ASR-pM-eMr">
-                                <rect key="frame" x="106" y="404" width="163" height="45"/>
+                                <rect key="frame" x="218" y="370" width="163" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="45" id="1GG-Ap-g6n"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="163" id="hyN-2Q-FAd"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="SUJ-dd-Ppr">
-                                <rect key="frame" x="33" y="83" width="308" height="69"/>
+                                <rect key="frame" x="145" y="83" width="308" height="69"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="2ef-sq-C8H">
                                         <rect key="frame" x="0.0" y="0.0" width="308" height="69"/>
@@ -45,24 +42,22 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.72941176470000002" green="0.047058823530000002" blue="0.1137254902" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="SUJ-dd-Ppr" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="CnL-Vh-MtD"/>
+                            <constraint firstItem="SUJ-dd-Ppr" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" constant="-1" id="CnL-Vh-MtD"/>
                             <constraint firstItem="ASR-pM-eMr" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="93" id="Kwb-C9-p5u"/>
                             <constraint firstItem="ASR-pM-eMr" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="aXv-GF-FGn"/>
                             <constraint firstItem="SUJ-dd-Ppr" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="63" id="cw9-h6-YeB"/>
                         </constraints>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-50.5" y="289.5"/>
+            <point key="canvasLocation" x="-51" y="289"/>
         </scene>
     </scenes>
     <resources>
         <image name="FitCat-1" width="141" height="38"/>
-        <image name="bg-1" width="375" height="667"/>
         <image name="white log" width="291" height="65"/>
     </resources>
 </document>
