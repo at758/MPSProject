@@ -15,7 +15,7 @@ class CatListTableViewController: UITableViewController{
     
     @IBOutlet weak var TitleItem: UINavigationItem!
     //This variable checks for the number of key value pairs within a user entry that are not cat information
-    var attributeFlag:Int = 0
+    var attributeFlag:Bool = false
     var catNames = [String]()
     var catImages = [NSData]()
     let u_name = floginobj.f_id
@@ -30,6 +30,8 @@ class CatListTableViewController: UITableViewController{
     var myURL = "https://fitcat.firebaseio.com/users"
     var deleteAlert = UIAlertController(title: "Delete Record", message: "Are you sure you want to delete this record?", preferredStyle: UIAlertControllerStyle.Alert)
     @IBAction func prepareForUnwind(segue: UIStoryboardSegue) {
+        print("I am here now")
+        self.refreshControl?.addTarget(self, action: #selector(CatListTableViewController.handleRefresh(_:)), forControlEvents: UIControlEvents.ValueChanged)
         
     }
     
@@ -80,7 +82,15 @@ class CatListTableViewController: UITableViewController{
                         {
                         TitleItem.title = "Welcome, " + (val as! String)
                         }
-                        attributeFlag += 1
+                        
+                        else if(cat_name == "tandccheck")
+                        {
+                            attributeFlag = true
+                        }
+                        else{
+                            attributeFlag = false
+                        }
+                        
                     }
                 }
             }
@@ -90,8 +100,8 @@ class CatListTableViewController: UITableViewController{
         print(error.localizedDescription)
     }
         
-    //Check if attributeFlag is 2, if not, then Terms and Conditions are not added
-        if(attributeFlag != 2)
+    //Check if attributeFlag, if not, then Terms and Conditions are not added
+        if (attributeFlag)
         {
             //This variable contains the UIAlert view for the terms and conditions alert view
             let tandcAlert = UIAlertController(title: "Terms and Conditions", message: tandcmessageString, preferredStyle: UIAlertControllerStyle.Alert)
