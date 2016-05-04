@@ -10,7 +10,6 @@ import UIKit
 import Firebase
 
 class InfoViewController: UIViewController {
-    
     var ref = Firebase(url: "https://fitcat.firebaseio.com/users")
     var u_name = floginobj.f_id
 
@@ -33,15 +32,13 @@ class InfoViewController: UIViewController {
     
     //Change the value of slider on dragging it, It stores the body condition index for the cat
     @IBAction func bcsSlider(sender: AnyObject) {
-        
         let sliderValue =   Int(self.bcsSliderOutlet.value)
         bcsScore.text = String(sliderValue)
-        
     }
     
+    
     //Called when the date value is changed in the date picker
-    func dateChanged(datePicker: UIDatePicker)
-    {
+    func dateChanged(datePicker: UIDatePicker) {
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateStyle = NSDateFormatterStyle.ShortStyle
         planStartDateText.text = dateFormatter.stringFromDate(datePicker.date)
@@ -49,44 +46,33 @@ class InfoViewController: UIViewController {
     
     //Button Action to create Plan
     @IBAction func createfitPlan(sender: AnyObject) {
-        
         //Add months to date
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "mm-dd-yyyy"
         dateFormatter.dateStyle = NSDateFormatterStyle.ShortStyle
         let cal = NSCalendar.currentCalendar()
-
+        
         var plandateinDateFormat = dateFormatter.dateFromString(planStartDateText.text!)
         //let currDate = plandateinDateFormat
       
         //∆BCS * (.075/.01)
-        
         let bcsIntValuedelta = Int(bcsScore.text!)! - 5
         
         let totalWeight =  Double(bcsIntValuedelta) * 0.075 * Double(catWeight.text!)!
         
         let totalMonths = totalWeight / (0.01 * Double(catWeight.text!)!)
-        
-    let totalMonthsinInt = Int(round(totalMonths))
-        
-    var years:Int = 1
-    var monthCat:Int = 1
-    if (totalMonthsinInt > 12)
-    {
-        years = totalMonthsinInt/12
-        monthCat = totalMonthsinInt - (12 * years)
-        
-       plandateinDateFormat =  cal.dateByAddingUnit(.Year, value: years, toDate: plandateinDateFormat!, options: [])
-    plandateinDateFormat = cal.dateByAddingUnit(.Month, value: monthCat, toDate: plandateinDateFormat!, options: [])
-        
-
-    }
-        else
-    {
-                monthCat = totalMonthsinInt
-        plandateinDateFormat = cal.dateByAddingUnit(.Month, value: monthCat, toDate: plandateinDateFormat!, options: [])
-
-    }
+        let totalMonthsinInt = Int(round(totalMonths))
+        var years:Int = 1
+        var monthCat:Int = 1
+        if (totalMonthsinInt > 12) {
+            years = totalMonthsinInt/12
+            monthCat = totalMonthsinInt - (12 * years)
+            plandateinDateFormat =  cal.dateByAddingUnit(.Year, value: years, toDate: plandateinDateFormat!, options: [])
+            plandateinDateFormat = cal.dateByAddingUnit(.Month, value: monthCat, toDate: plandateinDateFormat!, options: [])
+        } else {
+            monthCat = totalMonthsinInt
+            plandateinDateFormat = cal.dateByAddingUnit(.Month, value: monthCat, toDate: plandateinDateFormat!, options: [])
+        }
         
         /*for id in self.view.subviews as [UIView]{
             
@@ -96,47 +82,42 @@ class InfoViewController: UIViewController {
             }
             
         }*/
+        targetDateLabel.text = dateFormatter.stringFromDate(plandateinDateFormat!)
+        startingBCSLabel.text = bcsScore.text
+        startWeightLabel.text = catWeight.text! + " lbs"
+        targetWeightLossLabel.text = String(totalWeight) + "lbs"
+        weightLossLabel.text = "0 lbs"
     
         
-    targetDateLabel.text = dateFormatter.stringFromDate(plandateinDateFormat!)
-    startingBCSLabel.text = bcsScore.text
-    startWeightLabel.text = catWeight.text! + " lbs"
-    targetWeightLossLabel.text = String(totalWeight) + "lbs"
-    weightLossLabel.text = "0 lbs"
-    
+        //Push in Firebase Database
+        ref = Firebase(url: "https://fitcat.firebaseio.com/users/" +  (u_name))
+        let app = ref.childByAppendingPath(name)
+        app.updateChildValues(["catTargetEndDate" : String(targetDateLabel.text!)])
+        app.updateChildValues(["catWeight" : catWeight.text!])
+        app.updateChildValues(["catBCS" : String(bcsScore.text!)])
+        app.updateChildValues(["catTargetWeightLoss" : String(totalWeight)])
+        app.updateChildValues(["catWeightLoss" : "0"])
         
-    //Push in Firebase Database
-    ref = Firebase(url: "https://fitcat.firebaseio.com/users/" +  (u_name))
-    let app   = ref.childByAppendingPath(name)
-    app.updateChildValues(["catTargetEndDate" : String(targetDateLabel.text!)])
-    app.updateChildValues(["catWeight" : catWeight.text!])
-    app.updateChildValues(["catBCS" : String(bcsScore.text!)])
-    app.updateChildValues(["catTargetWeightLoss" : String(totalWeight)])
-    app.updateChildValues(["catWeightLoss" : "0"])
         
-    //Notifications : Set up
-    //Daily Cat notifications
-    let notification = UILocalNotification()
+        //Notifications : Set up
+        //Daily Cat notifications
+        let notification = UILocalNotification()
         notification.fireDate = NSDate(timeIntervalSinceNow: 10)
         notification.alertTitle = "Reminder to input data"
         notification.repeatInterval  = NSCalendarUnit.Day
         notification.alertBody = "Please enter the total amount of food you fed \(catName.text!) today."
         notification.soundName = UILocalNotificationDefaultSoundName
         notification.userInfo = ["CustomField1": "w00t"]
-        //notification.category = "Cat feed details"
-        //UIApplication.sharedApplication()
         UIApplication.sharedApplication().scheduleLocalNotification(notification)
         
         //Notifications for month
         let notificationMonth = UILocalNotification()
         notificationMonth.fireDate = NSDate(timeIntervalSinceNow: 20)
         notificationMonth.alertTitle = "Reminder to weigh cat"
-        notificationMonth.repeatInterval  = NSCalendarUnit.Day
+        notificationMonth.repeatInterval  = NSCalendarUnit.Month
         notificationMonth.alertBody = "It’s that time of the month again! Please weigh \(catName.text!) and enter his weight into your database so that we can track the progress of the established weight loss plan."
         notificationMonth.soundName = UILocalNotificationDefaultSoundName
         notificationMonth.userInfo = ["CustomField1": "w00t"]
-        //notification.category = "Cat feed details"
-        //UIApplication.sharedApplication()
         UIApplication.sharedApplication().scheduleLocalNotification(notificationMonth)
         
         
