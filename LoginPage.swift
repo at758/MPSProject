@@ -26,12 +26,12 @@ class LoginPage: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate {
     
     @IBAction func NextPage(sender: UIButton) {
         
-
-       
         
         facebookLogin.logInWithReadPermissions(["email"], fromViewController: self, handler: {
             (facebookResult, facebookError) -> Void in
             facebookResult
+            
+            
            
             if facebookError != nil {
                 print("Facebook login failed. Error \(facebookError)")
@@ -39,6 +39,7 @@ class LoginPage: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate {
                 print("Facebook login was cancelled.")
             } else {
                 let accessToken = FBSDKAccessToken.currentAccessToken().tokenString
+                
                 
                 
                 self.ref.authWithOAuthProvider("facebook", token: accessToken,
