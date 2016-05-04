@@ -31,7 +31,7 @@ class LoginPage: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate {
         
         facebookLogin.logInWithReadPermissions(["email"], fromViewController: self, handler: {
             (facebookResult, facebookError) -> Void in
-            
+            facebookResult
            
             if facebookError != nil {
                 print("Facebook login failed. Error \(facebookError)")
@@ -39,12 +39,17 @@ class LoginPage: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate {
                 print("Facebook login was cancelled.")
             } else {
                 let accessToken = FBSDKAccessToken.currentAccessToken().tokenString
+                
+                
                 self.ref.authWithOAuthProvider("facebook", token: accessToken,
                     withCompletionBlock: { error, authData in
                         if error != nil {
                             print("Login failed. \(error)")
                         } else {
                             print("Logged in! \(authData)")
+                            
+                            
+                            
                             floginobj.f_id = authData.uid.substringFromIndex(authData.uid.startIndex.advancedBy(9))
                             floginobj.f_name = authData.providerData["displayName"] as! String
                            let dest = self.storyboard?.instantiateViewControllerWithIdentifier("MyTabController")

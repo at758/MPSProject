@@ -22,11 +22,11 @@ class AddCatDetailsViewController: UIViewController, UINavigationControllerDeleg
     @IBOutlet weak var catName: UITextField!
     
     //Cat Breed Data
-    var catBreedData = ["/cat-breeds/item/173":"Abyssinian","/cat-breeds/item/174":"American Bobtail","/cat-breeds/item/176":"American Bobtail SH","/cat-breeds/item/177":"American Curl","/cat-breeds/item/178":"American Curl LH","/cat-breeds/item/179":"American Shorthair","/cat-breeds/item/181":"American Wirehair","/cat-breeds/item/313":"Australian Mist","/cat-breeds/item/183":"Balinese","/cat-breeds/item/184":"Bengal","/cat-breeds/item/185":"Birman","/cat-breeds/item/187":"Bombay","/cat-breeds/item/190":"British Shorthair","/cat-breeds/item/192":"British Longhair","/cat-breeds/item/195":"Burmese","/cat-breeds/item/316":"Burmilla","/cat-breeds/item/1668":"Burmilla LH","/cat-breeds/item/197":"Chartreux","/cat-breeds/item/199":"Chausie","/cat-breeds/item/200":"Cornish Rex","/cat-breeds/item/202":"Cymric","/cat-breeds/item/206":"Devon Rex","/cat-breeds/item/347":"Egyptian Mau","/cat-breeds/item/210":"Exotic Shorthair","/cat-breeds/item/212":"Havana","/cat-breeds/item/214":"Himalayan","/cat-breeds/item/216":"Japanese Bobtail","/cat-breeds/item/218":"Japanese Bobtail LH","/cat-breeds/item/319":"Khaomanee","/cat-breeds/item/221":"Korat","/cat-breeds/item/223":"Kurilian Bobtail","/cat-breeds/item/226":"Kurilian Bobtail LH","/cat-breeds/item/228":"LaPerm","/cat-breeds/item/230":"LaPerm Shorthair","/cat-breeds/item/231":"Maine Coon","/cat-breeds/item/233":"Manx","/cat-breeds/item/236":"Munchkin","/cat-breeds/item/240":"Munchkin Longhair","/cat-breeds/item/242":"Nebelung","/cat-breeds/item/245":"Norwegian Forest","/cat-breeds/item/246":"Ocicat","/cat-breeds/item/247":"Oriental Longhair","/cat-breeds/item/248":"Oriental Shorthair","/cat-breeds/item/249":"Persian","/cat-breeds/item/250":"Peterbald","/cat-breeds/item/252":"Pixiebob","/cat-breeds/item/253":"Pixiebob Longhair","/cat-breeds/item/254":"Ragdoll","/cat-breeds/item/258":"Russian Blue","/cat-breeds/item/260":"Savannah","/cat-breeds/item/262":"Scottish Fold","/cat-breeds/item/264":"Scottish Fold LH","/cat-breeds/item/1178":"Scottish Straight","/cat-breeds/item/1182":"Scottish Straight LH","/cat-breeds/item/266":"Selkirk Rex","/cat-breeds/item/267":"Selkirk Rex Longhair","/cat-breeds/item/268":"Siamese","/cat-breeds/item/269":"Siberian","/cat-breeds/item/272":"Singapura","/cat-breeds/item/274":"Snowshoe","/cat-breeds/item/279":"Somali","/cat-breeds/item/285":"Sphynx","/cat-breeds/item/287":"Thai","/cat-breeds/item/290":"Tonkinese","/cat-breeds/item/301":"Toyger","/cat-breeds/item/305":"Turkish Angora","/cat-breeds/item/307":"Turkish Van","/cat-breeds/item/309":"Household Pet","/cat-breeds/item/311":"Household Pet Kitten","/cat-breeds/item/334":"Donskoy","/cat-breeds/item/335":"Highlander","/cat-breeds/item/337":"Highlander Shorthair","/cat-breeds/item/1207":"Lykoi","/cat-breeds/item/327":"Minuet","/cat-breeds/item/330":"Minuet Longhair","/cat-breeds/item/332":"Serengeti","/cat-breeds/item/339":"Minskin","https://en.wikipedia.org/wiki/Domestic_short-haired_cat":"Domestic Short Haired", "https://en.wikipedia.org/wiki/Domestic_long-haired_cat":"Domestic Long Haired"]
+    var catBreedData = ["":"","/cat-breeds/item/173":"Abyssinian","/cat-breeds/item/174":"American Bobtail","/cat-breeds/item/176":"American Bobtail SH","/cat-breeds/item/177":"American Curl","/cat-breeds/item/178":"American Curl LH","/cat-breeds/item/179":"American Shorthair","/cat-breeds/item/181":"American Wirehair","/cat-breeds/item/313":"Australian Mist","/cat-breeds/item/183":"Balinese","/cat-breeds/item/184":"Bengal","/cat-breeds/item/185":"Birman","/cat-breeds/item/187":"Bombay","/cat-breeds/item/190":"British Shorthair","/cat-breeds/item/192":"British Longhair","/cat-breeds/item/195":"Burmese","/cat-breeds/item/316":"Burmilla","/cat-breeds/item/1668":"Burmilla LH","/cat-breeds/item/197":"Chartreux","/cat-breeds/item/199":"Chausie","/cat-breeds/item/200":"Cornish Rex","/cat-breeds/item/202":"Cymric","/cat-breeds/item/206":"Devon Rex","/cat-breeds/item/347":"Egyptian Mau","/cat-breeds/item/210":"Exotic Shorthair","/cat-breeds/item/212":"Havana","/cat-breeds/item/214":"Himalayan","/cat-breeds/item/216":"Japanese Bobtail","/cat-breeds/item/218":"Japanese Bobtail LH","/cat-breeds/item/319":"Khaomanee","/cat-breeds/item/221":"Korat","/cat-breeds/item/223":"Kurilian Bobtail","/cat-breeds/item/226":"Kurilian Bobtail LH","/cat-breeds/item/228":"LaPerm","/cat-breeds/item/230":"LaPerm Shorthair","/cat-breeds/item/231":"Maine Coon","/cat-breeds/item/233":"Manx","/cat-breeds/item/236":"Munchkin","/cat-breeds/item/240":"Munchkin Longhair","/cat-breeds/item/242":"Nebelung","/cat-breeds/item/245":"Norwegian Forest","/cat-breeds/item/246":"Ocicat","/cat-breeds/item/247":"Oriental Longhair","/cat-breeds/item/248":"Oriental Shorthair","/cat-breeds/item/249":"Persian","/cat-breeds/item/250":"Peterbald","/cat-breeds/item/252":"Pixiebob","/cat-breeds/item/253":"Pixiebob Longhair","/cat-breeds/item/254":"Ragdoll","/cat-breeds/item/258":"Russian Blue","/cat-breeds/item/260":"Savannah","/cat-breeds/item/262":"Scottish Fold","/cat-breeds/item/264":"Scottish Fold LH","/cat-breeds/item/1178":"Scottish Straight","/cat-breeds/item/1182":"Scottish Straight LH","/cat-breeds/item/266":"Selkirk Rex","/cat-breeds/item/267":"Selkirk Rex Longhair","/cat-breeds/item/268":"Siamese","/cat-breeds/item/269":"Siberian","/cat-breeds/item/272":"Singapura","/cat-breeds/item/274":"Snowshoe","/cat-breeds/item/279":"Somali","/cat-breeds/item/285":"Sphynx","/cat-breeds/item/287":"Thai","/cat-breeds/item/290":"Tonkinese","/cat-breeds/item/301":"Toyger","/cat-breeds/item/305":"Turkish Angora","/cat-breeds/item/307":"Turkish Van","/cat-breeds/item/309":"Household Pet","/cat-breeds/item/311":"Household Pet Kitten","/cat-breeds/item/334":"Donskoy","/cat-breeds/item/335":"Highlander","/cat-breeds/item/337":"Highlander Shorthair","/cat-breeds/item/1207":"Lykoi","/cat-breeds/item/327":"Minuet","/cat-breeds/item/330":"Minuet Longhair","/cat-breeds/item/332":"Serengeti","/cat-breeds/item/339":"Minskin","https://en.wikipedia.org/wiki/Domestic_short-haired_cat":"Domestic Short Haired", "https://en.wikipedia.org/wiki/Domestic_long-haired_cat":"Domestic Long Haired"]
     
   
-    var choice = ["Yes","No"]
-    var gender = ["Male", "Female"]
+    var choice = ["Select an option below","Yes","No"]
+    var gender = ["Select an option below","Male", "Female"]
     //Creating reference to FireBase
     var ref = Firebase(url: "https://fitcat.firebaseio.com/users")
     var u_name = floginobj.f_id
@@ -60,30 +60,43 @@ class AddCatDetailsViewController: UIViewController, UINavigationControllerDeleg
         
         return 1
     }
+    
+    
   
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int{
         
         if(pickerView.tag ==  3)
         {
-            return catBreedData.count
+            return (catBreedData.count)
         }
         
-        return 2
+        return 3
     }
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
         if(pickerView.tag == 1)
         {
+           //  print("The row is \(row)")
+            if(row != 0)
+            {
              catGender.text = gender[row]
+            }
         }
         else if(pickerView.tag == 3)
         {
-            catBreed.text = Array(catBreedData.values).sort()[row]
+            var sorbreedval = Array(catBreedData.values).sort()
+            sorbreedval.removeAtIndex(0)
+            sorbreedval.insert("Select an option", atIndex: 0)
+            catBreed.text = sorbreedval[row]
         }
         else
         {
+            if(row != 0)
+            {
+
             catStatus.text = choice[row]
+            }
         }
         
     }
@@ -204,6 +217,9 @@ class AddCatDetailsViewController: UIViewController, UINavigationControllerDeleg
         catBreedSelection.tag = 3
         
         catGender.inputView = picker2
+        print("Joe",  picker2.hidden)
+        print("Pom",  picker2.selectedRowInComponent(0))
+        
         catStatus.inputView = picker1
         catBreed.inputView = catBreedSelection
         
@@ -278,8 +294,9 @@ class AddCatDetailsViewController: UIViewController, UINavigationControllerDeleg
     
  
     }
-    
-
+    override func viewWillAppear(animated: Bool) {
+        picker2.selectRow(0, inComponent: 0, animated: false)
+    }
 
 }
 
