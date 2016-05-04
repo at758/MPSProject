@@ -15,7 +15,7 @@ class CatListTableViewController: UITableViewController{
     
     @IBOutlet weak var TitleItem: UINavigationItem!
     //This variable checks for the number of key value pairs within a user entry that are not cat information
-    var attributeFlag:Int = 0
+    var attributeFlag:Bool = false
     var catNames = [String]()
     var catImages = [NSData]()
     let u_name = floginobj.f_id
@@ -85,10 +85,10 @@ class CatListTableViewController: UITableViewController{
                         
                         else if(cat_name == "tandccheck")
                         {
-                            attributeFlag = 1
+                            attributeFlag = true
                         }
                         else{
-                            attributeFlag = 0
+                            attributeFlag = false
                         }
                         
                     }
@@ -100,8 +100,8 @@ class CatListTableViewController: UITableViewController{
         print(error.localizedDescription)
     }
         
-    //Check if attributeFlag is 2, if not, then Terms and Conditions are not added
-        if(attributeFlag != 1)
+    //Check if attributeFlag, if not, then Terms and Conditions are not added
+        if (attributeFlag)
         {
             //This variable contains the UIAlert view for the terms and conditions alert view
             let tandcAlert = UIAlertController(title: "Terms and Conditions", message: tandcmessageString, preferredStyle: UIAlertControllerStyle.Alert)
