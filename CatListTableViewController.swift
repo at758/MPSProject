@@ -101,7 +101,7 @@ class CatListTableViewController: UITableViewController{
     }
         
     //Check if attributeFlag, if not, then Terms and Conditions are not added
-        if (attributeFlag)
+        if (attributeFlag != true)
         {
             //This variable contains the UIAlert view for the terms and conditions alert view
             let tandcAlert = UIAlertController(title: "Terms and Conditions", message: tandcmessageString, preferredStyle: UIAlertControllerStyle.Alert)
