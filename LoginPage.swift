@@ -18,18 +18,21 @@ class FBCred {
 
 var floginobj = FBCred()    //floginobj
 
+var notificationflag = 0    //This is a flag to check if a notification was received or not
+
 class LoginPage: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate {
 
      let ref = Firebase(url: "https://fitcat.firebaseio.com/")
      let facebookLogin = FBSDKLoginManager()
    
+    @IBOutlet weak var ActIndicator: UIActivityIndicatorView!
     
     @IBAction func NextPage(sender: UIButton) {
         
         
         facebookLogin.logInWithReadPermissions(["email"], fromViewController: self, handler: {
             (facebookResult, facebookError) -> Void in
-            facebookResult
+            
             
             
            
@@ -40,7 +43,7 @@ class LoginPage: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate {
             } else {
                 let accessToken = FBSDKAccessToken.currentAccessToken().tokenString
                 
-                
+                self.ActIndicator.startAnimating()
                 
                 self.ref.authWithOAuthProvider("facebook", token: accessToken,
                     withCompletionBlock: { error, authData in
@@ -53,8 +56,30 @@ class LoginPage: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate {
                             
                             floginobj.f_id = authData.uid.substringFromIndex(authData.uid.startIndex.advancedBy(9))
                             floginobj.f_name = authData.providerData["displayName"] as! String
-                           let dest = self.storyboard?.instantiateViewControllerWithIdentifier("MyTabController")
+                            
+                            //Check if the notificationflag = 1
+                            let dest = self.storyboard?.instantiateViewControllerWithIdentifier("MyTabController")
+                            //Initialize an activity indicator object
+                            
+                            
+                            
+                            if(notificationflag == 1)
+                            {
+                                
+                                
+                                self.presentViewController(dest!, animated: true, completion: nil)
+                                
+                                
+                               let getdest = dest
+                               (getdest as! UITabBarController).selectedIndex = 1
+                            }
+                            else
+                            {
+                           
+                            
                             self.presentViewController(dest!, animated: true, completion: nil)
+                            self.ActIndicator.stopAnimating()
+                            }
                            
                         }
                 })
@@ -121,11 +146,34 @@ class LoginPage: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate {
             ref.unauth();
     }
     
+    func localNotificationReceived(){
+        
+        let tc = self.parentViewController?.parentViewController
+        if tc as? UITabBarController != nil {
+            // var tababarController = self.window!.rootViewController as UITabBarController
+            //tababarController.selectedIndex = 1
+            
+            (tc as! UITabBarController).selectedIndex = 1
+            print("is a tab bar controller")
+        }
+        
+        notificationflag = 1
+        
+        
+    }
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        notificationflag = 0
         GIDSignIn.sharedInstance().delegate = self
         GIDSignIn.sharedInstance().uiDelegate = self
-        facebookLogin.logOut()
+        //facebookLogin.logOut()
+        
+        //Listen to the notification
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(LoginPage.localNotificationReceived), name: "localnot", object: nil)
+        
+        
                // Do any additional setup after loading the view.
     }
 

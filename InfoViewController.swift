@@ -99,25 +99,36 @@ class InfoViewController: UIViewController {
         app.updateChildValues(["catWeightLoss" : "0"])
         
         
+        //Checking if notification settings exist
+        guard let settings = UIApplication.sharedApplication().currentUserNotificationSettings() else { return }
+        
+        if settings.types == .None {
+            let ac = UIAlertController(title: "Can't schedule", message: "Either we don't have permission to schedule notifications, or we haven't asked yet.", preferredStyle: .Alert)
+            ac.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+            presentViewController(ac, animated: true, completion: nil)
+            return
+        }
+        
+        
         //Notifications : Set up
         //Daily Cat notifications
         let notification = UILocalNotification()
-        notification.fireDate = NSDate(timeIntervalSinceNow: 10)
+        notification.fireDate = NSDate(timeIntervalSinceNow: 3600 * 12)
         notification.alertTitle = "Reminder to input data"
-        notification.repeatInterval  = NSCalendarUnit.Day
+        notification.repeatInterval  = NSCalendarUnit.Minute
         notification.alertBody = "Please enter the total amount of food you fed \(catName.text!) today."
         notification.soundName = UILocalNotificationDefaultSoundName
-        notification.userInfo = ["CustomField1": "w00t"]
+        notification.userInfo = ["NotifTag": "forCatFood"]
         UIApplication.sharedApplication().scheduleLocalNotification(notification)
         
-        //Notifications for month
+        //Notifications for Week
         let notificationMonth = UILocalNotification()
-        notificationMonth.fireDate = NSDate(timeIntervalSinceNow: 20)
+        notificationMonth.fireDate = NSDate(timeInterval: 3600 * 12, sinceDate: NSDate())
         notificationMonth.alertTitle = "Reminder to weigh cat"
-        notificationMonth.repeatInterval  = NSCalendarUnit.Month
+        notificationMonth.repeatInterval  = NSCalendarUnit.WeekOfMonth
         notificationMonth.alertBody = "It’s that time of the month again! Please weigh \(catName.text!) and enter his weight into your database so that we can track the progress of the established weight loss plan."
         notificationMonth.soundName = UILocalNotificationDefaultSoundName
-        notificationMonth.userInfo = ["CustomField1": "w00t"]
+       notificationMonth.userInfo = ["NotifTag": "forCatWeight"]
         UIApplication.sharedApplication().scheduleLocalNotification(notificationMonth)
         
         

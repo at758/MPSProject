@@ -33,6 +33,9 @@ class CatListTableViewController: UITableViewController{
         print("I am here now")
         self.refreshControl?.addTarget(self, action: #selector(CatListTableViewController.handleRefresh(_:)), forControlEvents: UIControlEvents.ValueChanged)
         
+        //Change the tab bar item to home
+        (self.parentViewController as! UITabBarController).tabBar.selectedItem?.title = "home"
+        
     }
     
    func calculateInitialValue()
@@ -160,6 +163,28 @@ class CatListTableViewController: UITableViewController{
         performSegueWithIdentifier("addCatDetails", sender: sender)
     }
     
+    func localNotificationReceived(){
+        
+       let tc = self.parentViewController?.parentViewController
+        if tc as? UITabBarController != nil {
+           // var tababarController = self.window!.rootViewController as UITabBarController
+            //tababarController.selectedIndex = 1
+            
+            (tc as! UITabBarController).selectedIndex = 1
+            print("is a tab bar controller")
+        }
+
+        
+        
+       /* let fc = FeedingViewController()
+        self.presentViewController(fc, animated: true, completion: nil)
+       */
+        
+    }
+    
+    deinit{
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -181,7 +206,8 @@ class CatListTableViewController: UITableViewController{
 
         navigationItem.leftBarButtonItem = editButtonItem()
         
-        
+        //Listen to the notification
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(CatListTableViewController.localNotificationReceived), name: "localnot", object: nil)
         
         deleteAlert.addAction(UIAlertAction(title: "Delete", style: .Default, handler: {(action: UIAlertAction!) in
             
@@ -307,6 +333,10 @@ class CatListTableViewController: UITableViewController{
     
     override func viewWillAppear(animated: Bool) {
         print("here")
+        
+        //Change the tab bar item to home
+        (self.parentViewController?.parentViewController as! UITabBarController).tabBar.selectedItem?.title = "home"
+        
         calculateInitialValue()
         self.tableView.reloadData()
     }

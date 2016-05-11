@@ -44,9 +44,17 @@
                                     <segue destination="PG1-2d-2CM" kind="modal" identifier="catList" id="djR-sm-07a"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" id="tRe-DU-MYe">
+                                <rect key="frame" x="140" y="265" width="37" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="color" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.46274509803921571" green="0.17647058823529413" blue="0.3411764705882353" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <connections>
+                        <outlet property="ActIndicator" destination="tRe-DU-MYe" id="z3Q-Vc-yTH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wV5-dV-zQV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -127,21 +135,21 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="301" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3/22/16" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gRy-AJ-PdF">
-                                                    <rect key="frame" x="8" y="-1" width="56" height="54.5"/>
+                                                    <rect key="frame" x="8" y="-1" width="56" height="55"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="303" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Cl5-Qm-yRI">
-                                                    <rect key="frame" x="269" y="0.0" width="50" height="54.5"/>
+                                                    <rect key="frame" x="269" y="0.0" width="50" height="55"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="302" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FoodName" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="h3d-fJ-vvk">
-                                                    <rect key="frame" x="63" y="0.0" width="207" height="54.5"/>
+                                                    <rect key="frame" x="63" y="0.0" width="207" height="55"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -188,7 +196,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="foodlist" rowHeight="76" id="NAd-38-6B9">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="76"/>
+                                        <rect key="frame" x="0.0" y="92" width="320" height="76"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NAd-38-6B9" id="VnC-Cg-Adf">
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="75"/>
@@ -440,7 +448,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V4b-7Y-6Mh" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="HgF-uU-EkU" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="171" y="18"/>
+            <point key="canvasLocation" x="189" y="-18"/>
         </scene>
         <!--MyTabController-->
         <scene sceneID="OBp-Db-7IY">
@@ -646,7 +654,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Cb-qh-B3V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-683.5" y="-991.5"/>
+            <point key="canvasLocation" x="-736" y="-1005"/>
         </scene>
         <!--Cat Info-->
         <scene sceneID="Ii3-yI-5l2">
@@ -972,7 +980,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="40z-u3-Cd4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-702.5" y="138.5"/>
+            <point key="canvasLocation" x="-797" y="-18"/>
         </scene>
         <!--Tracking-->
         <scene sceneID="Pux-CU-dz1">

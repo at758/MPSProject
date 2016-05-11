@@ -26,6 +26,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let settings = UIUserNotificationSettings(forTypes: [.Badge, .Alert, .Sound], categories: nil)
         application.registerUserNotificationSettings(settings)
         
+        let options = launchOptions
+       // let mainstrybrd:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        if (options != nil) {
+            let notification = options![UIApplicationLaunchOptionsLocalNotificationKey] as? UILocalNotification
+            
+            if(notification != nil)
+            {
+                let userinfo = notification?.userInfo!["NotifTag"]
+                print ("Hello ", userinfo as! String)
+                if(userinfo as! String == "forCatFood")
+                {
+                    NSNotificationCenter.defaultCenter().postNotificationName("localnot", object: nil, userInfo: userinfo as! NSObject as? [NSObject : AnyObject])
+                }
+                else
+                {
+                    
+                }
+            }
+        }
+        
         return true      //return true
         
     }
@@ -56,6 +77,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return FBSDKApplicationDelegate.sharedInstance().application(
             application, openURL: url, sourceApplication: sourceApplication, annotation: annotation) ||
             GIDSignIn.sharedInstance().handleURL(url, sourceApplication: sourceApplication, annotation: annotation)
+    }
+    
+    func application(application: UIApplication, didReceiveLocalNotification notification: UILocalNotification) {
+        
+        print("Received Notifiation")
+        
+        let userinfo = notification.userInfo!["NotifTag"]
+        print ("Hello ", userinfo as! String)
+        if(userinfo as! String == "forCatFood")
+        {
+            NSNotificationCenter.defaultCenter().postNotificationName("localnot", object: nil, userInfo: userinfo as! NSObject as? [NSObject : AnyObject])
+        }
+        else
+        {
+            
+        }
+
+        
+        
+        
     }
 }
 
