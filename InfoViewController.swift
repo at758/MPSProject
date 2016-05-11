@@ -115,7 +115,7 @@ class InfoViewController: UIViewController {
         let notification = UILocalNotification()
         notification.fireDate = NSDate(timeIntervalSinceNow: 3600 * 12)
         notification.alertTitle = "Reminder to input data"
-        notification.repeatInterval  = NSCalendarUnit.Minute
+        notification.repeatInterval  = NSCalendarUnit.Day
         notification.alertBody = "Please enter the total amount of food you fed \(catName.text!) today."
         notification.soundName = UILocalNotificationDefaultSoundName
         notification.userInfo = ["NotifTag": "forCatFood"]
