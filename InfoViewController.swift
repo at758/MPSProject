@@ -113,7 +113,7 @@ class InfoViewController: UIViewController {
         //Notifications : Set up
         //Daily Cat notifications
         let notification = UILocalNotification()
-        notification.fireDate = NSDate(timeIntervalSinceNow: 3600 * 12)
+        notification.fireDate = NSDate(timeIntervalSinceNow: 10)
         notification.alertTitle = "Reminder to input data"
         notification.repeatInterval  = NSCalendarUnit.Day
         notification.alertBody = "Please enter the total amount of food you fed \(catName.text!) today."

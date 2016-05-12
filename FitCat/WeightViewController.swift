@@ -33,7 +33,7 @@ class WeightViewController: UIViewController, UINavigationControllerDelegate,
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     let cell = self.tableView.dequeueReusableCellWithIdentifier("feedcell") as UITableViewCell!
     // var curWeight : WeightRecord
-    var curWeight = weights[indexPath.row] as WeightRecord
+    let curWeight = weights[indexPath.row] as WeightRecord
     
     let feedDate = cell.viewWithTag(301) as! UILabel
     // let feedName = cell.viewWithTag(302) as! UILabel
@@ -90,11 +90,11 @@ class WeightViewController: UIViewController, UINavigationControllerDelegate,
         var w = try String(contentsOfURL: reposURL1!)
         if (w != "null" && w != "") {
           w = w.stringByReplacingOccurrencesOfString("\"", withString: "", options: NSStringCompareOptions.LiteralSearch, range: nil)
-          var element = WeightRecord(date: "", weight: w + " lbs");
+          let element = WeightRecord(date: "", weight: w + " lbs");
           if let json = try NSJSONSerialization.JSONObjectWithData(JSONData2, options: []) as? NSDictionary {
             if let reposArray2 = json as? [String: AnyObject] {
               for (_, val) in reposArray2 {
-                var feedDate = val["date"] as! String
+                let feedDate = val["date"] as! String
                 if (feedDate != "") {
                   element.date = feedDate
                 }
