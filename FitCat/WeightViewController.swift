@@ -3,7 +3,6 @@
 //  FitCat
 //
 //  Created by Shunchang on 5/12/16.
-//  Copyright © 2016 Akshay Tata. All rights reserved.
 //
 
 import UIKit
@@ -11,7 +10,8 @@ import Firebase
 
 class WeightViewController: UIViewController, UINavigationControllerDelegate,
   UITableViewDataSource, UITableViewDelegate,
-  UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
+  UITextFieldDelegate,
+  UIPickerViewDataSource, UIPickerViewDelegate {
   
   /* cat information */
   var catNameArr = [String]()
@@ -19,14 +19,36 @@ class WeightViewController: UIViewController, UINavigationControllerDelegate,
   var u_name = floginobj.f_id
   var picker1 = UIPickerView()
   
-  /* weight record*/
+  /* feeding information */
   var weights: [WeightRecord] = []
   
   @IBOutlet weak var catName: UITextField!
   @IBOutlet weak var tableView: UITableView!
   
+  // MARK: - TableView
+  func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return weights.count
+  }
+  
+  func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    let cell = self.tableView.dequeueReusableCellWithIdentifier("feedcell") as UITableViewCell!
+    // var curWeight : WeightRecord
+    var curWeight = weights[indexPath.row] as WeightRecord
+    
+    let feedDate = cell.viewWithTag(301) as! UILabel
+    // let feedName = cell.viewWithTag(302) as! UILabel
+    let feedCalories = cell.viewWithTag(303) as! UILabel
+    
+    feedDate.text = curWeight.date
+    // feedName.text = myfeed.foodname
+    feedCalories.text = curWeight.weight
+    return cell
+  }
+  
   override func viewDidLoad() {
     super.viewDidLoad()
+    tableView.dataSource = self
+    tableView.delegate = self
     let reposURL = NSURL(string: "https://fitcat.firebaseio.com/users.json")
     if let JSONData = NSData(contentsOfURL: reposURL!) {
       do {
@@ -50,33 +72,56 @@ class WeightViewController: UIViewController, UINavigationControllerDelegate,
     picker1.dataSource = self
     catName.delegate = self
     catName.inputView = picker1
+    updateFeed()
   }
   
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
-  }
+  // update feed information
+  func updateFeed() {
+    let name = catName.text
+    weights.removeAll()
+    var str = "https://fitcat.firebaseio.com/users/" +  (u_name) + "/" + (name!)
+    str = str.stringByReplacingOccurrencesOfString(" ", withString: "%20")
   
-  // MARK: - TableView
-  func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return weights.count
-  }
-  
-  func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = self.tableView.dequeueReusableCellWithIdentifier("cell") as UITableViewCell!
-    var myweight : WeightRecord
-    myweight = weights[indexPath.row] as WeightRecord
+    let reposURL1 = NSURL(string: str + "/catWeight.json")
+    let reposURL2 = NSURL(string: str + "/feeding.json")
     
-    let Date = cell.viewWithTag(301) as! UILabel
-    let Weight = cell.viewWithTag(302) as! UILabel
-    
-    Date.text = myweight.date
-    Weight.text = myweight.weight
-    return cell
+    if let JSONData2 = NSData(contentsOfURL: reposURL2!) {
+      do {
+        var w = try String(contentsOfURL: reposURL1!)
+        if (w != "null" && w != "") {
+          w = w.stringByReplacingOccurrencesOfString("\"", withString: "", options: NSStringCompareOptions.LiteralSearch, range: nil)
+          var element = WeightRecord(date: "", weight: w + " lbs");
+          if let json = try NSJSONSerialization.JSONObjectWithData(JSONData2, options: []) as? NSDictionary {
+            if let reposArray2 = json as? [String: AnyObject] {
+              for (_, val) in reposArray2 {
+                var feedDate = val["date"] as! String
+                if (feedDate != "") {
+                  element.date = feedDate
+                }
+              }
+            }
+          }
+          weights.append(element)
+        }
+      } catch let error as NSError {
+        print("Error: \(error)")
+      }
+      tableView.reloadData()
+    }
+  
+    // to hide keyboard
+    let tap : UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(TrackingViewController.dismissKeyboard))
+    tap.cancelsTouchesInView = true
+    self.view.addGestureRecognizer(tap)
   }
   
   func dismissKeyboard() {
     self.view.endEditing(true)
+    updateFeed()
+  }
+  
+  override func didReceiveMemoryWarning() {
+    super.didReceiveMemoryWarning()
   }
   
   // Mark: pickers
