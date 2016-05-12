@@ -30,14 +30,25 @@ class Food: NSObject {
     }
 }
 
-class Feed: NSObject{
-    var calories: String
-    var date: String
-    var foodname: String
-    
-    init(calories: String, date: String, foodname: String) {
-        self.calories = calories
-        self.date = date
-        self.foodname = foodname
-    }
+class Feed: NSObject {
+  var calories: String
+  var date: String
+  var foodname: String
+  
+  init(calories: String, date: String, foodname: String) {
+    self.calories = calories
+    self.date = date
+    self.foodname = foodname
+  }
 }
+
+class WeightRecord: NSObject {
+  var date: String
+  var weight: String
+  
+  init(date: String, weight: String) {
+    self.date = date
+    self.weight = weight
+  }
+}
+

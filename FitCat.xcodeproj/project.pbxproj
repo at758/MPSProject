@@ -22,6 +22,7 @@
 		6DDAF9381C652B22006C4C78 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DDAF9361C652B22006C4C78 /* LaunchScreen.storyboard */; };
 		A48461A14125A8CB73902A9A /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2ECB57CCF803EA094EC87C5 /* Pods.framework */; };
 		D601D4351C90F36E0003C064 /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D601D4341C90F36E0003C064 /* SearchTableViewController.swift */; };
+		D6CB42681CE4D0B50024B919 /* WeightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CB42671CE4D0B50024B919 /* WeightViewController.swift */; };
 		DD2B6FF41C87DC3D00A111C3 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2B6FF31C87DC3D00A111C3 /* InfoViewController.swift */; };
 		DD2DD6FC1CD8125F0008EA63 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2DD6FB1CD8125F0008EA63 /* SettingViewController.swift */; };
 		DD3520951CA365DD0069626C /* FeedingDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3520941CA365DD0069626C /* FeedingDetailViewController.swift */; };
@@ -52,6 +53,7 @@
 		8EAAD7D5DF5B1B393A59953F /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		A2ECB57CCF803EA094EC87C5 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D601D4341C90F36E0003C064 /* SearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
+		D6CB42671CE4D0B50024B919 /* WeightViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeightViewController.swift; sourceTree = "<group>"; };
 		DD2B6FF31C87DC3D00A111C3 /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InfoViewController.swift; path = ../InfoViewController.swift; sourceTree = "<group>"; };
 		DD2DD6FB1CD8125F0008EA63 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		DD3520941CA365DD0069626C /* FeedingDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedingDetailViewController.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 		6DDAF92A1C652B22006C4C78 /* FitCat */ = {
 			isa = PBXGroup;
 			children = (
+				D6CB42671CE4D0B50024B919 /* WeightViewController.swift */,
 				DD3520941CA365DD0069626C /* FeedingDetailViewController.swift */,
 				DDC2183A1CA3A46100169845 /* TrackingViewController.swift */,
 				DDE161A21CA220B100FD0471 /* FeedingViewController.swift */,
@@ -171,7 +174,7 @@
 				TargetAttributes = {
 					6DDAF9271C652B21006C4C78 = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = 37CNT232NG;
+						DevelopmentTeam = 9WEW4LG4VB;
 					};
 				};
 			};
@@ -275,6 +278,7 @@
 				6DDAF92C1C652B22006C4C78 /* AppDelegate.swift in Sources */,
 				DD3520951CA365DD0069626C /* FeedingDetailViewController.swift in Sources */,
 				DDE161A31CA220B100FD0471 /* FeedingViewController.swift in Sources */,
+				D6CB42681CE4D0B50024B919 /* WeightViewController.swift in Sources */,
 				DD2DD6FC1CD8125F0008EA63 /* SettingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
