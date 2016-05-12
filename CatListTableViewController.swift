@@ -32,9 +32,7 @@ class CatListTableViewController: UITableViewController{
     @IBAction func prepareForUnwind(segue: UIStoryboardSegue) {
         print("I am here now")
         self.refreshControl?.addTarget(self, action: #selector(CatListTableViewController.handleRefresh(_:)), forControlEvents: UIControlEvents.ValueChanged)
-        
-        //Change the tab bar item to home
-        (self.parentViewController as! UITabBarController).tabBar.selectedItem?.title = "home"
+       
         
     }
     
