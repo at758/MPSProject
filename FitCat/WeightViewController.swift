@@ -85,12 +85,24 @@ class WeightViewController: UIViewController, UINavigationControllerDelegate,
     let reposURL1 = NSURL(string: str + "/catWeight.json")
     let reposURL2 = NSURL(string: str + "/feeding.json")
     
-    if let JSONData2 = NSData(contentsOfURL: reposURL2!) {
+    if let JSONData1 = NSData(contentsOfURL: reposURL1!) {
       do {
         var w = try String(contentsOfURL: reposURL1!)
         if (w != "null" && w != "") {
           w = w.stringByReplacingOccurrencesOfString("\"", withString: "", options: NSStringCompareOptions.LiteralSearch, range: nil)
-          var element = WeightRecord(date: "", weight: w + " lbs");
+          print(w)
+          
+          let currentDate = NSDate()
+          let dateFormatter = NSDateFormatter()
+          dateFormatter.locale = NSLocale.currentLocale()
+          dateFormatter.dateStyle = NSDateFormatterStyle.FullStyle
+          var convertedDate = dateFormatter.stringFromDate(currentDate)
+          
+          dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
+          convertedDate = dateFormatter.stringFromDate(currentDate)
+          
+          var element = WeightRecord(date: convertedDate, weight: w + " lbs");
+          /*
           if let json = try NSJSONSerialization.JSONObjectWithData(JSONData2, options: []) as? NSDictionary {
             if let reposArray2 = json as? [String: AnyObject] {
               for (_, val) in reposArray2 {
@@ -100,7 +112,7 @@ class WeightViewController: UIViewController, UINavigationControllerDelegate,
                 }
               }
             }
-          }
+          }*/
           weights.append(element)
         }
       } catch let error as NSError {
