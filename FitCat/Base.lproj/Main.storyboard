@@ -13,12 +13,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg-1" id="Cxb-EE-S2H">
-                                <rect key="frame" x="-43" y="-5" width="403" height="672"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.72941176470588232" green="0.047058823529411764" blue="0.11372549019607843" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="white log" id="Lwv-ZF-gAE">
                                 <rect key="frame" x="6" y="71" width="308" height="69"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
@@ -50,7 +44,7 @@
                                 <color key="color" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>
                         </subviews>
-                        <color key="backgroundColor" red="0.46274509803921571" green="0.17647058823529413" blue="0.3411764705882353" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.74509803919999995" green="0.015686274510000001" blue="0.090196078430000007" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
                         <outlet property="ActIndicator" destination="tRe-DU-MYe" id="z3Q-Vc-yTH"/>
@@ -693,6 +687,7 @@
                             <slider opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="5" minValue="0.0" maxValue="9" id="h33-ja-IsI">
                                 <rect key="frame" x="94" y="209" width="133" height="31"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <color key="minimumTrackTintColor" red="0.93333333330000001" green="0.0" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <action selector="bcsSlider:" destination="1aF-XI-le4" eventType="valueChanged" id="OvN-r7-LB4"/>
                                 </connections>
@@ -1133,7 +1128,6 @@
         <image name="Feeding_selected" width="26" height="21"/>
         <image name="FitCat-1" width="141" height="38"/>
         <image name="IMG_6699.png" width="160" height="148"/>
-        <image name="bg-1" width="375" height="667"/>
         <image name="cat1" width="81" height="75"/>
         <image name="down" width="24" height="24"/>
         <image name="email-1" width="289" height="56"/>
