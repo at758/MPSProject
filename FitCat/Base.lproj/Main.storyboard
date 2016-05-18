@@ -939,7 +939,7 @@
                         </userDefinedRuntimeAttributes>
                     </tabBarItem>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="uqR-4u-nK3">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="uqR-4u-nK3">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -966,7 +966,7 @@
                         </userDefinedRuntimeAttributes>
                     </tabBarItem>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="XvL-2L-Cmj">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="XvL-2L-Cmj">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.98039215690000003" green="0.0" blue="0.066666666669999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -987,10 +987,17 @@
         <scene sceneID="HPf-rS-wv8">
             <objects>
                 <navigationController id="fJp-Di-ncS" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Weight" image="scale 2" selectedImage="scale-selected" id="UNA-8w-Hp9"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="7AU-CR-GzZ">
+                    <tabBarItem key="tabBarItem" title="Weight" image="scale 2" selectedImage="scale-selected" id="UNA-8w-Hp9">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" red="0.93333333330000001" green="0.0" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="7AU-CR-GzZ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.93333333330000001" green="0.0" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="2PO-tO-7Fc" kind="relationship" relationship="rootViewController" id="0Jo-NI-Vjb"/>
@@ -1000,7 +1007,7 @@
             </objects>
             <point key="canvasLocation" x="-1732" y="106"/>
         </scene>
-        <!--Weight View Controller-->
+        <!--Weight Tracking-->
         <scene sceneID="XAN-f9-v0s">
             <objects>
                 <viewController id="2PO-tO-7Fc" customClass="WeightViewController" customModule="FitCat" customModuleProvider="target" sceneMemberID="viewController">
@@ -1058,7 +1065,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="a8Y-V0-73G"/>
+                    <navigationItem key="navigationItem" title="Weight Tracking" id="a8Y-V0-73G"/>
                     <connections>
                         <outlet property="catName" destination="AXI-89-Fis" id="htY-WX-8Vu"/>
                         <outlet property="tableView" destination="a1s-ds-UFM" id="dha-3O-rcA"/>
@@ -1080,7 +1087,7 @@
                         </userDefinedRuntimeAttributes>
                     </tabBarItem>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="kpI-1f-Ofn">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="kpI-1f-Ofn">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.95686274510000002" green="0.0" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
@@ -1106,7 +1113,7 @@
                         </userDefinedRuntimeAttributes>
                     </tabBarItem>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gcB-a8-NhN">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="gcB-a8-NhN">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.95686274510000002" green="0.0" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
