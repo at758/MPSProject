@@ -692,161 +692,34 @@
                                     <action selector="bcsSlider:" destination="1aF-XI-le4" eventType="valueChanged" id="OvN-r7-LB4"/>
                                 </connections>
                             </slider>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" id="n3o-hz-Xx5">
-                                <rect key="frame" x="5" y="375" width="350" height="105"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" id="zDU-DN-vh9">
-                                        <rect key="frame" x="0.0" y="0.0" width="350" height="105"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                        <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" id="cte-oa-KBd">
-                                                <rect key="frame" x="0.0" y="0.0" width="350" height="105"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                                <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" id="aIf-Bv-jd1">
-                                                        <rect key="frame" x="0.0" y="0.0" width="350" height="105"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                                        <subviews>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" id="K3b-DU-CAv">
-                                                                <rect key="frame" x="0.0" y="0.0" width="350" height="105"/>
-                                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                                                <subviews>
-                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" id="oky-T6-LVR">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="350" height="105"/>
-                                                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                                                        <subviews>
-                                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" id="LXw-nP-g8U">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="350" height="105"/>
-                                                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                                                                <subviews>
-                                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" id="NS0-EI-kXk">
-                                                                                        <rect key="frame" x="0.0" y="0.0" width="309" height="21"/>
-                                                                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                                                                        <subviews>
-                                                                                            <stackView opaque="NO" contentMode="scaleToFill" id="21w-Rx-QV6">
-                                                                                                <rect key="frame" x="0.0" y="0.0" width="309" height="21"/>
-                                                                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                                                                                <subviews>
-                                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current target completion:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lQU-rf-iLv">
-                                                                                                        <rect key="frame" x="0.0" y="0.0" width="203" height="21"/>
-                                                                                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                                                                        <nil key="highlightedColor"/>
-                                                                                                    </label>
-                                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="TL0-Ev-9b4">
-                                                                                                        <rect key="frame" x="203" y="0.0" width="106" height="21"/>
-                                                                                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                                                                        <nil key="highlightedColor"/>
-                                                                                                    </label>
-                                                                                                </subviews>
-                                                                                            </stackView>
-                                                                                        </subviews>
-                                                                                    </stackView>
-                                                                                    <stackView opaque="NO" contentMode="scaleToFill" id="fOx-C8-Hn8">
-                                                                                        <rect key="frame" x="0.0" y="21" width="231" height="21"/>
-                                                                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                                                                        <subviews>
-                                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Starting BCS:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="x6n-sC-zD3">
-                                                                                                <rect key="frame" x="0.0" y="0.0" width="103" height="21"/>
-                                                                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                                                                <nil key="highlightedColor"/>
-                                                                                            </label>
-                                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Jje-zw-zY2">
-                                                                                                <rect key="frame" x="103" y="0.0" width="128" height="21"/>
-                                                                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                                                                <nil key="highlightedColor"/>
-                                                                                            </label>
-                                                                                        </subviews>
-                                                                                    </stackView>
-                                                                                    <stackView opaque="NO" contentMode="scaleToFill" id="Jhu-zh-4Ze">
-                                                                                        <rect key="frame" x="0.0" y="42" width="269" height="21"/>
-                                                                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                                                                        <subviews>
-                                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Starting weight:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Stv-Mm-Oh7">
-                                                                                                <rect key="frame" x="0.0" y="0.0" width="121" height="21"/>
-                                                                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                                                                <nil key="highlightedColor"/>
-                                                                                            </label>
-                                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Frt-DK-At3">
-                                                                                                <rect key="frame" x="121" y="0.0" width="148" height="21"/>
-                                                                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                                                                <nil key="highlightedColor"/>
-                                                                                            </label>
-                                                                                        </subviews>
-                                                                                    </stackView>
-                                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" id="KUs-Q8-1UX">
-                                                                                        <rect key="frame" x="0.0" y="63" width="301" height="21"/>
-                                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                                        <subviews>
-                                                                                            <stackView opaque="NO" contentMode="scaleToFill" id="prM-aI-BTz">
-                                                                                                <rect key="frame" x="0.0" y="0.0" width="301" height="21"/>
-                                                                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                                                <subviews>
-                                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ecc-7x-8EB">
-                                                                                                        <rect key="frame" x="0.0" y="0.0" width="144" height="21"/>
-                                                                                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                                                                                        <string key="text">Target weight loss:
-</string>
-                                                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                                                                        <nil key="highlightedColor"/>
-                                                                                                    </label>
-                                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="iP3-Zm-gtY">
-                                                                                                        <rect key="frame" x="144" y="0.0" width="157" height="21"/>
-                                                                                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                                                                        <nil key="highlightedColor"/>
-                                                                                                    </label>
-                                                                                                </subviews>
-                                                                                            </stackView>
-                                                                                        </subviews>
-                                                                                    </stackView>
-                                                                                    <stackView opaque="NO" contentMode="scaleToFill" id="jT6-3q-Ymp">
-                                                                                        <rect key="frame" x="0.0" y="84" width="316" height="21"/>
-                                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                                        <subviews>
-                                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weight lost to date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="IfJ-H0-i9h">
-                                                                                                <rect key="frame" x="0.0" y="0.0" width="149" height="21"/>
-                                                                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                                                                <nil key="highlightedColor"/>
-                                                                                            </label>
-                                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wF2-fg-DaT">
-                                                                                                <rect key="frame" x="149" y="0.0" width="167" height="21"/>
-                                                                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                                                                <nil key="highlightedColor"/>
-                                                                                            </label>
-                                                                                        </subviews>
-                                                                                    </stackView>
-                                                                                </subviews>
-                                                                            </stackView>
-                                                                        </subviews>
-                                                                    </stackView>
-                                                                </subviews>
-                                                            </stackView>
-                                                        </subviews>
-                                                    </stackView>
-                                                </subviews>
-                                            </stackView>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
-                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current target completion:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lQU-rf-iLv">
+                                <rect key="frame" x="16" y="355" width="203" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="TL0-Ev-9b4">
+                                <rect key="frame" x="217" y="355" width="78" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Starting weight:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Stv-Mm-Oh7">
+                                <rect key="frame" x="16" y="395" width="121" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Frt-DK-At3">
+                                <rect key="frame" x="137" y="395" width="148" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalCompressionResistancePriority="752" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter weight in pounds" textAlignment="natural" minimumFontSize="17" id="5Dl-Am-ojB">
                                 <rect key="frame" x="82" y="171" width="170" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
@@ -898,6 +771,50 @@
                                     <action selector="createfitPlan:" destination="1aF-XI-le4" eventType="touchUpInside" id="SFH-dp-wfi"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ecc-7x-8EB">
+                                <rect key="frame" x="17" y="415" width="144" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <string key="text">Target weight loss:
+</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="iP3-Zm-gtY">
+                                <rect key="frame" x="159" y="415" width="136" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Starting BCS:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="x6n-sC-zD3">
+                                <rect key="frame" x="16" y="375" width="103" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Jje-zw-zY2">
+                                <rect key="frame" x="118" y="375" width="128" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weight lost to date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="IfJ-H0-i9h">
+                                <rect key="frame" x="17" y="435" width="149" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wF2-fg-DaT">
+                                <rect key="frame" x="164" y="435" width="131" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
