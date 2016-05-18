@@ -13,6 +13,7 @@ class InfoViewController: UIViewController {
     var ref = Firebase(url: "https://fitcat.firebaseio.com/users")
     var u_name = floginobj.f_id
 
+    @IBOutlet weak var fitButton: UIButton!
     @IBOutlet weak var bcsScore: UILabel!
     @IBOutlet weak var catImage: UIImageView!
     @IBOutlet weak var catName: UILabel!
@@ -136,8 +137,37 @@ class InfoViewController: UIViewController {
     }
     var name : String?
     var image : NSData?
+    
+    
+    func textFieldDidChange(textField: UITextField) {
+        //your code
+        
+       // print(catWeight.text?.characters.count)
+        
+       //  print(planStartDateText.text?.characters.count)
+        
+        if(catWeight.text?.characters.count > 0
+            && planStartDateText.text?.characters.count > 0)
+           {
+            
+            fitButton.enabled = true
+        }
+        else
+        {
+            fitButton.enabled = false
+        }
+    }
+ 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        fitButton.enabled = false
+        
+         planStartDateText.addTarget(self, action: #selector(InfoViewController.textFieldDidChange(_:)), forControlEvents: UIControlEvents.AllEditingEvents)
+        
+        
+        catWeight.addTarget(self, action: #selector(InfoViewController.textFieldDidChange(_:)), forControlEvents: UIControlEvents.AllEditingEvents)
         
         //Changing the dimensions of catImage
         catImage.layer.cornerRadius = catImage.frame.size.width / 2
