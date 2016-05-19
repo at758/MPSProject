@@ -41,7 +41,7 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>edu.cornell.FelineHealth.FitCat</string>
+				<string>edu.cornell.felinehealth.yuanyuan.fitcat</string>
 			</array>
 		</dict>
 	</array>
