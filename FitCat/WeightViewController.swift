@@ -8,9 +8,9 @@
 import UIKit
 import Firebase
 
-class WeightViewController: UIViewController, UINavigationControllerDelegate,
-  UITableViewDataSource, UITableViewDelegate,
-  UITextFieldDelegate,
+class WeightViewController:
+  UIViewController, UINavigationControllerDelegate,
+  UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate,
   UIPickerViewDataSource, UIPickerViewDelegate {
   
   /* cat information */
@@ -22,8 +22,11 @@ class WeightViewController: UIViewController, UINavigationControllerDelegate,
   /* feeding information */
   var weights: [WeightRecord] = []
   
+  @IBOutlet weak var catWeight: UITextField!
   @IBOutlet weak var catName: UITextField!
   @IBOutlet weak var tableView: UITableView!
+  
+  var weightRecord = ["date":"05/12/2016","weight":""]
   
   // MARK: - TableView
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -32,16 +35,14 @@ class WeightViewController: UIViewController, UINavigationControllerDelegate,
   
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     let cell = self.tableView.dequeueReusableCellWithIdentifier("feedcell") as UITableViewCell!
-    // var curWeight : WeightRecord
+
     let curWeight = weights[indexPath.row] as WeightRecord
     
-    let feedDate = cell.viewWithTag(301) as! UILabel
-    // let feedName = cell.viewWithTag(302) as! UILabel
-    let feedCalories = cell.viewWithTag(303) as! UILabel
+    let Date = cell.viewWithTag(301) as! UILabel
+    let Weight = cell.viewWithTag(303) as! UILabel
     
-    feedDate.text = curWeight.date
-    // feedName.text = myfeed.foodname
-    feedCalories.text = curWeight.weight
+    Date.text = curWeight.date
+    Weight.text = curWeight.weight + " lbs"
     return cell
   }
   
@@ -72,52 +73,66 @@ class WeightViewController: UIViewController, UINavigationControllerDelegate,
     picker1.dataSource = self
     catName.delegate = self
     catName.inputView = picker1
-    updateFeed()
+    update()
   }
   
-  // update feed information
-  func updateFeed() {
+  // update weight information
+  func save() {
+    if (catName.text != "" && catName.text != nil && catWeight.text != "" && catWeight.text != nil) {
+      ref = Firebase(url: "https://fitcat.firebaseio.com/users/" +  (u_name) + "/" + (catName.text)!)
+      let uuid = NSUUID().UUIDString
+      let path = "weightRecord" + "/" + uuid
+      let path2 = "/"
+      let app = ref.childByAppendingPath(path)
+      let app2 = ref.childByAppendingPath(path2)
+      let timestamp = NSDateFormatter.localizedStringFromDate(NSDate(), dateStyle: .ShortStyle, timeStyle: .NoStyle)
+      if (catWeight.text != "" && catWeight.text != nil) {
+        weightRecord["date"] = timestamp
+        weightRecord["weight"] = catWeight.text!
+        app.setValue(weightRecord)
+        app2.updateChildValues(["catWeight" : catWeight.text!])
+        catWeight.text! = ""
+      }
+    }
+  }
+  
+  func update() {
+    save()
     let name = catName.text
     weights.removeAll()
     var str = "https://fitcat.firebaseio.com/users/" +  (u_name) + "/" + (name!)
     str = str.stringByReplacingOccurrencesOfString(" ", withString: "%20")
+    let reposURL2 = NSURL(string: str + "/weightRecord.json")
   
-    let reposURL1 = NSURL(string: str + "/catWeight.json")
-    let reposURL2 = NSURL(string: str + "/feeding.json")
-    
     if let JSONData2 = NSData(contentsOfURL: reposURL2!) {
       do {
-        var w = try String(contentsOfURL: reposURL1!)
-        if (w != "null" && w != "") {
-          w = w.stringByReplacingOccurrencesOfString("\"", withString: "", options: NSStringCompareOptions.LiteralSearch, range: nil)
-          let element = WeightRecord(date: "", weight: w + " lbs");
-          if let json = try NSJSONSerialization.JSONObjectWithData(JSONData2, options: []) as? NSDictionary {
-            if let reposArray2 = json as? [String: AnyObject] {
-              for (_, val) in reposArray2 {
-                let feedDate = val["date"] as! String
-                if (feedDate != "") {
-                  element.date = feedDate
-                }
+        if let json = try NSJSONSerialization.JSONObjectWithData(JSONData2, options: []) as? NSDictionary {
+          if let reposArray2 = json as? [String: AnyObject] {
+            for (_, val) in reposArray2 {
+              let myDate = val["date"] as! String
+              let myWeight = val["weight"] as! String
+              if (myDate != "" && myWeight != "") {
+                let record = WeightRecord(date: myDate, weight: myWeight)
+                weights.append(record)
               }
             }
           }
-          weights.append(element)
         }
       } catch let error as NSError {
-        print("Error: \(error)")
+        print(error.localizedDescription)
       }
       tableView.reloadData()
     }
   
     // to hide keyboard
-    let tap : UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(TrackingViewController.dismissKeyboard))
+    let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(WeightViewController.dismissKeyboard))
     tap.cancelsTouchesInView = true
     self.view.addGestureRecognizer(tap)
   }
   
   func dismissKeyboard() {
     self.view.endEditing(true)
-    updateFeed()
+    update()
   }
   
   override func didReceiveMemoryWarning() {
@@ -129,7 +144,7 @@ class WeightViewController: UIViewController, UINavigationControllerDelegate,
     return 1
   }
   
-  func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int{
+  func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
     return catNameArr.count
   }
   
