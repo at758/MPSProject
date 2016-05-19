@@ -35,6 +35,7 @@ class WeightViewController:
   
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     let cell = self.tableView.dequeueReusableCellWithIdentifier("feedcell") as UITableViewCell!
+    weights.sortInPlace({$0.date > $1.date})
 
     let curWeight = weights[indexPath.row] as WeightRecord
     
@@ -48,6 +49,7 @@ class WeightViewController:
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    weights.sortInPlace({$0.date > $1.date})
     tableView.dataSource = self
     tableView.delegate = self
     let reposURL = NSURL(string: "https://fitcat.firebaseio.com/users.json")
