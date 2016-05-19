@@ -73,6 +73,7 @@ class WeightViewController:
     picker1.dataSource = self
     catName.delegate = self
     catName.inputView = picker1
+    catWeight.delegate = self
     update()
   }
   
@@ -130,6 +131,12 @@ class WeightViewController:
     self.view.addGestureRecognizer(tap)
   }
   
+    /* Resign the focus after the return */
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        update()
+        return false    }
+    
   func dismissKeyboard() {
     self.view.endEditing(true)
     update()
