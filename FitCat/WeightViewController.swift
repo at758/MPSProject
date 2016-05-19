@@ -73,6 +73,7 @@ class WeightViewController:
     picker1.dataSource = self
     catName.delegate = self
     catName.inputView = picker1
+    catWeight.delegate = self
     update()
   }
   
@@ -86,7 +87,8 @@ class WeightViewController:
       let app = ref.childByAppendingPath(path)
       let app2 = ref.childByAppendingPath(path2)
       let timestamp = NSDateFormatter.localizedStringFromDate(NSDate(), dateStyle: .ShortStyle, timeStyle: .NoStyle)
-      if (catWeight.text != "" && catWeight.text != nil) {
+      let num = Int(catWeight.text!)
+      if (num != nil) {
         weightRecord["date"] = timestamp
         weightRecord["weight"] = catWeight.text!
         app.setValue(weightRecord)
@@ -130,6 +132,13 @@ class WeightViewController:
     self.view.addGestureRecognizer(tap)
   }
   
+  /* Resign the focus after the return */
+  func textFieldShouldReturn(textField: UITextField) -> Bool {
+    self.view.endEditing(true)
+    update()
+    return false
+  }
+    
   func dismissKeyboard() {
     self.view.endEditing(true)
     update()
